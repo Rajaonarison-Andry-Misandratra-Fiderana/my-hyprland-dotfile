@@ -38,7 +38,9 @@ cp -r ./ ~/.config/
     SUPER + Space → Opens Ulauncher to quickly launch applications.
 
     Take a Screenshot
-    SUPER + S → Takes a full screenshot. SUPER + Shift + S → Takes a screenshot with additional options via hyprshot.
+    PRINT → Takes a full screenshot. 
+    SUPER + Shift + S → Takes a screenshot(region).
+    SUPER + S → Takes a screenshot(windows).
 
     Toggle the Status Bar
     SUPER + A → Toggles the visibility of the status bar.
