@@ -5,6 +5,8 @@
 ## Before installing, make sure you have:
     Kitty (Terminal emulator)
 
+    Ulauncher (To launch your apps)
+    
     Hyprland (Wayland compositor)
 
     Hyprshot (For the Screenshot)
@@ -71,3 +73,8 @@ cp -r ./ ~/.config/
     SUPER + SHIFT + [1-9] → Moves the active window to the corresponding workspace.
 
 ### Note: All bindings can be customized in the configuration file ~/.config/hypr/hyprland.conf according to your preferences.
+
+### ⚠️ Don't forget to adjust the $ according to your configuration!  Personally, I use Thunar as my file manager and Zen as my browser.
+
+### If you want to customize or add modules learn more here -> https://hyprpanel.com/configuration/modules.html
+### And if you want to learn hyprland -> https://wiki.hyprland.org/
