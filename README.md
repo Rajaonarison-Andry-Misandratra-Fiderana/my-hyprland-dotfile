@@ -21,4 +21,5 @@ cp -r ./ ~/.config/
 
 # 📸 Preview
 
+![Image](https://github.com/user-attachments/assets/be275f17-b204-4df1-ab93-927b036ddf49)
 
