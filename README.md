@@ -7,6 +7,8 @@
 
     Hyprland (Wayland compositor)
 
+    Hyprshot (For the Screenshot)
+    
     Hyprpannel (Customizable bar for Hyprland)
 
     Fastfetch (Fast and stylish system info display)
