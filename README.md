@@ -21,7 +21,10 @@ cp -r ./ ~/.config/
 
 # 📸 Preview
 
-![Image](https://github.com/user-attachments/assets/be275f17-b204-4df1-ab93-927b036ddf49)
+![Image](https://github.com/user-attachments/assets/bf117278-125a-46a8-8b04-45fddc27e6fe)
+
+![Image](https://github.com/user-attachments/assets/5f1cbf73-72b5-4d75-adf8-22a8fe940128)
+
 
 ## Hyprland Bindings Documentation
 
