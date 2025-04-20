@@ -5,13 +5,15 @@
 ## Before installing, make sure you have:
     Kitty (Terminal emulator)
 
-    Ulauncher (To launch your apps)
+    Rofi-> in development (To launch your apps)
     
     Hyprland (Wayland compositor)
 
     Hyprshot (For the Screenshot)
     
     Hyprpannel (Customizable bar for Hyprland)
+
+    Hyprpaper (For the Wallpaper)
 
     Fastfetch (Fast and stylish system info display)
 
