@@ -4,7 +4,7 @@
 
     Kitty (Terminal emulator)
 
-    Rofi-> in development (To launch your apps)
+    Rofi (To launch your apps)
     
     Hyprland (Wayland compositor)
 
@@ -25,6 +25,8 @@ cp -r ./ ~/.config/
 # 📸 Preview
 
 ![Image](https://github.com/user-attachments/assets/8f860ba2-1696-4058-9ae6-6d9a928355d0)
+
+![Image](https://github.com/user-attachments/assets/a60848b6-7fa8-413e-abcd-496d9e91a842)
 
 ![Image](https://github.com/user-attachments/assets/30a6afd1-f14b-4d4b-95f3-b92bce38ebb2)
 
