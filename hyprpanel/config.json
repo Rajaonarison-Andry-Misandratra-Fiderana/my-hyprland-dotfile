@@ -1,0 +1,96 @@
+{
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "ram",
+        "cpu"
+      ],
+      "middle": [
+        "clock",
+        "cava"
+      ],
+      "right": [
+        "systray",
+        "volume",
+        "hyprsunset",
+        "battery",
+        "notifications"
+      ]
+    },
+    "1": {
+      "left": [
+        "dashboard"
+      ],
+      "middle": [
+        "windowstitle"
+      ],
+      "right": [
+        "clock"
+      ]
+    },
+    "2": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "clock",
+        "notifications"
+      ]
+    }
+  },
+  "theme.bar.floating": true,
+  "bar.autoHide": "fullscreen",
+  "theme.bar.buttons.enableBorders": true,
+  "bar.launcher.autoDetectIcon": false,
+  "bar.launcher.icon": "",
+  "bar.workspaces.show_icons": false,
+  "bar.workspaces.show_numbered": false,
+  "bar.workspaces.monitorSpecific": false,
+  "bar.workspaces.showWsIcons": true,
+  "bar.workspaces.showApplicationIcons": true,
+  "bar.battery.hideLabelWhenFull": true,
+  "theme.bar.menus.monochrome": false,
+  "wallpaper.enable": false,
+  "theme.bar.transparent": true,
+  "theme.bar.buttons.monochrome": true,
+  "theme.bar.border.color": "#99c1f1",
+  "theme.bar.buttons.borderColor": "#f6f5f4",
+  "theme.bar.buttons.text": "#ffffff",
+  "theme.bar.buttons.icon": "#deddda",
+  "theme.bar.buttons.workspaces.hover": "#5e5c64",
+  "theme.bar.buttons.workspaces.available": "#3d3846",
+  "theme.bar.buttons.workspaces.occupied": "#f6f5f4",
+  "theme.bar.buttons.workspaces.active": "#ffffff",
+  "menus.dashboard.stats.enabled": false,
+  "menus.dashboard.shortcuts.enabled": true,
+  "menus.dashboard.directories.enabled": false,
+  "menus.dashboard.shortcuts.left.shortcut1.tooltip": "",
+  "menus.dashboard.shortcuts.left.shortcut1.icon": "",
+  "menus.dashboard.shortcuts.left.shortcut1.command": "",
+  "menus.dashboard.shortcuts.left.shortcut2.tooltip": "",
+  "menus.dashboard.shortcuts.left.shortcut2.command": "",
+  "menus.dashboard.shortcuts.left.shortcut2.icon": "",
+  "menus.dashboard.shortcuts.left.shortcut4.tooltip": "",
+  "menus.dashboard.shortcuts.left.shortcut4.command": "",
+  "menus.dashboard.shortcuts.left.shortcut4.icon": "",
+  "theme.bar.border.location": "none",
+  "bar.workspaces.applicationIconOncePerWorkspace": true,
+  "bar.workspaces.showAllActive": true,
+  "theme.bar.buttons.workspaces.smartHighlight": true,
+  "bar.workspaces.workspaceMask": true,
+  "theme.font.weight": 500,
+  "theme.font.size": "1rem",
+  "menus.transition": "crossfade",
+  "theme.bar.menus.enableShadow": false,
+  "menus.power.sleep": "systemctl hibernate",
+  "bar.workspaces.numbered_active_indicator": "underline",
+  "theme.bar.buttons.workspaces.enableBorder": false
+}
