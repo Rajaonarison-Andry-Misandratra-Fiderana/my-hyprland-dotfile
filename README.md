@@ -19,8 +19,6 @@
 
 ## 📥 Installation
 
-Clone the repo and copy the files to your $HOME/.config:
-
 git clone https://github.com/Rajaonarison-Andry-Misandratra-Fiderana/my-hyprland-dotfile
 cd my-hyprland-dotfile
 cp -r ./ ~/.config/  
