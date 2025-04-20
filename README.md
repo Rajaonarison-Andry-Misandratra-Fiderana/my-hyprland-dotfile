@@ -1,8 +1,7 @@
 # 💻 A minimalist and optimized Hyprland rice
 
-📦 Requirements
+## 📦 Requirements
 
-## Before installing, make sure you have:
     Kitty (Terminal emulator)
 
     Rofi-> in development (To launch your apps)
