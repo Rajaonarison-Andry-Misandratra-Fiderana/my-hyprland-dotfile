@@ -73,7 +73,8 @@ cp -r ./ ~/.config/
 
 ### Note: All bindings can be customized in the configuration file ~/.config/hypr/hyprland.conf according to your preferences.
 
-### ⚠️ Don't forget to adjust the $ according to your configuration!  Personally, I use Thunar as my file manager and Zen as my browser.
+### ⚠️ Don't forget to adjust the $ in hyprland.conf according to your configuration!  Personally,
+I use Thunar as my file manager and Zen as my browser.
 
 ### If you want to customize or add modules learn more here -> https://hyprpanel.com/configuration/modules.html
 ### And if you want to learn hyprland -> https://wiki.hyprland.org/
