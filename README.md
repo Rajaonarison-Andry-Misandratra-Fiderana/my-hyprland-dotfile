@@ -18,9 +18,9 @@
 
 ## 📥 Installation
 
-git clone https://github.com/Rajaonarison-Andry-Misandratra-Fiderana/my-hyprland-dotfile
-cd my-hyprland-dotfile
-cp -r ./ ~/.config/  
+	git clone https://github.com/Rajaonarison-Andry-Misandratra-Fiderana/my-hyprland-dotfile
+	cd my-hyprland-dotfile
+	cp -r ./ ~/.config/  
 
 # 📸 Preview
 
