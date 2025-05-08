@@ -1,21 +1,29 @@
 #!/bin/bash
 
-# Script to copy configuration files
-# - Everything in ./ goes to ~/.config/
-# - ./fonts goes to ~/.local/share/fonts
-
 set -e
 
-# Define source and target directories
-SRC_DIR="$(pwd)"
-CONFIG_TARGET="$HOME/.config"
-FONTS_TARGET="$HOME/.local/share/fonts"
+echo "🔧 Starting dotfiles installation..."
 
-echo "📁 Copying configuration files to $CONFIG_TARGET..."
-rsync -av --exclude "fonts" "$SRC_DIR/" "$CONFIG_TARGET/"
+# Créer les répertoires si nécessaires
+mkdir -p ~/.config
+mkdir -p ~/.local/share/fonts
+sudo mkdir -p /usr/share/icons
 
-echo "🔤 Copying fonts to $FONTS_TARGET..."
-mkdir -p "$FONTS_TARGET"
-rsync -av "$SRC_DIR/fonts/" "$FONTS_TARGET/"
+# Copier tout sauf le dossier 'fonts' dans ~/.config
+echo "📁 Copying configs to ~/.config..."
+shopt -s extglob
+cp -r !(fonts|install.sh) ~/.config/
 
-echo "✅ All files copied successfully."
+# Copier les polices (sauf 'locolor') vers ~/.local/share/fonts
+echo "🔤 Installing fonts..."
+find ./fonts -mindepth 1 -maxdepth 1 ! -name "locolor" -exec cp -r {} ~/.local/share/fonts/ \;
+
+# Copier le dossier 'locolor' dans /usr/share/icons
+echo "🎨 Installing 'locolor' cursor theme..."
+sudo cp -r ./fonts/locolor /usr/share/icons/
+
+# Mise à jour du cache des polices
+echo "🔄 Updating font cache..."
+fc-cache -fv
+
+echo "✅ Installation complete!"
