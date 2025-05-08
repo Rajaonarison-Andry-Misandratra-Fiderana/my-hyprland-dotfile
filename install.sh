@@ -1,28 +1,32 @@
 #!/bin/bash
 
-set -e
-
-echo "🔧 Starting dotfiles installation..."
-
-# Créer les répertoires si nécessaires
+# Ensure required directories exist
 mkdir -p ~/.config
 mkdir -p ~/.local/share/fonts
-sudo mkdir -p /usr/share/icons
+sudo mkdir -p /usr/share/icons/
 
-# Copier tout sauf le dossier 'fonts' dans ~/.config
-echo "📁 Copying configs to ~/.config..."
-shopt -s extglob
-cp -r !(fonts|install.sh) ~/.config/
+# Copy all items except the "fonts" folder to ~/.config
+for item in ./*; do
+    if [[ "$(basename "$item")" != "fonts" ]]; then
+        cp -r "$item" ~/.config/
+    fi
+done
 
-# Copier les polices (sauf 'locolor') vers ~/.local/share/fonts
-echo "🔤 Installing fonts..."
-find ./fonts -mindepth 1 -maxdepth 1 ! -name "locolor" -exec cp -r {} ~/.local/share/fonts/ \;
+# Handle fonts directory separately
+if [ -d "./fonts" ]; then
+    for font in ./fonts/*; do
+        if [[ "$(basename "$font")" == "locolor" ]]; then
+            sudo cp -r "$font" /usr/share/icons/
+        else
+            cp -r "$font" ~/.local/share/fonts/
+        fi
+    done
+fi
 
-# Copier le dossier 'locolor' dans /usr/share/icons
-echo "🎨 Installing 'locolor' cursor theme..."
-sudo cp -r ./fonts/locolor /usr/share/icons/
+# Make sure Rofi scripts are executable
+chmod +x ~/.config/rofi/launchers/type-7/launcher.sh
+chmod +x ~/.config/rofi/powermenu/type-2/powermenu.sh
 
-# Mise à jour du cache des polices
 echo "🔄 Updating font cache..."
 fc-cache -fv
 
