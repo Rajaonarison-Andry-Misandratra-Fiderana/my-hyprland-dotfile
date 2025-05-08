@@ -8,7 +8,7 @@
     
     Hyprland (Wayland compositor)
 
-    Hyprshot (For the Screenshot)
+    Slurp (For the Screenshot)
     
     Hyprpannel (Customizable bar for Hyprland)
 
@@ -20,7 +20,9 @@
 
 	git clone https://github.com/Rajaonarison-Andry-Misandratra-Fiderana/my-hyprland-dotfile
 	cd my-hyprland-dotfile
-	cp -r ./ ~/.config/  
+	chmod +x install.sh
+ 	./install.sh
+
 
 # 📸 Preview
 
