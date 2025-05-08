@@ -49,7 +49,7 @@
   "theme.bar.floating": true,
   "bar.autoHide": "fullscreen",
   "theme.bar.buttons.enableBorders": true,
-  "bar.launcher.autoDetectIcon": false,
+  "bar.launcher.autoDetectIcon": true,
   "bar.launcher.icon": "",
   "bar.workspaces.show_icons": false,
   "bar.workspaces.show_numbered": false,
