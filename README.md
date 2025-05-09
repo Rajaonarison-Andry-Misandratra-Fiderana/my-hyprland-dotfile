@@ -33,6 +33,8 @@ chmod +x install.sh
 
 ![Image](https://github.com/user-attachments/assets/08dc3c10-b196-42e2-892d-276e305e43e2)
 
+![Image](https://github.com/user-attachments/assets/a885a24a-f21a-4897-8d49-e17055bb64f0) 
+
 ---
 
 ## 🧩 Hyprland Key Bindings
