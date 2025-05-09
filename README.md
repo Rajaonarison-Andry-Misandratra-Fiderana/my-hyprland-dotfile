@@ -23,11 +23,15 @@ chmod +x install.sh
 
 ## 📸 Preview
 
-![Image](https://github.com/user-attachments/assets/e82a1b0c-f223-4c5a-b3b9-3bb6f8b57885)
+![Image](https://github.com/user-attachments/assets/6d00998c-9731-461a-81a4-73193cfc86b1)
 
-![Image](https://github.com/user-attachments/assets/0c2c6fc8-8256-4e4c-aec9-585a0a4834ca)
+![Image](https://github.com/user-attachments/assets/b4f67a78-7784-4e83-82d8-85bc2fdae149)
 
-![Image](https://github.com/user-attachments/assets/c6b56c60-d470-4392-b6e3-a59f2d1b7c24)
+![Image](https://github.com/user-attachments/assets/be986c7a-5822-4ff5-a3fe-ac9c63fbca06)
+
+![Image](https://github.com/user-attachments/assets/855c8780-31a6-475a-9b86-41d28e549de1)
+
+![Image](https://github.com/user-attachments/assets/08dc3c10-b196-42e2-892d-276e305e43e2)
 
 ---
 
