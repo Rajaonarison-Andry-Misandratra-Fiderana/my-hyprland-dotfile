@@ -40,7 +40,7 @@
     },
     {
       "type": "packages",
-      "format": "{} (apt)",
+      "format": "{} (pacman)",
       "key": " ",
       "keyColor": "green"
     },
