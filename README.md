@@ -96,5 +96,3 @@ chmod +x install.sh
 * ⚙️ Hyprpanel Modules → [https://hyprpanel.com/configuration/modules.html](https://hyprpanel.com/configuration/modules.html)
 
 ---
-
-Souhaites-tu que je te génère un GIF de démonstration à partir de ton environnement Hyprland (ou un guide pour le faire avec `peek`, `ffmpeg`, etc.) ?
