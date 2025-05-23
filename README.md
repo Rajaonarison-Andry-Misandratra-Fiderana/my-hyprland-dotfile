@@ -1,6 +1,6 @@
 # ✨💻 A Minimalist and Optimized Hyprland Rice
 
-🌈 **Clean**
+🔧 **Clean**
 ⚡ **Snappy Performance**
 🎯 **Custom Keybinds**
 🧠 **Minimal Learning Curve**
@@ -12,13 +12,21 @@
 
 🧱 Make sure these are installed before you begin:
 
-* 🖥️ **Kitty** – Fast, GPU-accelerated terminal
-* 🎛️ **Rofi** – App launcher and power menu
-* 🌀 **Hyprland** – Next-gen Wayland compositor
-* 🖼️ **Hyprpaper** – Wallpaper manager
-* 📏 **Slurp** – Region selector (screenshots)
-* 🧩 **Hyprpanel** – Lightweight status bar
-* 🎨 **Fastfetch** – Fancy system info at startup
+    🖥️ Kitty – Fast, GPU-accelerated terminal
+
+    ⚡ Ulauncher – Lightning-fast application launcher
+
+    💤 Rofi – Power menu (shutdown, reboot, etc.)
+
+    🌀 Hyprland – Next-gen Wayland compositor
+
+    🖼️ Hyprpaper – Wallpaper manager
+
+    📏 Slurp – Region selector (screenshots)
+
+    🧩 Hyprpanel – Lightweight status bar
+
+    🎨 Fastfetch – Fancy system info at startup
 
 ### 🧰 Optional Add-ons
 
@@ -40,7 +48,10 @@ chmod +x install.sh
 
 ## 📸 Preview 
 
-
+![Image](https://github.com/user-attachments/assets/9c40f5fb-0efa-480d-91f2-18f6fad516f9)
+![Image](https://github.com/user-attachments/assets/b13418f4-647f-41a5-9015-9e977f536ff1)
+![Image](https://github.com/user-attachments/assets/8b14a425-ad3d-46be-b07c-789f88052643)
+![Image](https://github.com/user-attachments/assets/2d24b541-a6c3-4728-ba11-029fc764edda)
 
 ---
 
