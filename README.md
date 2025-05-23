@@ -1,14 +1,6 @@
----
-
 # ✨💻 A Minimalist and Optimized Hyprland Rice
 
-> ⚡️ *Speed, Style, Simplicity.* Welcome to your next favorite desktop setup.
-
----
-
-## 🚀 Features At a Glance
-
-🌈 **Clean Aesthetic**
+🌈 **Clean**
 ⚡ **Snappy Performance**
 🎯 **Custom Keybinds**
 🧠 **Minimal Learning Curve**
