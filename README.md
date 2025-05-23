@@ -1,16 +1,41 @@
-# 💻 A Minimalist and Optimized Hyprland Rice
+---
+
+# ✨💻 A Minimalist and Optimized Hyprland Rice
+
+> ⚡️ *Speed, Style, Simplicity.* Welcome to your next favorite desktop setup.
+
+---
+
+## 🚀 Features At a Glance
+
+🌈 **Clean Aesthetic**
+⚡ **Snappy Performance**
+🎯 **Custom Keybinds**
+🧠 **Minimal Learning Curve**
+📦 **One-command Setup**
+
+---
 
 ## 📦 Requirements
 
-* **Kitty** – Terminal emulator
-* **Rofi** – Application launcher
-* **Hyprland** – Wayland compositor
-* **Slurp** – Region selector for screenshots
-* **Hyprpanel** – Customizable bar for Hyprland
-* **Hyprpaper** – Wallpaper manager
-* **Fastfetch** – Stylish system info fetcher
+🧱 Make sure these are installed before you begin:
 
-## 📥 Installation
+* 🖥️ **Kitty** – Fast, GPU-accelerated terminal
+* 🎛️ **Rofi** – App launcher and power menu
+* 🌀 **Hyprland** – Next-gen Wayland compositor
+* 🖼️ **Hyprpaper** – Wallpaper manager
+* 📏 **Slurp** – Region selector (screenshots)
+* 🧩 **Hyprpanel** – Lightweight status bar
+* 🎨 **Fastfetch** – Fancy system info at startup
+
+### 🧰 Optional Add-ons
+
+* 🖋️ **GNU Free Fonts**
+* 🧠 **JetBrains Mono** – Clean, dev-friendly font
+
+---
+
+## 📥 Installation (1-click setup)
 
 ```bash
 git clone https://github.com/Rajaonarison-Andry-Misandratra-Fiderana/my-hyprland-dotfile
@@ -19,49 +44,54 @@ chmod +x install.sh
 ./install.sh
 ```
 
-🎉 **Good news!** The entire configuration is now automated thanks to the `install.sh` script. 🚀
+---
 
-## 📸 Preview
+## 📸 Preview 
 
-![Image](https://github.com/user-attachments/assets/f11d1651-cd54-4777-ab6a-24651fabf499)
 
-![Image](https://github.com/user-attachments/assets/68b0371c-3ef4-420a-b2cb-44e13d1652cf)
-
-![Image](https://github.com/user-attachments/assets/eb041ece-6037-4a49-bd02-719c5cdbcdca)
-
-![Image](https://github.com/user-attachments/assets/dd3ebaeb-22ba-4fcf-8e41-872cea648551)
 
 ---
 
-## 🧩 Hyprland Key Bindings
+## 🎮 Key Bindings You’ll Love
 
-| Action                          | Keybinding              |
-| ------------------------------- | ----------------------- |
-| Launch browser                  | `SUPER + B`             |
-| Launch terminal                 | `SUPER + Return`        |
-| Launch file manager             | `SUPER + E`             |
-| Launch app launcher (Ulauncher) | `SUPER + Space`         |
-| Full screenshot                 | `Print`                 |
-| Region screenshot               | `SUPER + Shift + S`     |
-| Window screenshot               | `SUPER + S`             |
-| Toggle status bar               | `SUPER + A`             |
-| Next window                     | `SUPER + Tab`           |
-| Previous window                 | `SUPER + Shift + Tab`   |
-| Toggle fullscreen               | `SUPER + F`             |
-| Close active window             | `SUPER + Q`             |
-| Exit Hyprland                   | `SUPER + M`             |
-| Switch workspace (1–9)          | `SUPER + [1–9]`         |
-| Move window to workspace (1–9)  | `SUPER + Shift + [1–9]` |
+| 💥 Action                | ⌨️ Keybinding           |
+| ------------------------ | ----------------------- |
+| Open Terminal            | `SUPER + Return`        |
+| App Launcher (Ulauncher) | `SUPER + Space`         |
+| File Manager (Thunar)    | `SUPER + E`             |
+| Web Browser (Zen)        | `SUPER + B`             |
+| Full Screenshot          | `Print`                 |
+| Region Screenshot        | `SUPER + Shift + S`     |
+| Window Screenshot        | `SUPER + S`             |
+| Toggle Bar               | `SUPER + A`             |
+| Next/Previous Window     | `SUPER + Tab / Shift`   |
+| Fullscreen Mode          | `SUPER + F`             |
+| Close Window             | `SUPER + Q`             |
+| Exit Session             | `SUPER + M`             |
+| Workspace (1-9)          | `SUPER + [1–9]`         |
+| Move Window to Workspace | `SUPER + Shift + [1–9]` |
 
-### 🛠️ Customization Tips
-
-* All keybindings are located in `~/.config/hypr/hyprland.conf`. You can easily change them to fit your workflow.
-* Don’t forget to adjust environment variables (like `$terminal`, `$browser`, etc.) in your config.
-* Personally, I use **Thunar** as my file manager and **Zen** as my browser.
-
-## 📚 Resources
-
-* Hyprland config docs: [https://wiki.hyprland.org](https://wiki.hyprland.org)
-* Hyprpanel module config: [https://hyprpanel.com/configuration/modules.html](https://hyprpanel.com/configuration/modules.html)
+🧠 All bindings editable in `~/.config/hypr/hyprland.conf`.
 
 ---
+
+## 🎨 Customization Tips
+
+💡 You can modify:
+
+* `$terminal`, `$browser`, `$fileManager` in your config
+* Bar modules (CPU, RAM, network) in `hyprpanel.conf`
+* Wallpapers via `Hyprpaper`
+
+🔧 **Pro tip:** Use `hyprctl reload` to see changes instantly without restarting the session!
+
+---
+
+## 📚 Learn More
+
+* 🧪 Hyprland Wiki → [https://wiki.hyprland.org](https://wiki.hyprland.org)
+* ⚙️ Hyprpanel Modules → [https://hyprpanel.com/configuration/modules.html](https://hyprpanel.com/configuration/modules.html)
+
+---
+
+Souhaites-tu que je te génère un GIF de démonstration à partir de ton environnement Hyprland (ou un guide pour le faire avec `peek`, `ffmpeg`, etc.) ?
