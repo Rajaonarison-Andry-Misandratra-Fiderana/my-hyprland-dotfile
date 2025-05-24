@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Installer la police JetBrains Mono Nerd Font
+echo "🔄 Installation de ttf-jetbrains-mono-nerd..."
+sudo pacman -S --noconfirm extra/ttf-jetbrains-mono-nerd
+
 # Ensure required directories exist
 mkdir -p ~/.config
 sudo mkdir -p /usr/share/fonts/TTF/
