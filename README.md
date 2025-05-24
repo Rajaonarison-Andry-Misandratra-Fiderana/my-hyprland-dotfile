@@ -24,14 +24,12 @@
 
     📏 Slurp – Region selector (screenshots)
 
-    🧩 Hyprpanel – Lightweight status bar
+    🧩 Waybar – Lightweight status bar
 
     🎨 Fastfetch – Fancy system info at startup
-
-### 🧰 Optional Add-ons
-
-* 🖋️ **GNU Free Fonts**
-* 🧠 **JetBrains Mono** – Clean, dev-friendly font
+    
+    🧠 JetBrains Mono – Clean, dev-friendly font
+    
 
 ---
 
@@ -48,10 +46,10 @@ chmod +x install.sh
 
 ## 📸 Preview 
 
-![Image](https://github.com/user-attachments/assets/9c40f5fb-0efa-480d-91f2-18f6fad516f9)
-![Image](https://github.com/user-attachments/assets/b13418f4-647f-41a5-9015-9e977f536ff1)
-![Image](https://github.com/user-attachments/assets/8b14a425-ad3d-46be-b07c-789f88052643)
-![Image](https://github.com/user-attachments/assets/2d24b541-a6c3-4728-ba11-029fc764edda)
+![Image](https://github.com/user-attachments/assets/d2080593-8b3e-403b-bd51-1b6471f85e78)
+![Image](https://github.com/user-attachments/assets/2ea258eb-60b9-480e-aa25-ff51a4ec7a57)
+![Image](https://github.com/user-attachments/assets/3c1a2ad2-194d-47cb-8563-406124eb9459)
+![Image](https://github.com/user-attachments/assets/4b8d8269-194f-4798-a505-f656dc3f2acd)
 
 ---
 
