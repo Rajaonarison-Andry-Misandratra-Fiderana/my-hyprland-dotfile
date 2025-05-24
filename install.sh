@@ -2,7 +2,7 @@
 
 # Installer la police JetBrains Mono Nerd Font
 echo "🔄 Installation de ttf-jetbrains-mono-nerd..."
-sudo pacman -S --noconfirm extra/ttf-jetbrains-mono-nerd
+sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd slurp hyprland hyprpaper rofi waybar fastfetch kitty
 
 # Ensure required directories exist
 mkdir -p ~/.config
