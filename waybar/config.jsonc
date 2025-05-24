@@ -3,7 +3,7 @@
   "margin-left": 7,
   "margin-right": 7,
   "height": 50,
-  "spacing": 7, // Ajoute cet espace entre tous les modules
+  "spacing": 10, // Ajoute cet espace entre tous les modules
   "modules-left": [
     "custom/arch"
   ],
@@ -13,6 +13,7 @@
   "modules-right": [
     "tray",
     "pulseaudio",
+    "backlight", // Ajouté ici
     "network",
     "battery",
     "clock"
@@ -82,5 +83,9 @@
     "format": "",
     "tooltip": "Arch Linux",
     "on-click": "xdg-open https://archlinux.org"
+  },
+  "backlight": {
+    "format": "  {percent}%",
+    "format-icons": ["", "", ""]
   }
 }
