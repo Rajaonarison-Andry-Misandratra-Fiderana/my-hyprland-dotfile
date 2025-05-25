@@ -63,11 +63,9 @@ button:hover {
 
 #clock,
 #battery,
-#cpu,
-#memory,
 #temperature,
 #network,
-#pulseaudio {
+#pulseaudio{
   padding: 0 10px;
 }
 
@@ -104,7 +102,7 @@ button:hover {
 }
 
 .modules-right {
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 .modules-left {
@@ -146,6 +144,6 @@ label:focus {
 }
 
 #custom-arch {
-  padding-left: 8px;
-  padding-right: 10px;
+  margin-left: 8px;
+  margin-right: 10px;
 }

@@ -3,7 +3,7 @@
   "margin-left": 7,
   "margin-right": 7,
   "height": 50,
-  "spacing": 10, // Ajoute cet espace entre tous les modules
+  "spacing": 7, // Ajoute cet espace entre tous les modules
   "modules-left": [
     "custom/arch"
   ],
@@ -13,30 +13,29 @@
   "modules-right": [
     "tray",
     "pulseaudio",
-    "backlight", // Ajouté ici
+    "backlight",
     "network",
     "battery",
     "clock"
   ],
-   
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
-      "active": " ",
+      "active": ""
     },
     "sort-by-number": true,
     "persistent-workspaces": {
-      "*": 4, // 5 workspaces by default on every monitor
-    },
+      "*": 4
+    }
   },
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d}",
-    "padding-right": 10 // Ajoute du padding à droite
+    "padding-right": 10
   },
   "cpu": {
-    "format": "  {usage}%",
+    "format": "  {usage}%  ",
     "tooltip": false
   },
   "memory": {
@@ -48,6 +47,7 @@
       "warning": 30,
       "critical": 15
     },
+    "interval": 20,
     "format": "{icon}  {capacity}%",
     "format-full": "{icon}  {capacity}%",
     "format-charging": "  {capacity}%",
@@ -82,10 +82,14 @@
   "custom/arch": {
     "format": "",
     "tooltip": "Arch Linux",
-    "on-click": "xdg-open https://archlinux.org"
+    "on-click": "xdg-open https://wiki.archlinux.org/title/Main_page"
   },
   "backlight": {
     "format": "  {percent}%",
     "format-icons": ["", "", ""]
+  },
+  "tray": {
+    "margin-left": 7,
+    "margin-right": 7
   }
 }
