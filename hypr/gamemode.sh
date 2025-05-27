@@ -1,7 +1,10 @@
 #!/usr/bin/env sh
-HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
-if [ "$HYPRGAMEMODE" = 1 ] ; then
+
+# Vérifie si les animations sont activées (donc si on est en mode normal)
+if [ "$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')" = 1 ]; then
+    # Active le mode performance et désactive les effets visuels
     hyprctl --batch "\
+        dispatch toggleperformance;\
         keyword animations:enabled 0;\
         keyword decoration:shadow:enabled 0;\
         keyword decoration:blur:enabled 0;\
@@ -11,4 +14,6 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
         keyword decoration:rounding 0"
     exit
 fi
+
+# Si déjà en mode jeu, on recharge (ou on pourrait faire un script inverse)
 hyprctl reload
