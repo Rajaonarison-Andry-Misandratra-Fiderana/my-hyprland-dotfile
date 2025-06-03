@@ -1,39 +1,30 @@
-# ✨💻 A Minimalist and Optimized Hyprland Rice
+# ✨💻 Minimalist & Optimized Hyprland Rice
 
-🔧 **Clean**
-⚡ **Snappy Performance**
-🎯 **Custom Keybinds**
-🧠 **Minimal Learning Curve**
-📦 **One-command Setup**
+🔧 Clean
+⚡ Blazing Fast Performance
+🎯 Smart Keybinds
+🧠 Low Learning Curve
+📦 One-Command Setup
 
 ---
 
 ## 📦 Requirements
 
-🧱 Make sure these are installed before you begin:
+Before installing, ensure the following are available on your system:
 
-    🖥️ Kitty – Fast, GPU-accelerated terminal
-
-    ⚡ Ulauncher – Lightning-fast application launcher
-
-    💤 Rofi – Power menu (shutdown, reboot, etc.)
-
-    🌀 Hyprland – Next-gen Wayland compositor
-
-    🖼️ Hyprpaper – Wallpaper manager
-
-    📏 Slurp – Region selector (screenshots)
-
-    🧩 Waybar – Lightweight status bar
-
-    🎨 Fastfetch – Fancy system info at startup
-    
-    🧠 JetBrains Mono – Clean, dev-friendly font
-    
+* 🖥️ Kitty – GPU-accelerated terminal
+* ⚡ Ulauncher – Lightweight application launcher
+* 💤 Rofi – Power menu (shutdown, reboot, etc.)
+* 🌀 Hyprland – Next-gen Wayland compositor
+* 🖼️ Hyprpaper – Wallpaper manager
+* 📏 Slurp – Screenshot region selector
+* 🧩 Waybar – Status bar
+* 🎨 Fastfetch – System info on launch
+* 🧠 JetBrains Mono – Dev-friendly font
 
 ---
 
-## 📥 Installation (1-click setup)
+## 📥 One-Command Installation
 
 ```bash
 git clone https://github.com/Rajaonarison-Andry-Misandratra-Fiderana/my-hyprland-dotfile
@@ -44,70 +35,81 @@ chmod +x install.sh
 
 ---
 
-## 📸 Preview 
+## 🖼️ Preview
 
-![Image](https://github.com/user-attachments/assets/d2080593-8b3e-403b-bd51-1b6471f85e78)
-![Image](https://github.com/user-attachments/assets/4b8d8269-194f-4798-a505-f656dc3f2acd)
-![Image](https://github.com/user-attachments/assets/2ea258eb-60b9-480e-aa25-ff51a4ec7a57)
-
----
-
-## 🎮 Key Bindings You’ll Love
-
-| 💥 Action                    | ⌨️ Keybinding             |
-| ---------------------------- | ------------------------- |
-| Open Terminal                | `SUPER + Return`          |
-| App Launcher (Ulauncher)     | `SUPER + Space`           |
-| File Manager (Thunar)        | `SUPER + E`               |
-| Web Browser (Zen)            | `SUPER + B`               |
-| Obsidian                     | `SUPER + O`               |
-| Code Editor (VSCode)         | `SUPER + W`               |
-| Full Screenshot              | `SUPER + S`               |
-| Region Screenshot            | `SUPER + Shift + S`       |
-| Toggle Waybar                | `SUPER + A`               |
-| Next Window                  | `SUPER + Tab`             |
-| Previous Window              | `SUPER + Shift + Tab`     |
-| Fullscreen Mode              | `SUPER + F`               |
-| Toggle Floating              | `SUPER + T`               |
-| Toggle Pseudotile            | `SUPER + P`               |
-| Toggle Split Orientation     | `SUPER + J`               |
-| Move Focus (Arrow Keys)      | `SUPER + ↑/↓/←/→`         |
-| Resize Window (Arrow Keys)   | `SUPER + Shift + ↑/↓/←/→` |
-| Move Window to Workspace 1–9 | `SUPER + Shift + [1–9]`   |
-| Move Window to Workspace 10  | `SUPER + Shift + 0`       |
-| Workspace (1–9)              | `SUPER + [1–9]`           |
-| Workspace Scroll             | `SUPER + Mouse Wheel`     |
-| Move Window (Mouse)          | `SUPER + Left Click`      |
-| Resize Window (Mouse)        | `SUPER + Right Click`     |
-| Close Window                 | `SUPER + Q`               |
-| Exit Session                 | `SUPER + M`               |
-| Toggle Gaming Mode           | `WIN + F1`                |
-| Volume Up                    | `SUPER + F7`              |
-| Volume Down                  | `SUPER + F6`              |
-| Brightness Up                | `SUPER + F4`              |
-| Brightness Down              | `SUPER + F3`              |
+![Screenshot 1](https://github.com/user-attachments/assets/d2080593-8b3e-403b-bd51-1b6471f85e78)
+![Screenshot 2](https://github.com/user-attachments/assets/4b8d8269-194f-4798-a505-f656dc3f2acd)
+![Screenshot 3](https://github.com/user-attachments/assets/2ea258eb-60b9-480e-aa25-ff51a4ec7a57)
 
 ---
 
-✅ **Tip**: All keybinds are easily modifiable in `~/.config/hypr/hyprland.conf`.
+## 🎮 Keybindings You’ll Love
+
+| Action                   | Shortcut               |
+| ------------------------ | ---------------------- |
+| Open Terminal            | Super + Return         |
+| App Launcher (Ulauncher) | Super + Space          |
+| File Manager (Thunar)    | Super + E              |
+| Web Browser (Zen)        | Super + B              |
+| Obsidian                 | Super + O              |
+| Code Editor (VSCode)     | Super + W              |
+| Full Screenshot          | Super + S              |
+| Region Screenshot        | Super + Shift + S      |
+| Toggle Waybar            | Super + A              |
+| Next Window              | Super + Tab            |
+| Previous Window          | Super + Shift + Tab    |
+| Fullscreen Toggle        | Super + F              |
+| Toggle Floating          | Super + T              |
+| Toggle Pseudotile        | Super + P              |
+| Toggle Split Orientation | Super + J              |
+| Move Focus (Arrow Keys)  | Super + ↑↓←→           |
+| Resize (Arrow Keys)      | Super + Shift + ↑↓←→   |
+| Move Window to WS 1–9    | Super + Shift + \[1–9] |
+| Move Window to WS 10     | Super + Shift + 0      |
+| Switch to WS 1–9         | Super + \[1–9]         |
+| Workspace Scroll         | Super + Mouse Wheel    |
+| Move Window (Mouse)      | Super + Left Click     |
+| Resize Window (Mouse)    | Super + Right Click    |
+| Close Window             | Super + Q              |
+| Exit Session             | Super + M              |
+| Toggle Gaming Mode       | Win + F1               |
+| Volume Up                | Super + F7             |
+| Volume Down              | Super + F6             |
+| Brightness Up            | Super + F4             |
+| Brightness Down          | Super + F3             |
+| Swap with Master (↑)     | Super + Ctrl + ↑       |
+| Roll Master Next/Prev    | Super + Ctrl + ← / →   |
+
+💡 All keybindings are located in \~/.config/hypr/hyprland.conf and easily modifiable.
 
 ---
 
-## 🎨 Customization Tips
+## 🎨 Customize It Your Way
 
-💡 You can modify:
+Easily tweak:
 
-* `$terminal`, `$browser`, `$fileManager` in your config
-* Bar modules (CPU, RAM, network) in `hyprpanel.conf`
-* Wallpapers via `Hyprpaper`
+* Default apps: \$terminal, \$browser, \$fileManager
+* Bar modules: Edit \~/.config/waybar/config or hyprpanel.conf
+* Wallpaper: Hyprpaper
+* Layout: Master-based with configurable behavior
 
-🔧 **Pro tip:** Use `hyprctl reload` to see changes instantly without restarting the session!
+---
+
+## ⚙️ Notable Config Highlights
+
+* 💡 Master layout with roll/swapping support
+* 💻 Smart workspace assignments by app (Zen, Code, VLC, Steam, etc.)
+* 🎮 Gaming Mode toggle with Win+F1
+* 🪟 Predefined floating rules and opacity settings
+* 🪄 Smooth animations with custom Bézier curves
+* 🧊 Blur & shadows for aesthetic depth
+* 🌐 NVIDIA and VM-ready environment variables
 
 ---
 
 ## 📚 Learn More
 
 * 🧪 Hyprland Wiki → [https://wiki.hyprland.org](https://wiki.hyprland.org)
-* ⚙️ Hyprpanel Modules → [https://hyprpanel.com/configuration/modules.html](https://hyprpanel.com/configuration/modules.html)
+* 🧩 Hyprpanel Modules → [https://hyprpanel.com/configuration/modules.html](https://hyprpanel.com/configuration/modules.html)
 
 ---
