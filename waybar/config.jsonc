@@ -1,9 +1,8 @@
 {
-  "margin-top": 15,
-  "margin-left": 7,
-  "margin-right": 7,
+  "margin-top": 7,
+  "margin-bottom": 3,
   "height": 50,
-  "spacing": 7, // Ajoute cet espace entre tous les modules
+  "spacing": 7,
   "modules-left": [
     "custom/arch"
   ],
@@ -29,17 +28,15 @@
       "*": 4
     }
   },
+  "custom/arch": {
+    "format": "",
+    "tooltip": "Arch Linux",
+    "on-click": "xdg-open https://wiki.archlinux.org/title/Main_page"
+  },
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d}",
     "padding-right": 10
-  },
-  "cpu": {
-    "format": "  {usage}%  ",
-    "tooltip": false
-  },
-  "memory": {
-    "format": "{}%  "
   },
   "battery": {
     "bat": "BAT0", // Change en "BAT1" si besoin
@@ -47,7 +44,7 @@
       "warning": 30,
       "critical": 15
     },
-    "interval": 20,
+    "interval": 1,
     "format": "{icon}  {capacity}%",
     "format-full": "{icon}  {capacity}%",
     "format-charging": "  {capacity}%",
@@ -61,7 +58,8 @@
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": " ⚠ ",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "onclick": "network-manager-applet"
   },
   "pulseaudio": {
     "format": "{icon}  {volume}%",
@@ -79,17 +77,9 @@
     },
     "on-click": "pavucontrol"
   },
-  "custom/arch": {
-    "format": "",
-    "tooltip": "Arch Linux",
-    "on-click": "xdg-open https://wiki.archlinux.org/title/Main_page"
-  },
+  
   "backlight": {
     "format": "  {percent}%",
     "format-icons": ["", "", ""]
-  },
-  "tray": {
-    "margin-left": 7,
-    "margin-right": 7
   }
 }
