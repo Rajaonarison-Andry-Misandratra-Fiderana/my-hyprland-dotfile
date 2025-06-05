@@ -93,7 +93,7 @@ chmod +x install.sh
 Easily tweak:
 
 * Default apps: \$terminal, \$browser, \$fileManager
-* Bar modules: Edit \~/.config/waybar/config or hyprpanel.conf
+* Bar modules: Edit \~/.config/waybar/config
 * Wallpaper: Hyprpaper
 * Layout: Master-based with configurable behavior
 
