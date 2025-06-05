@@ -14,7 +14,7 @@ Before installing, ensure the following are available on your system:
 
 * 🖥️ Kitty – GPU-accelerated terminal
 * ⚡ Ulauncher – Lightweight application launcher
-* 💤 Rofi – Power menu (shutdown, reboot, etc.)
+* 💤 Rofi – App launcher and Power menu
 * 🌀 Hyprland – Next-gen Wayland compositor
 * 🖼️ Hyprpaper – Wallpaper manager
 * 📏 Slurp – Screenshot region selector
@@ -37,9 +37,13 @@ chmod +x install.sh
 
 ## 🖼️ Preview
 
-![Screenshot 1](https://github.com/user-attachments/assets/d2080593-8b3e-403b-bd51-1b6471f85e78)
-![Screenshot 2](https://github.com/user-attachments/assets/4b8d8269-194f-4798-a505-f656dc3f2acd)
-![Screenshot 3](https://github.com/user-attachments/assets/2ea258eb-60b9-480e-aa25-ff51a4ec7a57)
+![Image](https://github.com/user-attachments/assets/69043b78-07bd-47ab-9ab8-2ba242e0e395)
+
+![Image](https://github.com/user-attachments/assets/39d0a414-566e-444e-afb1-d4c81f6385ae)
+
+![Image](https://github.com/user-attachments/assets/cab912ce-fec9-49d6-a9a0-f11373d05f35)
+
+![Image](https://github.com/user-attachments/assets/87638640-edbf-479e-a6c1-9330d10c25d5)
 
 ---
 
