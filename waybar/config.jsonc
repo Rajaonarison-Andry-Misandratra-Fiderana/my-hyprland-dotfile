@@ -3,6 +3,7 @@
   "margin-bottom": 3,
   "height": 50,
   "spacing": 7,
+
   "modules-left": [
     "custom/arch"
   ],
@@ -17,69 +18,77 @@
     "battery",
     "clock"
   ],
+
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
-      "active": ""
+      "active": "" // fa-circle
     },
     "sort-by-number": true,
     "persistent-workspaces": {
       "*": 4
     }
   },
+
   "custom/arch": {
-    "format": "",
+    "format": "", // fa-linux (Arch)
     "tooltip": "Arch Linux",
     "on-click": "xdg-open https://wiki.archlinux.org/title/Main_page"
   },
+
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "  {:%H:%M}", // fa-clock
     "format-alt": "{:%Y-%m-%d}",
     "padding-right": 10
   },
+
   "battery": {
-    "bat": "BAT0", // Change en "BAT1" si besoin
+    "bat": "BAT0",
     "states": {
       "warning": 30,
       "critical": 15
     },
     "interval": 1,
-    "format": "{icon}  {capacity}%",
-    "format-full": "{icon}  {capacity}%",
-    "format-charging": "  {capacity}%",
-    "format-plugged": "  {capacity}%",
+    "format": "{icon} {capacity}%",
+    "format-full": "{icon} {capacity}%",
+    "format-charging": " {capacity}%", // fa-bolt
+    "format-plugged": " {capacity}%",   // fa-plug
     "format-alt": "{time} {icon}",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": ["", "", "", "", ""] // fa-battery-0 à fa-battery-full
   },
+
   "network": {
-    "format-wifi": "  {signalStrength}%",
-    "format-ethernet": "{cidr} ",
+    "format-wifi": "  {signalStrength}%",           // fa-wifi
+    "format-ethernet": "{cidr} ",                  // fa-ethernet
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": " ⚠ ",
+    "format-disconnected": "⚠",
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
     "onclick": "network-manager-applet"
   },
+
   "pulseaudio": {
     "format": "{icon}  {volume}%",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": "",
+    "format-bluetooth": "{volume}% {icon}  {format_source}",         // fa-bluetooth
+    "format-bluetooth-muted": "  {format_source}",                  // fa-volume-off
+    "format-muted": "",
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
+      "headphone": "",      // fa-headphones
+      "hands-free": "",     // fa-headset
       "headset": "",
-      "phone": "",
+      "phone": "",          // fa-phone
       "portable": "",
-      "car": "",
-      "default": ["", "", ""]
+      "car": "",            // fa-car
+      "default": ["", "", ""] // fa-volume-off, -down, -up
     },
     "on-click": "pavucontrol"
   },
-  
+
   "backlight": {
-    "format": "  {percent}%",
-    "format-icons": ["", "", ""]
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", ""] // fa-adjust, fa-lightbulb-o, fa-sun-o
   }
 }
