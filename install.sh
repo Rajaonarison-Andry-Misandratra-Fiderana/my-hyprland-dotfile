@@ -2,7 +2,7 @@
 
 # Installer la police JetBrains Mono Nerd Font
 echo "🔄 Installation de ttf-jetbrains-mono-nerd..."
-sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd slurp hyprland hyprpaper rofi waybar fastfetch kitty
+sudo pacman -S ttf-jetbrains-mono-nerd slurp hyprland hyprpaper rofi waybar fastfetch kitty ttf-font-awesome
 
 # Ensure required directories exist
 mkdir -p ~/.config
@@ -28,7 +28,7 @@ if [ -d "./fonts" ]; then
         fi
     done
 fi
-
+chmod +x ~/.config/rofi/launchers/type-6/launcher.sh
 chmod +x ~/.config/rofi/powermenu/type-2/powermenu.sh
 
 echo "🔄 Updating font cache..."
