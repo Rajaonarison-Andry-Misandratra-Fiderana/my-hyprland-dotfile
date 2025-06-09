@@ -1,26 +1,41 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
-# Installer les paquets nécessaires
-echo "🔄 Installation des paquets essentiels..."
-sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd slurp hyprland hyprpaper rofi-wayland waybar fastfetch kitty ttf-font-awesome
+trap 'echo "❌ An error occurred at line $LINENO. Aborting script."' ERR
 
-# Créer les dossiers nécessaires
-mkdir -p ~/.config
-sudo mkdir -p /usr/share/fonts/TTF/
-sudo mkdir -p /usr/share/icons/
+echo "🔄 Installing essential packages..."
+sudo pacman -Syu --noconfirm --needed \
+    ttf-jetbrains-mono-nerd \
+    slurp \
+    hyprland \
+    hyprpaper \
+    rofi-wayland \
+    waybar \
+    fastfetch \
+    kitty \
+    ttf-font-awesome
 
-# Copier les éléments de configuration (sauf certains)
-echo "📂 Copie des fichiers de configuration..."
+# Create necessary directories
+echo "📁 Creating necessary directories..."
+mkdir -p "$HOME/.config"
+sudo mkdir -p /usr/share/fonts/TTF
+sudo mkdir -p /usr/share/icons
+
+# Copy configuration files (excluding some)
+echo "📂 Copying configuration files..."
 for item in ./*; do
     name="$(basename "$item")"
     if [[ "$name" != "fonts" && "$name" != "install.sh" && ! "$name" =~ ^README ]]; then
-        cp -r "$item" ~/.config/
+        if [[ -e "$item" ]]; then
+            cp -r "$item" "$HOME/.config/"
+        fi
     fi
 done
 
-# Copier les polices et icônes
-if [ -d "./fonts" ]; then
-    echo "🔤 Installation des polices et icônes personnalisées..."
+# Copy fonts and icons if available
+if [[ -d "./fonts" ]]; then
+    echo "🔤 Installing custom fonts and icons..."
     for font in ./fonts/*; do
         fname="$(basename "$font")"
         if [[ -d "$font" && "$fname" == "Bibata-Modern-Classic" ]]; then
@@ -31,17 +46,17 @@ if [ -d "./fonts" ]; then
     done
 fi
 
-# Rendre les scripts rofi exécutables
-chmod +x ~/.config/rofi/launchers/type-6/launcher.sh
-chmod +x ~/.config/rofi/powermenu/type-2/powermenu.sh
+# Make rofi scripts executable
+echo "🔧 Setting execution permissions for rofi scripts..."
+chmod +x "$HOME/.config/rofi/launchers/type-6/launcher.sh" 2>/dev/null || echo "⚠️ launcher.sh not found."
+chmod +x "$HOME/.config/rofi/powermenu/type-2/powermenu.sh" 2>/dev/null || echo "⚠️ powermenu.sh not found."
 
-# Mise à jour du cache de polices
-echo "🔄 Mise à jour du cache des polices..."
+# Update font cache
+echo "🔄 Updating font cache..."
 sudo fc-cache -fv
 
-# Modification du .bashrc
-echo "🛠️ Configuration de .bashrc..."
-
+# Update .bashrc file
+echo "🛠️ Configuring .bashrc..."
 BASHRC="$HOME/.bashrc"
 
 add_if_not_exists() {
@@ -55,4 +70,4 @@ add_if_not_exists "alias ls='ls --color=auto'"
 add_if_not_exists "alias grep='grep --color=auto'"
 add_if_not_exists "PS1='\\[\\e[1;32m\\]\\u\\[\\e[0m\\] \\[\\e[1;34m\\]\\w\\[\\e[0m\\] '"
 
-echo "✅ Installation terminée ! Redémarre le terminal pour voir les changements."
+echo "✅ Installation completed! Restart your terminal to see the changes."
