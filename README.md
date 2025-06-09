@@ -10,19 +10,17 @@
 
 ## 📦 Requirements
 
-Before installing, ensure the following are available on your system:
+### Before installing, ensure the following are available on your system:
 
-* 🖥️ Kitty – GPU-accelerated terminal
-* ⚡ Ulauncher – Lightweight application launcher
-* 💤 Rofi – App launcher and Power menu
-* 🌀 Hyprland – Next-gen Wayland compositor
-* 🖼️ Hyprpaper – Wallpaper manager
-* 📏 Slurp – Screenshot region selector
-* 🧩 Waybar – Status bar
-* 🎨 Fastfetch – System info on launch
-* 🧠 JetBrains Mono – Dev-friendly font
-
----
+🖥️ Kitty – GPU-accelerated terminal
+💤 Rofi – App launcher 
+🌀 Hyprland – Next-gen Wayland compositor
+🖼️ Hyprpaper – Wallpaper manager
+📏 Slurp – Region selector for screenshots
+🧩 Waybar – Customizable status bar
+🎨 Fastfetch – System info displayed on startup
+🧠 JetBrains Mono – Developer-friendly programming font
+🔒 wlogout – Graphical logout menu for Wayland
 
 ## 📥 One-Command Installation
 
@@ -37,13 +35,13 @@ chmod +x install.sh
 
 ## 🖼️ Preview
 
-![Image](https://github.com/user-attachments/assets/69043b78-07bd-47ab-9ab8-2ba242e0e395)
+![Image](https://github.com/user-attachments/assets/6cc2040f-3204-47a8-a698-71bb5c87864a)
 
-![Image](https://github.com/user-attachments/assets/39d0a414-566e-444e-afb1-d4c81f6385ae)
+![Image](https://github.com/user-attachments/assets/072efc1c-cb88-4674-a3f1-1009e47fd954)
 
-![Image](https://github.com/user-attachments/assets/cab912ce-fec9-49d6-a9a0-f11373d05f35)
+![Image](https://github.com/user-attachments/assets/afd07fb9-8c8e-4887-8b7b-60b16ec64273)
 
-![Image](https://github.com/user-attachments/assets/87638640-edbf-479e-a6c1-9330d10c25d5)
+![Image](https://github.com/user-attachments/assets/6205bcb2-4bbe-4e7c-ac6d-1676bdfbedc7)
 
 ---
 
