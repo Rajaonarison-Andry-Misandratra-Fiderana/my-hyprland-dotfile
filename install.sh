@@ -14,7 +14,8 @@ sudo pacman -Syu --noconfirm --needed \
     waybar \
     fastfetch \
     kitty \
-    ttf-font-awesome
+    ttf-font-awesome \
+    wlogout
 
 # Create necessary directories
 echo "📁 Creating necessary directories..."
