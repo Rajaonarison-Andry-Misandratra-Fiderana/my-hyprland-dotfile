@@ -120,8 +120,9 @@ Easily tweak:
 
 ## ✅ TODO
 
-- 🔧 Fix icon spacing in tray
-- 🌗 Add a light/dark theme toggle system
-- 🖼️ Implement a wallpaper selector
+- 🔧 Fix icon spacing in tray  
+- 🌗 Add a light/dark theme toggle system  
+- 🖼️ Implement a wallpaper selector  
+- 🎨 Customize the appearance of wlogout  
 
 ---
