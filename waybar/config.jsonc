@@ -19,11 +19,11 @@
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
-      "active": "" // fa-circle
+      
     },
     "sort-by-number": true,
     "persistent-workspaces": {
-      "*": 4
+      "*": 4 // Default to 4 persistent workspaces
     }
   },
 

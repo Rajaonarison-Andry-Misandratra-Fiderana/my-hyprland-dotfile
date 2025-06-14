@@ -17,9 +17,6 @@ window#waybar {
 }
 
 button {
-  /* Use box-shadow instead of border so the text isn't offset */
-  box-shadow: inset 0 -3px transparent;
-  /* Avoid rounded borders under each button name */
   border: none;
   border-radius: 0;
   transition: 0.5s;
@@ -27,7 +24,7 @@ button {
 
 button:hover {
   background: inherit;
-  box-shadow: inset 0 -3px #474747a9;
+
 }
 
 #custom-arch {
@@ -42,8 +39,8 @@ button:hover {
   padding: 5px 20px;
   border-radius: 12px;
   margin-left: 10px;
-  margin-right: 0px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.7);
+
+
 }
 
 #backlight:hover,
@@ -64,16 +61,21 @@ button:hover {
 
 #workspaces button.focused {
   background-color: grey;
-  box-shadow: inset 0 -3px #ffffff;
+
 }
 
 #workspaces button.urgent {
   background-color: #eb4d4b;
 }
 
+#workspaces button.active {
+  background-color: #212121;
+  color: white;
+}
+
 #mode {
   background-color: #64727D;
-  box-shadow: inset 0 -3px #ffffff;
+
 }
 
 #clock,
@@ -107,7 +109,6 @@ button:hover {
 .modules-center {
   border-radius: 15px;
   padding: 0 50px 0 50px;
-  box-shadow: 0 0 2px rgba(0,0,0,0.7);
 }
 
 .modules-right {
