@@ -10,17 +10,19 @@
 
 ## 📦 Requirements
 
-### Before installing, ensure the following are available on your system:
+### The following components will be installed on your system:
 
-🖥️ Kitty – GPU-accelerated terminal
-💤 Rofi – App launcher 
-🌀 Hyprland – Next-gen Wayland compositor
-🖼️ Hyprpaper – Wallpaper manager
-📏 Slurp – Region selector for screenshots
-🧩 Waybar – Customizable status bar
-🎨 Fastfetch – System info displayed on startup
-🧠 JetBrains Mono – Developer-friendly programming font
-🔒 wlogout – Graphical logout menu for Wayland
+🖥️ Kitty – GPU-accelerated terminal  
+💤 Rofi – App launcher  
+🌀 Hyprland – Next-gen Wayland compositor  
+🖼️ Hyprpaper – Wallpaper manager  
+📏 Slurp – Region selector for screenshots  
+🧩 Waybar – Customizable status bar  
+🎨 Fastfetch – System info displayed on startup  
+🧠 JetBrains Mono – Developer-friendly programming font  
+🔒 wlogout – Graphical logout menu for Wayland  
+🛡️ hyprpolkit-agent – Polkit authentication agent for Hyprland  
+💽 udiskie – Auto-mount and manage removable drives  
 
 ## 📥 One-Command Installation
 
