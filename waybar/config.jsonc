@@ -4,12 +4,8 @@
   "height": 50,
   "spacing": 7,
 
-  "modules-left": [
-    "custom/arch"
-  ],
-  "modules-center": [
-    "hyprland/workspaces"
-  ],
+  "modules-left": ["custom/arch", "hyprland/workspaces"],
+  "modules-center": ["custom/cava"],
   "modules-right": [
     "tray",
     "pulseaudio",
@@ -33,8 +29,12 @@
 
   "custom/arch": {
     "format": "", // fa-linux (Arch)
-    "tooltip": "Arch Linux",
+
     "on-click": "xdg-open https://wiki.archlinux.org/title/Main_page"
+  },
+  "custom/cava": {
+    "format": "{}",
+    "exec": "~/.config/waybar/cava.sh"
   },
 
   "clock": {
@@ -54,14 +54,14 @@
     "format": "{icon} {capacity}%",
     "format-full": "{icon} {capacity}%",
     "format-charging": " {capacity}%", // fa-bolt
-    "format-plugged": " {capacity}%",   // fa-plug
+    "format-plugged": " {capacity}%", // fa-plug
     "format-alt": "{time} {icon}",
     "format-icons": ["", "", "", "", ""] // fa-battery-0 à fa-battery-full
   },
 
   "network": {
-    "format-wifi": "  {signalStrength}%",           // fa-wifi
-    "format-ethernet": "{cidr} ",                  // fa-ethernet
+    "format-wifi": "  {signalStrength}%", // fa-wifi
+    "format-ethernet": "{cidr} ", // fa-ethernet
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "⚠",
@@ -70,25 +70,27 @@
   },
 
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "{volume}% {icon}  {format_source}",         // fa-bluetooth
-    "format-bluetooth-muted": "  {format_source}",                  // fa-volume-off
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{volume}% {icon}  {format_source}",
+    "format-bluetooth-muted": "  {format_source}",
     "format-muted": "",
     "format-icons": {
-      "headphone": "",      // fa-headphones
-      "hands-free": "",     // fa-headset
+      "headphone": "",
+      "hands-free": "",
       "headset": "",
-      "phone": "",          // fa-phone
+      "phone": "",
       "portable": "",
-      "car": "",            // fa-car
-      "default": ["", "", ""] // fa-volume-off, -down, -up
+      "car": "",
+      "default": ["", "", ""]
     },
-    "on-click": "pavucontrol"
+    "on-click": "pamixer -t", // ⬅ toggle mute via clic gauche
+    "on-click-right": "pavucontrol" // ⬅ clic droit ouvre le contrôle
   },
-
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
-    "format-icons": ["", "", ""] // fa-adjust, fa-lightbulb-o, fa-sun-o
+    "format-icons": ["", "", ""],
+    "on-click": "pgrep -x hyprsunset && pkill hyprsunset || hyprsunset -t 5000",
+    "on-click-right": "hyprsunset -t 6500"
   }
 }
