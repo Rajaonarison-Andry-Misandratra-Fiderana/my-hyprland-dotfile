@@ -35,13 +35,15 @@ chmod +x install.sh
 
 ## 🖼️ Preview
 
-![Image](https://github.com/user-attachments/assets/6cc2040f-3204-47a8-a698-71bb5c87864a)
+![Image](https://github.com/user-attachments/assets/92cebf89-b1ed-48c5-b348-96f8098806fa)
 
-![Image](https://github.com/user-attachments/assets/072efc1c-cb88-4674-a3f1-1009e47fd954)
+![Image](https://github.com/user-attachments/assets/30733aa7-ed84-4063-862c-a1f99d1eda17)
 
-![Image](https://github.com/user-attachments/assets/afd07fb9-8c8e-4887-8b7b-60b16ec64273)
+![Image](https://github.com/user-attachments/assets/17d35345-6fba-4240-89d5-255781ce3476)
 
-![Image](https://github.com/user-attachments/assets/6205bcb2-4bbe-4e7c-ac6d-1676bdfbedc7)
+![Image](https://github.com/user-attachments/assets/fb9e75cb-37e6-4556-8319-5175884af910)
+
+![Image](https://github.com/user-attachments/assets/57db5c14-9586-4306-8d9a-346cea9dddb4)
 
 ---
 
@@ -113,5 +115,13 @@ Easily tweak:
 
 * 🧪 Hyprland Wiki → [https://wiki.hyprland.org](https://wiki.hyprland.org)
 * 🧩 Hyprpanel Modules → [https://hyprpanel.com/configuration/modules.html](https://hyprpanel.com/configuration/modules.html)
+
+---
+
+## ✅ TODO
+
+- 🔧 Fix icon spacing in tray
+- 🌗 Add a light/dark theme toggle system
+- 🖼️ Implement a wallpaper selector
 
 ---
