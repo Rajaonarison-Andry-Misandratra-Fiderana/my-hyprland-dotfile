@@ -7,6 +7,7 @@ trap 'echo "❌ An error occurred at line $LINENO. Aborting script."' ERR
 echo "🔄 Installing essential packages..."
 sudo pacman -Syu --noconfirm --needed \
     ttf-jetbrains-mono-nerd \
+     ttf-font-awesome \
     slurp \
     hyprland \
     hyprpaper \
@@ -14,8 +15,10 @@ sudo pacman -Syu --noconfirm --needed \
     waybar \
     fastfetch \
     kitty \
-    ttf-font-awesome \
-    wlogout
+    wlogout \
+    hyprpolkitagent \
+    udiskie \
+    network-manager-applet
 
 # Create necessary directories
 echo "📁 Creating necessary directories..."
@@ -51,6 +54,7 @@ fi
 echo "🔧 Setting execution permissions for rofi scripts..."
 chmod +x "$HOME/.config/rofi/launchers/type-6/launcher.sh" 2>/dev/null || echo "⚠️ launcher.sh not found."
 chmod +x "$HOME/.config/rofi/powermenu/type-2/powermenu.sh" 2>/dev/null || echo "⚠️ powermenu.sh not found."
+chmod +x "$HOME/.config/hypr/scripts/gamemode.sh" 2>/dev/null || echo "⚠️ gamemode.sh not found."
 
 # Update font cache
 echo "🔄 Updating font cache..."
@@ -71,4 +75,4 @@ add_if_not_exists "alias ls='ls --color=auto'"
 add_if_not_exists "alias grep='grep --color=auto'"
 add_if_not_exists "PS1='\\[\\e[1;32m\\]\\u\\[\\e[0m\\] \\[\\e[1;34m\\]\\w\\[\\e[0m\\] '"
 
-echo "✅ Installation completed! Restart your terminal to see the changes."
+echo "✅ Installation completed! Restart your PC."
