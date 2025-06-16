@@ -18,7 +18,8 @@ sudo pacman -Syu --noconfirm --needed \
     wlogout \
     hyprpolkitagent \
     udiskie \
-    network-manager-applet
+    network-manager-applet \
+    pamixer
 
 # Create necessary directories
 echo "📁 Creating necessary directories..."
