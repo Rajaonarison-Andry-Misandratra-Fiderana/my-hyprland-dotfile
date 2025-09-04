@@ -51,13 +51,11 @@
     "format-full": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
-    "format-alt": "{time} {icon}",
     "format-icons": ["", "", "", "", ""],
-    "on-click": "notify-send 'Batterie' 'Niveau: {capacity}%'",
     "on-plugged": "notify-send 'Chargeur connecté'",
-    "on-unplugged": "notify-send 'Chargeur déconnecté'"
+    "on-unplugged": "notify-send 'Chargeur déconnecté'",
+    "on-click": "~/.config/waybar/powermenu.sh"
   },
-
   "network": {
     "format-wifi": "  {signalStrength}%", // fa-wifi
     "format-ethernet": "{cidr} ", // fa-ethernet
