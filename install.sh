@@ -20,7 +20,8 @@ sudo pacman -Syu --noconfirm --needed \
     udiskie \
     network-manager-applet \
     pamixer \
-    power-profiles-daemon
+    power-profiles-daemon \
+    nwg-look
 
 # Create necessary directories
 echo "📁 Creating necessary directories..."
