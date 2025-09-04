@@ -7,7 +7,7 @@ trap 'echo "❌ An error occurred at line $LINENO. Aborting script."' ERR
 echo "🔄 Installing essential packages..."
 sudo pacman -Syu --noconfirm --needed \
     ttf-jetbrains-mono-nerd \
-     ttf-font-awesome \
+    ttf-font-awesome \
     slurp \
     hyprland \
     hyprpaper \
@@ -61,6 +61,13 @@ chmod +x "$HOME/.config/hypr/scripts/gamemode.sh" 2>/dev/null || echo "⚠️ ga
 echo "🔄 Updating font cache..."
 sudo fc-cache -fv
 
+# Configure Fastfetch
+echo "⚙️ Configuring Fastfetch..."
+mkdir -p "$HOME/.config/fastfetch"
+if [[ -f "$HOME/.config/fastfetch/fastfetch.jsonc" ]]; then
+    mv "$HOME/.config/fastfetch/fastfetch.jsonc" "$HOME/.config/fastfetch/config.jsonc"
+fi
+
 # Update .bashrc file
 echo "🛠️ Configuring .bashrc..."
 BASHRC="$HOME/.bashrc"
@@ -71,7 +78,7 @@ add_if_not_exists() {
 }
 
 add_if_not_exists '[[ $- != *i* ]] && return'
-add_if_not_exists 'fastfetch --load-config ~/.config/fastfetch/fastfetch.jsonc'
+add_if_not_exists 'fastfetch'   # ← mise à jour pour nouvelle version
 add_if_not_exists "alias ls='ls --color=auto'"
 add_if_not_exists "alias grep='grep --color=auto'"
 add_if_not_exists "PS1='\\[\\e[1;32m\\]\\u\\[\\e[0m\\] \\[\\e[1;34m\\]\\w\\[\\e[0m\\] '"
