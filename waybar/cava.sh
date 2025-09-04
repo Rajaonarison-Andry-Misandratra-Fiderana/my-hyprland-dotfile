@@ -15,8 +15,7 @@ done
 config_file="/tmp/polybar_cava_config"
 echo "
 [general]
-bars = 18
-
+bars = 35
 [output]
 method = raw
 raw_target = /dev/stdout

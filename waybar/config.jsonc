@@ -18,9 +18,7 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
-    "format-icons": {
-      
-    },
+    "format-icons": {},
     "sort-by-number": true,
     "persistent-workspaces": {
       "*": 4 // Default to 4 persistent workspaces
@@ -29,7 +27,6 @@
 
   "custom/arch": {
     "format": "", // fa-linux (Arch)
-
     "on-click": "xdg-open https://wiki.archlinux.org/title/Main_page"
   },
   "custom/cava": {
@@ -39,11 +36,10 @@
 
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "  {:%H:%M}", // fa-clock
+    "format": " {:%I:%M %p}", // fa-clock, 12h format with AM/PM
     "format-alt": "{:%Y-%m-%d}",
     "padding-right": 10
   },
-
   "battery": {
     "bat": "BAT0",
     "states": {
@@ -53,10 +49,13 @@
     "interval": 1,
     "format": "{icon} {capacity}%",
     "format-full": "{icon} {capacity}%",
-    "format-charging": " {capacity}%", // fa-bolt
-    "format-plugged": " {capacity}%", // fa-plug
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": ["", "", "", "", ""] // fa-battery-0 à fa-battery-full
+    "format-icons": ["", "", "", "", ""],
+    "on-click": "notify-send 'Batterie' 'Niveau: {capacity}%'",
+    "on-plugged": "notify-send 'Chargeur connecté'",
+    "on-unplugged": "notify-send 'Chargeur déconnecté'"
   },
 
   "network": {
@@ -65,8 +64,7 @@
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
-    "onclick": "network-manager-applet"
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
 
   "pulseaudio": {
@@ -83,13 +81,13 @@
       "car": "",
       "default": ["", "", ""]
     },
-    "on-click": "pamixer -t", // ⬅ toggle mute via clic gauche
-    "on-click-right": "pavucontrol" // ⬅ clic droit ouvre le contrôle
+    "on-click": "pamixer -t",
+    "on-click-right": "pavucontrol"
   },
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
-    "format-icons": ["", "", ""],
+    "format-icons": [" ", " ", " "],
     "on-click": "pgrep -x hyprsunset && pkill hyprsunset || hyprsunset -t 5000",
     "on-click-right": "hyprsunset -t 6500"
   }
