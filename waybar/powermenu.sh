@@ -7,4 +7,4 @@ case "$mode" in
     "Ultra Minimal") powerprofilesctl set power-saver ;;
 esac
 
-[ -n "$mode" ] && notify-send "⚡ Mode appliqué" "$mode"
+[ -n "$mode" ] && notify-send "⚡ Mode " "$mode"

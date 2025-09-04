@@ -51,7 +51,7 @@ mainbox {
 imagebox {
     padding:                     20px;
     background-color:            transparent;
-    background-image:            url("~/.config/Assets/rock_rofi.jpg", height);
+    background-image:            url("~/.config/Assets/microsoft_dark_rofi.jpg", height);
     orientation:                 vertical;
     children:                    [ "inputbar", "dummy", "mode-switcher" ];
 }
