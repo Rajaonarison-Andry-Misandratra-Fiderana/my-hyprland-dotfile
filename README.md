@@ -37,13 +37,13 @@ chmod +x install.sh
 
 ## 🖼️ Preview
 
-![Image](https://github.com/user-attachments/assets/92cebf89-b1ed-48c5-b348-96f8098806fa)
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/7689121d-83ba-4b52-99b6-cc267878ae08" />
 
-![Image](https://github.com/user-attachments/assets/30733aa7-ed84-4063-862c-a1f99d1eda17)
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/3f3d130d-7526-4aed-b63f-d611499eec6a" />
 
-![Image](https://github.com/user-attachments/assets/17d35345-6fba-4240-89d5-255781ce3476)
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/a0986647-c8c3-42cd-8cfb-cac053312d83" />
 
-![Image](https://github.com/user-attachments/assets/fb9e75cb-37e6-4556-8319-5175884af910)
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/85aade34-5bbb-42b5-a2cd-608ac9b04597" />
 
 ![Image](https://github.com/user-attachments/assets/57db5c14-9586-4306-8d9a-346cea9dddb4)
 
