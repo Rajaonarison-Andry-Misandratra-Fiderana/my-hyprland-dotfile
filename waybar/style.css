@@ -146,6 +146,9 @@ button:hover {
   padding: 0 15px;
   font-weight: 500;
 }
+#custom-battery {
+  padding: 0 15px;
+}
 
 /* Backlight */
 #backlight {
@@ -156,19 +159,12 @@ button:hover {
 /* Battery and tray */
 #custom-battery,
 #tray {
-  padding: 0 15px;
   transition: all 0.2s ease;
 }
 
 #tray {
   background-color: transparent;
-  padding: 5px 5px;
-  border-radius: 12px;
-  margin-right: 5px;
-}
-
-#tray > * {
-  padding: 0 5px;
+  padding: 0 5px 0 20px;
 }
 
 /* Hover glow effect for battery/network/pulseaudio/backlight */
