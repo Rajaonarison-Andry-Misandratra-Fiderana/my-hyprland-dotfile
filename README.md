@@ -116,13 +116,11 @@ Easily tweak:
 ## 📚 Learn More
 
 * 🧪 Hyprland Wiki → [https://wiki.hyprland.org](https://wiki.hyprland.org)
-* 🧩 Hyprpanel Modules → [https://hyprpanel.com/configuration/modules.html](https://hyprpanel.com/configuration/modules.html)
 
 ---
 
 ## ✅ TODO
 
-- 🔧 Fix icon spacing in tray  
 - 🌗 Add a light/dark theme toggle system  
 - 🖼️ Implement a wallpaper selector  
 - 🎨 Customize the appearance of wlogout  
