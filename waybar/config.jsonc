@@ -75,6 +75,7 @@
   },
   "custom/battery": {
     "format": "{text}",
+    
     "return-type": "json",
     "exec": "~/.config/waybar/powermenu.sh",
     "interval": 30
