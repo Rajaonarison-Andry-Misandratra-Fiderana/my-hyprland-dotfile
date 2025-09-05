@@ -2,7 +2,7 @@
   "margin-top": 7,
   "margin-bottom": 3,
   "height": 50,
-  "spacing": 7,
+  "spacing": 5,
 
   "modules-left": ["custom/arch", "hyprland/workspaces"],
   "modules-center": ["custom/cava"],
@@ -11,7 +11,7 @@
     "pulseaudio",
     "backlight",
     "network",
-    "battery",
+    "custom/battery",
     "clock"
   ],
 
@@ -35,26 +35,10 @@
   },
 
   "clock": {
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": " {:%I:%M %p}", // fa-clock, 12h format with AM/PM
-    "format-alt": "{:%Y-%m-%d}",
+    "format": "{:%I:%M %p}", // 12h format avec AM/PM et icône fa-clock
+    "format-alt": "{:%Y-%m-%d}", // format alternatif (clic ou alt)
+    "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>",
     "padding-right": 10
-  },
-  "battery": {
-    "bat": "BAT0",
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
-    "interval": 1,
-    "format": "{icon} {capacity}%",
-    "format-full": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-icons": ["", "", "", "", ""],
-    "on-plugged": "notify-send 'Chargeur connecté'",
-    "on-unplugged": "notify-send 'Chargeur déconnecté'",
-    "on-click": "~/.config/waybar/powermenu.sh"
   },
   "network": {
     "format-wifi": "  {signalStrength}%", // fa-wifi
@@ -84,9 +68,15 @@
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "{icon} {percent}%",
-    "format-icons": [" ", " ", " "],
+    "format": "{icon}  {percent}%",
+    "format-icons": ["", "", ""],
     "on-click": "pgrep -x hyprsunset && pkill hyprsunset || hyprsunset -t 5000",
     "on-click-right": "hyprsunset -t 6500"
+  },
+  "custom/battery": {
+    "format": "{text}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/powermenu.sh",
+    "interval": 30
   }
 }

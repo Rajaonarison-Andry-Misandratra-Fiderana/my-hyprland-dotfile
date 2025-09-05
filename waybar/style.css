@@ -1,170 +1,202 @@
+/* Global */
 * {
-    font-family:
-        "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px;
+  font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
 }
 
+/* Waybar background transparent */
 window#waybar {
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 30px;
-    transition-property: background-color;
-    transition-duration: 1s;
+  background-color: rgba(0, 0, 0, 0); /* transparent */
+  border-radius: 30px;
+  transition: background-color 1s, box-shadow 0.3s;
 }
 
-#waybar > * {
-    margin-left: 0px;
-    margin-right: 20px;
+/* Modules containers */
+.modules-left,
+.modules-center,
+.modules-right {
+  border-radius: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
+/* Modules left & center */
+.modules-left {
+  background-color: transparent;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 10px; /* Ajouté pour la symétrie */
+  margin-right: 10px; /* Ajouté pour la symétrie */
+}
+
+.modules-center {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px; /* Ajouté pour la symétrie */
+  margin-right: 10px; /* Ajouté pour la symétrie */
+}
+
+/* Modules right */
+.modules-right {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 20px; /* Ajouté pour la symétrie */
+}
+
+/* Uniformiser la taille des modules à droite */
+.modules-right > * {
+  min-height: 32px; /* même hauteur minimale */
+  padding: 0 0px; /* même padding horizontal */
+}
+
+/* Effet rectangle au hover sur chaque module de droite */
+.modules-right > *:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
+  transition: all 0.2s;
+}
+
+/* Buttons generic */
 button {
-    border: none;
-    border-radius: 0;
-    transition: 0.2s;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
 }
 
 button:hover {
-    background: inherit;
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.1); /* glow plus léger */
 }
 
+/* Arch logo */
 #custom-arch {
-    background-color: rgb(0, 0, 0); /* Fond transparent */
-    padding: 0px 25px 0 20px;
-    border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0 25px 0 20px;
+  border-radius: 12px;
+  color: #00bfff;
 }
 
+#custom-arch:hover {
+  color: #1e90ff;
+}
+
+/* Workspaces */
 #workspaces {
-    background-color: rgb(0, 0, 0);
-    padding: 5px 20px;
-    border-radius: 12px;
-    margin-left: 10px;
-}
-
-#backlight:hover,
-#pulseaudio:hover {
-    background-color: rgba(92, 91, 89, 0.299);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px 20px;
+  border-radius: 12px;
+  margin-left: 10px;
 }
 
 #workspaces button {
-    padding: 0 15px;
-    background-color: transparent;
-    color: #ffffff;
-    font-size: 20px;
+  padding: 0 15px;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 20px;
 }
 
 #workspaces button:hover {
-    background: rgba(153, 153, 153, 0.2);
+  background-color: rgba(97, 97, 97, 0.78);
+  box-shadow: 0 0 4px rgba(128, 128, 128, 0.36); /* glow réduit */
 }
 
 #workspaces button.focused {
-    background-color: grey;
+  background-color: #444444;
 }
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-
 #workspaces button.active {
-    background-color: #212121;
-    color: white;
+  background-color: #212121;
+  color: #ffffff;
+}
+#workspaces button.urgent {
+  background-color: #eb4d4b;
 }
 
-#mode {
-    background-color: #64727d;
+/* Modules interactive hover */
+#backlight:hover,
+#pulseaudio:hover,
+#custom-battery:hover,
+#network:hover {
+  background-color: rgba(92, 91, 89, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.15); /* glow plus léger */
+  transition: all 0.2s ease;
 }
 
-#clock,
-#battery,
-#temperature,
-#network,
-#pulseaudio,
-#backlight,
-#tray {
-    padding: 0 10px;
-    transition: 0.2s;
-}
-
+/* Pulseaudio */
 #pulseaudio {
-    color: powderblue;
+  color: #87cefa;
+  padding: 0 17px;
+}
+#pulseaudio.muted {
+  color: grey;
 }
 
+/* Network */
 #network {
-    color: rgb(225, 225, 0);
+  color: #ffd700;
+  padding: 0 8px;
 }
 
-#battery {
-    color: rgb(129, 255, 129);
-}
-
+/* Clock */
 #clock {
-    color: rgb(255, 255, 255);
+  color: #ffffff;
+  padding: 0 15px;
+  font-weight: 500;
 }
 
+/* Backlight */
 #backlight {
-    color: skyblue;
+  color: #00bfff;
+  padding: 0 12px;
 }
 
-.modules-right,
-.modules-left,
-.modules-center {
-    border-radius: 15px;
-    padding: 0 50px 0 50px;
+/* Battery and tray */
+#custom-battery,
+#tray {
+  padding: 0 15px;
+  transition: all 0.2s ease;
 }
 
-.modules-right {
-    padding: 0 20px;
-    background-color: rgb(0, 0, 0);
+#tray {
+  background-color: transparent;
+  padding: 5px 5px;
+  border-radius: 12px;
+  margin-right: 5px;
 }
 
-.modules-left {
-    padding: 0 20px;
-    background-color: transparent;
+#tray > * {
+  padding: 0 5px;
 }
 
-.modules-center {
-    background-color: rgb(0, 0, 0);
-    padding: 0 10px;
+/* Hover glow effect for battery/network/pulseaudio/backlight */
+#battery span,
+#network span,
+#pulseaudio span,
+#backlight span {
+  transition: color 0.2s, text-shadow 0.2s;
 }
 
-#battery.charging,
-#battery.plugged {
-    color: rgb(8, 167, 0);
-    background-color: #000000;
-    animation-name: blink;
-    animation-duration: 1.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+#battery:hover span,
+#network:hover span,
+#pulseaudio:hover span,
+#backlight:hover span {
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.2); /* glow réduit */
+}
+
+/* Misc */
+#mode {
+  background-color: #64727d;
 }
 
 @keyframes blink {
-    to {
-        color: #000000;
-    }
-}
-
-#battery.critical:not(.charging) {
-    background-color: #000000;
-    color: #ff0000;
-    animation-name: blink;
-    animation-duration: 1.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  to {
+    color: #000000;
+  }
 }
 
 label:focus {
-    background-color: #000000;
-}
-
-#pulseaudio.muted {
-    color: grey;
-}
-#tray {
-    background-color: transparent;
-    padding: 5px 5px;
-    border-radius: 12px;
-    margin-right: 5px;
-}
-#tray > * {
-    padding: 0 5px;
+  background-color: #000000;
 }
