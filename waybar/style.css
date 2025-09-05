@@ -128,7 +128,7 @@ button:hover {
 /* Pulseaudio */
 #pulseaudio {
   color: #87cefa;
-  padding: 0 17px;
+  padding: 0 15px;
 }
 #pulseaudio.muted {
   color: grey;
@@ -164,7 +164,7 @@ button:hover {
 
 #tray {
   background-color: transparent;
-  padding: 0 5px 0 20px;
+  padding: 0 15px 0 20px;
 }
 
 /* Hover glow effect for battery/network/pulseaudio/backlight */
