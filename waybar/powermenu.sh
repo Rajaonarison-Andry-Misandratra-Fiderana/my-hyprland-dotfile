@@ -27,6 +27,5 @@ elif [[ $STATE == "charging" ]]; then
 else
     TOOLTIP="Battery state: $STATE"
 fi
-
 # JSON pour Waybar avec icône et pourcentage de même couleur
 echo "{\"text\": \"<span color='$COLOR'>$ICON $PERCENT%</span>\", \"tooltip\": \"$TOOLTIP\"}"
