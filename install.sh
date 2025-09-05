@@ -20,7 +20,7 @@ sudo pacman -Syu --noconfirm --needed \
     udiskie \
     network-manager-applet \
     pamixer \
-    power-profiles-daemon \
+    powertop \
     nwg-look
 
 # Create necessary directories
