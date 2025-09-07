@@ -1,8 +1,5 @@
 # ✨💻 Minimalist & Optimized Hyprland Rice
 
-[![GitHub stars]([https://img.shields.io/github/stars/TON-USERNAME/my-hyprland-dotfile?style=for-the-badge)](https://github.com/Rajaonarison-Andry-Misandratra-Fiderana/my-hyprland-dotfile/blob/main/README.md/stargazers)
-[![GitHub last commit](https://github.com/Rajaonarison-Andry-Misandratra-Fiderana/my-hyprland-dotfile/blob/main/README.md)
-
 🔧 Clean
 ⚡ Blazing Fast Performance
 🎯 Smart Keybinds
