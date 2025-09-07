@@ -8,6 +8,15 @@
 
 ---
 
+## 🖼️ Preview 
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/7689121d-83ba-4b52-99b6-cc267878ae08" /> <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/3f3d130d-7526-4aed-b63f-d611499eec6a" /> 
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/a0986647-c8c3-42cd-8cfb-cac053312d83" /> 
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/85aade34-5bbb-42b5-a2cd-608ac9b04597" /> 
+
+![Image](https://github.com/user-attachments/assets/57db5c14-9586-4306-8d9a-346cea9dddb4) ---
+
 ## 📦 Requirements
 
 The following components will be installed on your system:
