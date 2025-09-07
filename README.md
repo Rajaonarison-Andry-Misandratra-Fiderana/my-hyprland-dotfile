@@ -10,42 +10,30 @@
 
 ## 📦 Requirements
 
-### The following components will be installed on your system:
+The following components will be installed on your system:
 
-🖥️ Kitty – GPU-accelerated terminal  
-💤 Rofi – App launcher  
-🌀 Hyprland – Next-gen Wayland compositor  
-🖼️ Hyprpaper – Wallpaper manager  
-📏 Slurp – Region selector for screenshots  
-🧩 Waybar – Customizable status bar  
-🎨 Fastfetch – System info displayed on startup  
-🧠 JetBrains Mono – Developer-friendly programming font  
-🔒 wlogout – Graphical logout menu for Wayland  
-🛡️ hyprpolkit-agent – Polkit authentication agent for Hyprland  
-💽 udiskie – Auto-mount and manage removable drives  
+🖥️ **Kitty** – GPU-accelerated terminal
+💤 **Rofi** – App launcher
+🌀 **Hyprland** – Next-gen Wayland compositor
+🖼️ **Hyprpaper** – Wallpaper manager
+📏 **Slurp** – Region selector for screenshots
+🧩 **Waybar** – Customizable status bar
+🎨 **Fastfetch** – System info displayed on startup
+🧠 **JetBrains Mono** – Developer-friendly programming font
+🔒 **wlogout** – Graphical logout menu for Wayland
+🛡️ **hyprpolkit-agent** – Polkit authentication agent for Hyprland
+💽 **udiskie** – Auto-mount and manage removable drives
+
+---
 
 ## 📥 One-Command Installation
 
 ```bash
-git clone https://github.com/Rajaonarison-Andry-Misandratra-Fiderana/my-hyprland-dotfile
+git clone https://github.com/TON-USERNAME/my-hyprland-dotfile
 cd my-hyprland-dotfile
 chmod +x install.sh
 ./install.sh
 ```
-
----
-
-## 🖼️ Preview
-
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/7689121d-83ba-4b52-99b6-cc267878ae08" />
-
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/3f3d130d-7526-4aed-b63f-d611499eec6a" />
-
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/a0986647-c8c3-42cd-8cfb-cac053312d83" />
-
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/85aade34-5bbb-42b5-a2cd-608ac9b04597" />
-
-![Image](https://github.com/user-attachments/assets/57db5c14-9586-4306-8d9a-346cea9dddb4)
 
 ---
 
@@ -54,7 +42,7 @@ chmod +x install.sh
 | Action                   | Shortcut               |
 | ------------------------ | ---------------------- |
 | Open Terminal            | Super + Return         |
-| App Launcher (Ulauncher) | Super + Space          |
+| App Launcher (Rofi)      | Super + Space          |
 | File Manager (Thunar)    | Super + E              |
 | Web Browser (Zen)        | Super + B              |
 | Obsidian                 | Super + O              |
@@ -86,7 +74,7 @@ chmod +x install.sh
 | Swap with Master (↑)     | Super + Ctrl + ↑       |
 | Roll Master Next/Prev    | Super + Ctrl + ← / →   |
 
-💡 All keybindings are located in \~/.config/hypr/hyprland.conf and easily modifiable.
+💡 All keybindings are located in `~/.config/hypr/hyprland.conf` and easily modifiable.
 
 ---
 
@@ -94,10 +82,10 @@ chmod +x install.sh
 
 Easily tweak:
 
-* Default apps: \$terminal, \$browser, \$fileManager
-* Bar modules: Edit \~/.config/waybar/config
+* Default apps: `$terminal`, `$browser`, `$fileManager`
+* Bar modules: edit `~/.config/waybar/config`
 * Wallpaper: Hyprpaper
-* Layout: Master-based with configurable behavior
+* Layout: master-based with configurable behavior
 
 ---
 
@@ -121,8 +109,6 @@ Easily tweak:
 
 ## ✅ TODO
 
-- 🌗 Add a light/dark theme toggle system  
-- 🖼️ Implement a wallpaper selector  
-- 🎨 Customize the appearance of wlogout  
-
----
+* 🌗 Add a light/dark theme toggle system
+* 🖼️ Implement a wallpaper selector
+* 🎨 Customize the appearance of wlogout
