@@ -1,5 +1,10 @@
 # ✨💻 Minimalist & Optimized Hyprland Rice
 
+[![GitHub stars](https://img.shields.io/github/stars/TON-USERNAME/my-hyprland-dotfile?style=for-the-badge)](https://github.com/TON-USERNAME/my-hyprland-dotfile/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/TON-USERNAME/my-hyprland-dotfile?style=for-the-badge)](https://github.com/TON-USERNAME/my-hyprland-dotfile/network)
+[![GitHub issues](https://img.shields.io/github/issues/TON-USERNAME/my-hyprland-dotfile?style=for-the-badge)](https://github.com/TON-USERNAME/my-hyprland-dotfile/issues)
+[![GitHub last commit](https://img.shields.io/github/last-commit/TON-USERNAME/my-hyprland-dotfile?style=for-the-badge)](https://github.com/TON-USERNAME/my-hyprland-dotfile/commits/main)
+
 🔧 Clean
 ⚡ Blazing Fast Performance
 🎯 Smart Keybinds
@@ -112,3 +117,5 @@ Easily tweak:
 * 🌗 Add a light/dark theme toggle system
 * 🖼️ Implement a wallpaper selector
 * 🎨 Customize the appearance of wlogout
+
+---
