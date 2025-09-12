@@ -1,0 +1,35 @@
+[global]
+alignment = center            # centre horizontal
+vertical_alignment = top      # top
+width = 500                   # largeur plus grande
+padding = 16                  # padding interne plus confortable
+frame_width = 2
+frame_color = "#1f1f1f"
+corner_radius = 12
+transparency = 5
+font = Monospace 12           # texte plus grand
+background = "#000000"
+foreground = "#e6e6e6"
+icon_theme = "Papirus-Dark"
+enable_recursive_icon_lookup = true
+
+[urgency_low]
+timeout = 5
+background = "#000000"
+foreground = "#cfcfcf"
+frame_color = "#2b2b2b"
+format = "<b>%s</b>\n%b"
+
+[urgency_normal]
+timeout = 8
+background = "#000000"
+foreground = "#ffffff"
+frame_color = "#2b2b2b"
+format = "<b>%s</b>\n%b"
+
+[urgency_critical]
+timeout = 0
+background = "#1a1a1a"
+foreground = "#ff5555"
+frame_color = "#ff0000"
+format = "<b>%s</b>\n%b"
