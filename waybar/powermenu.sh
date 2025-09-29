@@ -37,5 +37,5 @@ else
     TOOLTIP="Battery: $PERCENT%"
 fi
 
-# JSON pour Waybar avec couleur et tooltip
-echo "$ICON $PERCENT%"
+# JSON pour Waybar
+echo "{\"text\": \"<span color='$COLOR'>$ICON $PERCENT%</span>\", \"tooltip\": \"$TOOLTIP\"}"

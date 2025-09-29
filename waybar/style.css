@@ -196,3 +196,7 @@ button:hover {
 label:focus {
   background-color: #000000;
 }
+#custom-cava {
+  font-size: 18;
+  margin-right: 10px;
+}
