@@ -12,7 +12,7 @@
     "backlight",
     "network",
     "custom/battery",
-    "clock"
+    "clock",
   ],
 
   "hyprland/workspaces": {
@@ -21,24 +21,24 @@
     "format-icons": {},
     "sort-by-number": true,
     "persistent-workspaces": {
-      "*": 4 // Default to 4 persistent workspaces
-    }
+      "*": 4, // Default to 4 persistent workspaces
+    },
   },
 
   "custom/arch": {
     "format": "", // fa-linux (Arch)
-    "on-click": "~/.config/rofi/launcher.sh"
+    "on-click": "~/.config/rofi/launcher.sh",
   },
   "custom/cava": {
     "format": "{}",
-    "exec": "~/.config/waybar/cava.sh"
+    "exec": "~/.config/waybar/cava.sh",
   },
 
   "clock": {
     "format": "{:%I:%M %p}", // 12h format avec AM/PM et icône fa-clock
     "format-alt": "{:%Y-%m-%d}", // format alternatif (clic ou alt)
     "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>",
-    "padding-right": 10
+    "padding-right": 10,
   },
   "network": {
     "format-wifi": "  {signalStrength}%", // fa-wifi
@@ -46,7 +46,7 @@
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
   },
 
   "pulseaudio": {
@@ -61,22 +61,22 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
+      "default": ["", "", ""],
     },
     "on-click": "pamixer -t",
-    "on-click-right": "pavucontrol"
+    "on-click-right": "pavucontrol",
   },
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon}  {percent}%",
     "format-icons": ["", "", ""],
     "on-click": "pgrep -x hyprsunset && pkill hyprsunset || hyprsunset -t 5000",
-    "on-click-right": "hyprsunset -t 6500"
+    "on-click-right": "hyprsunset -t 6500",
   },
   "custom/battery": {
     "format": "{text}",
     "return-type": "json",
     "exec": "~/.config/waybar/powermenu.sh",
-    "interval": 30
-  }
+    "interval": 5,
+  },
 }
