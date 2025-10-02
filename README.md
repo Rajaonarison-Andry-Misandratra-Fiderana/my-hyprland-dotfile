@@ -1,8 +1,3 @@
-Parfait, je vais uniformiser tout le README pour que le key modifier principal s’appelle **`mainMod`** partout au lieu de `Super`, et harmoniser la terminologie dans les keybindings et les sections explicatives. Voici la version mise à jour :
-
----
-
-````markdown
 # ✨💻 Minimalist & Optimized Hyprland Rice
 
 🔧 Clean  
