@@ -163,5 +163,3 @@ To enable Gaming Mode:
 ## 📚 Learn More
 
 * 🧪 Hyprland Wiki → [https://wiki.hyprland.org](https://wiki.hyprland.org)
-
-```
