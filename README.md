@@ -51,6 +51,40 @@ chmod +x install.sh
 
 ---
 
+
+## 🎮 How to Use Gaming Mode
+
+To enable Gaming Mode:
+
+1. **Open Heroic Game Launcher**.
+2. **Go to the game’s settings**.
+3. **Set the launch script** to:
+
+```bash
+~/.config/hypr/scripts/gameboost.sh
+```
+
+4. **Set the post-game script** to:
+
+```bash
+~/.config/hypr/scripts/normalmode.sh
+```
+
+> This will automatically optimize your system for gaming when a game starts, and restore normal settings when you exit.
+
+---
+
+## 📚 Default Programs
+
+* Terminal: `kitty`
+* Launcher: `~/.config/rofi/launcher.sh`
+* File Manager: `thunar`
+* Browser: `zen-browser`
+* Power Menu: `wlogout`
+* Code Editor: `code`
+
+---
+
 ## 🎮 Keybindings (Using `mainMod`)
 
 | Action                       | Shortcut                |
@@ -95,70 +129,13 @@ chmod +x install.sh
 
 ---
 
-## 🖥️ Monitors
-
-* eDP-1: 1920x1080@60, primary
-* HDMI-A-4: 1920x1080@60, secondary
-
----
-
-## ⚙️ Environment / NVIDIA / VM
-
-* GBM_BACKEND=nvidia
-* LIBVA_DRIVER_NAME=nvidia
-* SDL_VIDEODRIVER=wayland
-* __GLX_VENDOR_LIBRARY_NAME=nvidia
-* __NV_PRIME_RENDER_OFFLOAD=1
-* __VK_LAYER_NV_optimus=NVIDIA_only
-* MOZ_DISABLE_RDD_SANDBOX=1
-* EGL_PLATFORM=wayland
-* WLR_NO_HARDWARE_CURSORS=1
-* WLR_RENDERER_ALLOW_SOFTWARE=1
-
----
-
-## 🏁 Autostart Programs
-
-* `hyprctl setcursor Bibata-Modern-Classic 24`
-* `waybar`
-* `hyprpaper`
-* `systemctl --user start hyprpolkitagent`
-* `nm-applet`
-* `udiskie`
-* `~/.config/hypr/scripts/sleepmanager.sh`
-
----
-
-## 📚 Default Programs
-
-* Terminal: `kitty`
-* Launcher: `~/.config/rofi/launcher.sh`
-* File Manager: `thunar`
-* Browser: `zen-browser`
-* Power Menu: `wlogout`
-* Code Editor: `code`
-
----
-
 ## 🪟 Window Rules & Workspaces
 
-* Workspace 1 → zen
+* Workspace 1 → zen / firefox / chrome
 * Workspace 2 → Code / Zed / Godot / Blender
 * Workspace 3 → VLC
 * Workspace 4 → virt-manager
-* Workspace 5 → Heroic / Steam
-
-**Floating / Size / Opacity Rules:**
-
-* `kitty`, `thunar`, `pavucontrol` → floating
-* `thunar` → 1600x900
-* `pavucontrol` → 1280x600
-* `blender`, `Godot`, `rofi` → opacity 1 override
-* `Code` → opacity 0.9 override
-* `blender`, `heroic`, `steam`, `virt-manager`, `Godot` → fullscreen
-* `steam_app_0`, `virt-manager`, `Code` → opacity 1
-* `rofi` → immediate
-* xwayland:1 → noblur
+* Workspace 5 → for playing games
 
 ---
 
@@ -175,7 +152,7 @@ chmod +x install.sh
 
 * Master layout with roll/swapping support
 * Smart workspace assignments by app
-* Gaming Mode toggle with mainMod+F1
+* Gaming Mode
 * Floating rules and opacity per window
 * Smooth animations with Bézier curves
 * Blur & shadows for depth
