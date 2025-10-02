@@ -21,7 +21,10 @@ sudo pacman -Syu --noconfirm --needed \
     network-manager-applet \
     pamixer \
     powertop \
-    nwg-look
+    nwg-look \
+    hyprlock \
+    hypridle \
+    jq
 
 # Create necessary directories
 echo "📁 Creating necessary directories..."
@@ -58,7 +61,16 @@ echo "🔧 Setting execution permissions for rofi scripts..."
 chmod +x "$HOME/.config/rofi/launchers/type-6/launcher.sh" 2>/dev/null || echo "⚠️ launcher.sh not found."
 chmod +x "$HOME/.config/rofi/powermenu/type-2/powermenu.sh" 2>/dev/null || echo "⚠️ powermenu.sh not found."
 chmod +x "$HOME/.config/waybar/powermenu.sh" 2>/dev/null || echo "⚠️ powermenu.sh not found."
-chmod +x "$HOME/.config/hypr/scripts/gamemode.sh" 2>/dev/null || echo "⚠️ gamemode.sh not found."
+
+# Make all scripts in hypr/scripts executable
+echo "🔧 Setting execution permissions for Hypr scripts..."
+if [[ -d "$HOME/.config/hypr/scripts" ]]; then
+    for script in "$HOME/.config/hypr/scripts/"*.sh; do
+        [[ -f "$script" && "$(basename "$script")" != "gamemode.sh" ]] && chmod +x "$script" && echo "✅ Made executable: $(basename "$script")"
+    done
+else
+    echo "⚠️ Directory ~/.config/hypr/scripts not found."
+fi
 
 # Update font cache
 echo "🔄 Updating font cache..."
@@ -81,7 +93,7 @@ add_if_not_exists() {
 }
 
 add_if_not_exists '[[ $- != *i* ]] && return'
-add_if_not_exists 'fastfetch'  
+add_if_not_exists 'fastfetch'
 add_if_not_exists "alias ls='ls --color=auto'"
 add_if_not_exists "alias grep='grep --color=auto'"
 add_if_not_exists "PS1='\\[\\e[1;32m\\]\\u\\[\\e[0m\\] \\[\\e[1;34m\\]\\w\\[\\e[0m\\] '"
