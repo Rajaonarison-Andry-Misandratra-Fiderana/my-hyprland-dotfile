@@ -16,7 +16,7 @@ install_hyprland_pack() {
 install_system_tools_pack() {
     echo "🛠️ Installing System Tools Pack..."
     sudo pacman -Syu --noconfirm --needed \
-        udiskie network-manager-applet pamixer
+        udiskie pamixer
 }
 
 install_thunar_pack() {
@@ -30,6 +30,14 @@ install_fonts_icons_pack() {
     sudo pacman -Syu --noconfirm --needed \
         ttf-jetbrains-mono-nerd ttf-font-awesome
     [[ -d "./fonts" ]] && sudo cp -r ./fonts/* /usr/share/fonts/TTF/ || true
+}
+
+install_network_pack() {
+    echo "🌐 Installing Networking Pack (WiFi, Bluetooth, NetworkManager)..."
+    sudo pacman -Syu --noconfirm --needed \
+        bluez bluez-utils rfkill networkmanager network-manager-applet
+    sudo systemctl enable --now bluetooth.service
+    sudo systemctl enable --now NetworkManager.service
 }
 
 # --- Common config (applied after installs) ---
@@ -102,9 +110,10 @@ show_menu() {
     echo -e "\n========= INSTALLER MENU ========="
     echo "1) Full Install (All packs)"
     echo "2) Hyprland Pack (WM + Utils)"
-    echo "3) System Tools Pack (Audio, Network, Power)"
+    echo "3) System Tools Pack (Audio, Power, File Ops)"
     echo "4) Thunar Pack (File Manager + Thumbnails)"
     echo "5) Fonts & Icons Pack (JetBrains, FA, Bibata)"
+    echo "6) Networking Pack (WiFi, Bluetooth, NetworkManager)"
     echo "0) Exit"
     echo "=================================="
 }
@@ -119,6 +128,7 @@ while true; do
             install_system_tools_pack
             install_thunar_pack
             install_fonts_icons_pack
+            install_network_pack
             apply_common_config
             echo "✅ Full installation completed!"
             ;;
@@ -126,6 +136,7 @@ while true; do
         3) install_system_tools_pack; apply_common_config ;;
         4) install_thunar_pack; apply_common_config ;;
         5) install_fonts_icons_pack; apply_common_config ;;
+        6) install_network_pack; apply_common_config ;;
         0) echo "👋 Exit"; exit 0 ;;
         *) echo "⚠️ Invalid option" ;;
     esac
