@@ -18,6 +18,9 @@
 
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d3f3425b-a801-4a62-87d7-503f3cabf882" />
 
+<img width="1920" height="1080" alt="20251021_13h21m00s_grim" src="https://github.com/user-attachments/assets/f784d568-c23b-4bd2-a095-626018d6d980" />
+
+
 ---
 
 ## 📦 Requirements
