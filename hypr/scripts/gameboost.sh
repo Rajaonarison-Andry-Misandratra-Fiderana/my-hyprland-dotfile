@@ -12,7 +12,13 @@ if [ "$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')" = 1 ]; th
         keyword decoration:rounding 0"
 fi
 
+# NVIDIA Performance
+nvidia-settings -a '[gpu:0]/GPUPowerMizerMode=1' 2>/dev/null
 
+# CPU Performance
+for cpu in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do
+    [ -f "$cpu" ] && echo performance | sudo tee "$cpu" >/dev/null 2>&1
+done
 
 export DXVK_STATE_CACHE=1
 export DXVK_ASYNC=1
@@ -24,6 +30,12 @@ export PROTON_ENABLE_NVAPI=1
 export DXVK_NVAPI_DRIVER_VERSION=49729
 export DXVK_NVAPI_ALLOW_OTHER_DRIVERS=1
 export LFX=1
+export PROTON_LOCAL_SHADER_CACHE=0
+export PROTON_NO_WM_DECORATION=1
+export PROTON_NVIDIA_LIBS=1
 
-
+# Attend que le jeu finisse
 wait $GAME_PID
+
+# Force exit du jeu (même si terminé)
+kill -9 $GAME_PID 2>/dev/null

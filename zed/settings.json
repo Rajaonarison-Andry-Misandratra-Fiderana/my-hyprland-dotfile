@@ -1,0 +1,107 @@
+{
+  // === Apparence ===
+  "theme": "Fleet Dark Purple",
+  "ui_font_size": 17,
+  "buffer_font_size": 17,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+
+  "icon_theme": {
+    "mode": "system",
+    "dark": "JetBrains Icons Dark",
+    "light": "JetBrains Icons Dark"
+  },
+
+  // === Édition ===
+  "auto_indent": true,
+  "tab_size": 2,
+  "format_on_save": "prettier",
+  "use_auto_surround": true,
+  "always_treat_brackets_as_autoclosed": true,
+
+  // === Interface utilisateur ===
+  "gutter": {
+    "line_numbers": true,
+    "runnables": true,
+    "breakpoints": true,
+    "folds": true,
+    "min_line_number_digits": 4
+  },
+  "relative_line_numbers": true,
+
+  "scrollbar": {
+    "show": "auto",
+    "cursors": true,
+    "git_diff": true,
+    "search_results": true,
+    "selected_text": true,
+    "selected_symbol": true,
+    "diagnostics": "all",
+    "axes": {
+      "horizontal": true,
+      "vertical": true
+    }
+  },
+
+  "minimap": {
+    "show": "never",
+    "thumb": "always",
+    "thumb_border": "left_open",
+    "current_line_highlight": "line"
+  },
+
+  "title_bar": {
+    "show_branch_icon": true,
+    "show_branch_name": true,
+    "show_project_items": true,
+    "show_onboarding_banner": false,
+    "show_user_picture": false,
+    "show_sign_in": false,
+    "show_menus": true
+  },
+
+  // === Curseur et Souris ===
+  "cursor_shape": "bar",
+  "hide_mouse": "on_typing",
+  "cursor_blink": true,
+
+  // === Complétion et Prédictions ===
+  "show_completions_on_input": true,
+  "show_completion_documentation": true,
+  "show_edit_predictions": true,
+  "snippet_sort_order": "top",
+
+  // === Recherche ===
+  "use_smartcase_search": true,
+
+  // === Vim Mode ===
+  "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "always",
+    "default_mode": "normal",
+    "toggle_relative_line_numbers": true,
+    "use_smartcase_find": true,
+    "highlight_on_yank_duration": 1000
+  },
+
+  // === Git ===
+  "git_panel": {
+    "default_width": 200,
+    "dock": "right"
+  },
+
+  // === Diagnostics ===
+  "diagnostics_max_severity": "warning",
+
+  // === Divers ===
+  "autosave": "off",
+  "base_keymap": "VSCode",
+  "close_on_file_delete": true,
+  "auto_update": false,
+  "enable_language_server": true,
+  "disable_ai": false,
+
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  }
+}
