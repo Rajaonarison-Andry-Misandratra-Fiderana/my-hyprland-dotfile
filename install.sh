@@ -4,16 +4,49 @@ IFS=$'\n\t'
 
 trap 'echo "❌ Error at line $LINENO"' ERR
 
-# --- Update once ---
-echo "🔄 Updating system before installations..."
-sudo pacman -Syu --noconfirm
+# --- Add Chaotic-AUR repository ---
+setup_chaotic_aur() {
+    echo "🌌 Setting up Chaotic-AUR repository..."
+
+    # Import and locally sign the Chaotic-AUR key
+    sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+    sudo pacman-key --lsign-key 3056513887B78AEB
+
+    # Install Chaotic-AUR keyring and mirrorlist
+    sudo pacman -U --noconfirm \
+        'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' \
+        'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+
+    # Add repository if not already present
+    if ! grep -q "^\[chaotic-aur\]" /etc/pacman.conf; then
+        echo "📝 Adding [chaotic-aur] repository to /etc/pacman.conf..."
+        sudo tee -a /etc/pacman.conf >/dev/null <<'EOF'
+
+[chaotic-aur]
+Include = /etc/pacman.d/chaotic-mirrorlist
+EOF
+    else
+        echo "✅ [chaotic-aur] repository already present."
+    fi
+
+    echo "🔄 Syncing package databases..."
+    sudo pacman -Sy --noconfirm
+}
+
+# --- Update system once ---
+system_update() {
+    echo "🔄 Updating system before installations..."
+    sudo pacman -Syu --noconfirm
+}
 
 # --- Packs installation ---
 install_hyprland_pack() {
     echo "🚀 Installing Hyprland Pack..."
     sudo pacman -S --noconfirm --needed \
         hyprland rofi-wayland hyprpaper kitty jq fastfetch \
-        slurp powertop nwg-look hyprlock hypridle hyprpolkitagent wlogout waybar swaync xdg-user-dirs xdg-utils xdg-desktop-portal-wlr xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-desktop-portal
+        slurp powertop nwg-look hyprlock hypridle hyprpolkitagent wlogout waybar swaync \
+        xdg-user-dirs xdg-utils xdg-desktop-portal-wlr xdg-desktop-portal-hyprland \
+        xdg-desktop-portal-gtk xdg-desktop-portal
 }
 
 install_system_tools_pack() {
@@ -124,6 +157,9 @@ show_menu() {
 }
 
 # --- Logic ---
+setup_chaotic_aur
+system_update
+
 while true; do
     show_menu
     read -rp "👉 Select an option: " choice
