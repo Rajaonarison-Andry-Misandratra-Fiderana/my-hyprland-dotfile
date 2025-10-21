@@ -9,8 +9,7 @@ install_hyprland_pack() {
     echo "🚀 Installing Hyprland Pack..."
     sudo pacman -Syu --noconfirm --needed \
         hyprland rofi-wayland hyprpaper kitty jq fastfetch \
-        slurp powertop nwg-look hyprlock hypridle hyprpolkitagent wlogout
-    yay -S --noconfirm waybar-cava
+        slurp powertop nwg-look hyprlock hypridle hyprpolkitagent wlogout waybar swaync xdg-user-dirs xdg-utils xdg-desktop-portal-wlr xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-desktop-portal
 }
 
 install_system_tools_pack() {
