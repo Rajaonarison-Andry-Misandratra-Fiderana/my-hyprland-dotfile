@@ -4,36 +4,40 @@ IFS=$'\n\t'
 
 trap 'echo "❌ Error at line $LINENO"' ERR
 
+# --- Update once ---
+echo "🔄 Updating system before installations..."
+sudo pacman -Syu --noconfirm
+
 # --- Packs installation ---
 install_hyprland_pack() {
     echo "🚀 Installing Hyprland Pack..."
-    sudo pacman -Syu --noconfirm --needed \
+    sudo pacman -S --noconfirm --needed \
         hyprland rofi-wayland hyprpaper kitty jq fastfetch \
         slurp powertop nwg-look hyprlock hypridle hyprpolkitagent wlogout waybar swaync xdg-user-dirs xdg-utils xdg-desktop-portal-wlr xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-desktop-portal
 }
 
 install_system_tools_pack() {
     echo "🛠️ Installing System Tools Pack..."
-    sudo pacman -Syu --noconfirm --needed \
+    sudo pacman -S --noconfirm --needed \
         udiskie pamixer
 }
 
 install_thunar_pack() {
     echo "📂 Installing Thunar Pack..."
-    sudo pacman -Syu --noconfirm --needed \
+    sudo pacman -S --noconfirm --needed \
         thunar tumbler ffmpegthumbnailer
 }
 
 install_fonts_icons_pack() {
     echo "🔤 Installing Fonts & Icons Pack..."
-    sudo pacman -Syu --noconfirm --needed \
+    sudo pacman -S --noconfirm --needed \
         ttf-jetbrains-mono-nerd ttf-font-awesome
     [[ -d "./fonts" ]] && sudo cp -r ./fonts/* /usr/share/fonts/TTF/ || true
 }
 
 install_network_pack() {
     echo "🌐 Installing Networking Pack (WiFi, Bluetooth, NetworkManager)..."
-    sudo pacman -Syu --noconfirm --needed \
+    sudo pacman -S --noconfirm --needed \
         bluez bluez-utils rfkill networkmanager network-manager-applet
     sudo systemctl enable --now bluetooth.service
     sudo systemctl enable --now NetworkManager.service
@@ -49,7 +53,7 @@ apply_common_config() {
     echo "📂 Copying configuration files..."
     for item in ./*; do
         name="$(basename "$item")"
-        if [[ "$name" != "fonts" && "$name" != "install.sh" && ! "$name" =~ ^README ]]; then
+        if [[ "$name" != "fonts" && "$name" != "install.sh" && ! "$name" =~ ^[Rr][Ee][Aa][Dd][Mm][Ee] ]]; then
             [[ -e "$item" ]] && cp -r "$item" "$HOME/.config/"
         fi
     done
@@ -73,9 +77,11 @@ apply_common_config() {
 
     echo "🔧 Setting execution permissions for Hypr scripts..."
     if [[ -d "$HOME/.config/hypr/scripts" ]]; then
+        shopt -s nullglob
         for script in "$HOME/.config/hypr/scripts/"*.sh; do
             [[ -f "$script" && "$(basename "$script")" != "gamemode.sh" ]] && chmod +x "$script" && echo "✅ Made executable: $(basename "$script")"
         done
+        shopt -u nullglob
     else
         echo "⚠️ Directory ~/.config/hypr/scripts not found."
     fi
