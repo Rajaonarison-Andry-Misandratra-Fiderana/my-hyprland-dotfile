@@ -46,7 +46,7 @@ install_hyprland_pack() {
         hyprland rofi-wayland hyprpaper kitty jq fastfetch \
         slurp powertop nwg-look hyprlock hypridle hyprpolkitagent wlogout waybar swaync \
         xdg-user-dirs xdg-utils xdg-desktop-portal-wlr xdg-desktop-portal-hyprland \
-        xdg-desktop-portal-gtk xdg-desktop-portal
+        xdg-desktop-portal-gtk xdg-desktop-portal nordic-darker-theme
 }
 
 install_system_tools_pack() {
