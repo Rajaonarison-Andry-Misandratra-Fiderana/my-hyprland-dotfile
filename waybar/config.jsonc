@@ -1,7 +1,5 @@
 {
-  "margin-top": 7,
-  "margin-bottom": 3,
-  "height": 50,
+  "height": 55,
   "spacing": 5,
 
   "modules-left": ["custom/arch", "hyprland/workspaces"],
@@ -11,8 +9,9 @@
     "pulseaudio",
     "backlight",
     "network",
-    "custom/battery",
+    "battery",
     "clock",
+    "custom/notification",
   ],
 
   "hyprland/workspaces": {
@@ -21,28 +20,31 @@
     "format-icons": {},
     "sort-by-number": true,
     "persistent-workspaces": {
-      "*": 4, // Default to 4 persistent workspaces
+      "*": 4,
     },
   },
 
   "custom/arch": {
-    "format": "", // fa-linux (Arch)
+    "format": "",
     "on-click": "~/.config/rofi/launcher.sh",
+    "tooltip": false,
   },
+
   "custom/cava": {
     "format": "{}",
     "exec": "~/.config/waybar/cava.sh",
+    "tooltip": false,
   },
 
   "clock": {
-    "format": "{:%I:%M %p}", // 12h format avec AM/PM et icône fa-clock
-    "format-alt": "{:%Y-%m-%d}", // format alternatif (clic ou alt)
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%Y-%m-%d}",
     "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>",
-    "padding-right": 10,
   },
+
   "network": {
-    "format-wifi": "  {signalStrength}%", // fa-wifi
-    "format-ethernet": "{cidr} ", // fa-ethernet
+    "format-wifi": "  {signalStrength}%",
+    "format-ethernet": "{cidr} ",
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "⚠",
@@ -65,18 +67,46 @@
     },
     "on-click": "pamixer -t",
     "on-click-right": "pavucontrol",
+    "tooltip": false,
   },
+
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon}  {percent}%",
     "format-icons": ["", "", ""],
     "on-click": "pgrep -x hyprsunset && pkill hyprsunset || hyprsunset -t 5000",
     "on-click-right": "hyprsunset -t 6500",
+    "tooltip": false,
   },
-  "custom/battery": {
-    "format": "{text}",
-    "return-type": "json",
-    "exec": "~/.config/waybar/powermenu.sh",
+
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": {
+      "charging": ["󰂄", "󰂅"],
+      "discharging": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "full": ["󰂅"],
+    },
     "interval": 5,
+    "tooltip": false,
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "<span size='16pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
   },
 }

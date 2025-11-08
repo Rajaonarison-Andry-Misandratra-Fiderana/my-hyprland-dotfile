@@ -1,202 +1,105 @@
-/* Global */
 * {
-  font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  font-weight: 900;
 }
 
-/* Waybar background transparent */
 window#waybar {
-  background-color: rgba(0, 0, 0, 0); /* transparent */
-  border-radius: 30px;
-  transition: background-color 1s, box-shadow 0.3s;
+  background-color: #181825;
+  transition: background-color 0.5s;
 }
 
-/* Modules containers */
-.modules-left,
-.modules-center,
-.modules-right {
-  border-radius: 15px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+window#waybar.hidden {
+  opacity: 0.5;
 }
 
-/* Modules left & center */
-.modules-left {
-  background-color: transparent;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: 10px; /* Ajouté pour la symétrie */
-  margin-right: 10px; /* Ajouté pour la symétrie */
-}
-
-.modules-center {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 10px; /* Ajouté pour la symétrie */
-  margin-right: 10px; /* Ajouté pour la symétrie */
-}
-
-/* Modules right */
-.modules-right {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-right: 20px; /* Ajouté pour la symétrie */
-}
-
-/* Uniformiser la taille des modules à droite */
-.modules-right > * {
-  min-height: 32px; /* même hauteur minimale */
-  padding: 0 0px; /* même padding horizontal */
-}
-
-/* Effet rectangle au hover sur chaque module de droite */
-.modules-right > *:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
-  transition: all 0.2s;
-}
-
-/* Buttons generic */
-button {
-  border: none;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-}
-
-button:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.1); /* glow plus léger */
-}
-
-/* Arch logo */
-#custom-arch {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 0 25px 0 20px;
-  border-radius: 12px;
-  color: #00bfff;
-}
-
-#custom-arch:hover {
-  color: #1e90ff;
-}
-
-/* Workspaces */
 #workspaces {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 5px 20px;
-  border-radius: 12px;
-  margin-left: 10px;
+  background-color: transparent;
 }
 
 #workspaces button {
-  padding: 0 15px;
-  background-color: transparent;
-  color: #ffffff;
-  font-size: 20px;
+  padding: 6px 18px;
+  margin: 6px 3px;
+  border-radius: 4px;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  min-width: 0;
+  box-shadow: inset 0 -3px transparent;
 }
 
+#workspaces button.active,
 #workspaces button:hover {
-  background-color: rgba(97, 97, 97, 0.78);
-  box-shadow: 0 0 4px rgba(128, 128, 128, 0.36); /* glow réduit */
+  color: #1e1e2e;
+  background-color: #cdd6f4;
 }
 
-#workspaces button.focused {
-  background-color: #444444;
-}
-#workspaces button.active {
-  background-color: #212121;
-  color: #ffffff;
-}
 #workspaces button.urgent {
-  background-color: #eb4d4b;
+  background-color: #ff6b81;
 }
 
-/* Modules interactive hover */
+#custom-arch {
+  background-color: #181825;
+  padding: 0 25px;
+  border-radius: 12px;
+  color: #00bfff;
+  text-shadow: 0 0 12px #00bfff;
+  transition: all 0.3s ease;
+}
+
+#custom-arch:hover {
+  text-shadow: 0 0 16px royalblue;
+  color: royalblue;
+}
+
+#memory,
+#battery,
+#backlight,
+#pulseaudio,
+#network,
+#clock,
+#tray {
+  border-radius: 6px;
+  margin: 6px 3px;
+  padding: 6px 12px;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  box-shadow: 0 0 4px rgba(0, 191, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+#memory:hover,
+#battery:hover,
 #backlight:hover,
 #pulseaudio:hover,
-#custom-battery:hover,
-#network:hover {
-  background-color: rgba(92, 91, 89, 0.3);
+#network:hover,
+#clock:hover,
+#tray:hover {
+  box-shadow: 0 0 4px rgba(0, 191, 255, 0.1);
+  color: #cdd6f4;
+}
+
+#battery.charging {
+  color: #cdd6f4;
+}
+
+#battery.warning,
+#battery.critical,
+#battery.urgent {
+  color: #ff6b81;
+}
+
+#custom-notification {
+  margin-right: 5px;
+  padding: 0 20px 0 20px;
+}
+
+tooltip {
   border-radius: 8px;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.15); /* glow plus léger */
-  transition: all 0.2s ease;
+  padding: 15px;
+  background-color: #131822;
 }
 
-/* Pulseaudio */
-#pulseaudio {
-  color: #87cefa;
-  padding: 0 15px;
-}
-#pulseaudio.muted {
-  color: grey;
-}
-
-/* Network */
-#network {
-  color: #ffd700;
-  padding: 0 8px;
-}
-
-/* Clock */
-#clock {
-  color: #ffffff;
-  padding: 0 15px;
-  font-weight: 500;
-}
-#custom-battery {
-  padding: 0 15px;
-}
-
-/* Backlight */
-#backlight {
-  color: #00bfff;
-  padding: 0 12px;
-}
-
-/* Battery and tray */
-#custom-battery,
-#tray {
-  transition: all 0.2s ease;
-}
-
-#tray {
-  background-color: transparent;
-  padding: 0 15px 0 20px;
-}
-
-/* Hover glow effect for battery/network/pulseaudio/backlight */
-#battery span,
-#network span,
-#pulseaudio span,
-#backlight span {
-  transition: color 0.2s, text-shadow 0.2s;
-}
-
-#battery:hover span,
-#network:hover span,
-#pulseaudio:hover span,
-#backlight:hover span {
-  text-shadow: 0 0 4px rgba(255, 255, 255, 0.2); /* glow réduit */
-}
-
-/* Misc */
-#mode {
-  background-color: #64727d;
-}
-
-@keyframes blink {
-  to {
-    color: #000000;
-  }
-}
-
-label:focus {
-  background-color: #000000;
-}
-#custom-cava {
-  font-size: 18;
-  margin-right: 10px;
+tooltip label {
+  padding: 5px;
+  background-color: #131822;
 }
