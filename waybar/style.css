@@ -5,14 +5,16 @@
 }
 
 window#waybar {
-  background-color: #181825;
+  background: rgba(0, 0, 0, 0);
   transition: background-color 0.5s;
+  color: #ffffff;
 }
 
 window#waybar.hidden {
   opacity: 0.5;
 }
 
+/* Workspaces */
 #workspaces {
   background-color: transparent;
 }
@@ -20,37 +22,47 @@ window#waybar.hidden {
 #workspaces button {
   padding: 6px 18px;
   margin: 6px 3px;
-  border-radius: 4px;
-  background-color: #1e1e2e;
-  color: #cdd6f4;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
   min-width: 0;
-  box-shadow: inset 0 -3px transparent;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 #workspaces button.active,
 #workspaces button:hover {
-  color: #1e1e2e;
-  background-color: #cdd6f4;
+  color: #ffffff;
+  background: rgba(0, 122, 255, 0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 1px 2px rgba(0, 122, 255, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 #workspaces button.urgent {
-  background-color: #ff6b81;
+  background: rgba(255, 59, 48, 0.3);
 }
 
+/* Logo Arch */
 #custom-arch {
-  background-color: #181825;
+  background: rgba(255, 255, 255, 0);
   padding: 0 25px;
-  border-radius: 12px;
-  color: #00bfff;
-  text-shadow: 0 0 12px #00bfff;
-  transition: all 0.3s ease;
+  border-radius: 16px;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  transition: all 1s ease;
 }
 
+#custom-notification:hover,
 #custom-arch:hover {
-  text-shadow: 0 0 16px royalblue;
-  color: royalblue;
+  color: #0096ff;
+  text-shadow: 0 0 12px rgba(0, 150, 255, 0.6);
 }
 
+/* Modules */
 #memory,
 #battery,
 #backlight,
@@ -58,12 +70,15 @@ window#waybar.hidden {
 #network,
 #clock,
 #tray {
-  border-radius: 6px;
+  border-radius: 12px;
   margin: 6px 3px;
   padding: 6px 12px;
-  background-color: #1e1e2e;
-  color: #cdd6f4;
-  box-shadow: 0 0 4px rgba(0, 191, 255, 0.1);
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
@@ -74,32 +89,50 @@ window#waybar.hidden {
 #network:hover,
 #clock:hover,
 #tray:hover {
-  box-shadow: 0 0 4px rgba(0, 191, 255, 0.1);
-  color: #cdd6f4;
+  background: rgba(255, 255, 255, 0.15);
 }
 
+/* Batterie */
 #battery.charging {
-  color: #cdd6f4;
+  color: #34c759;
+  background: rgba(52, 199, 89, 0.15);
 }
 
-#battery.warning,
+#battery.warning {
+  color: #ff9500;
+  background: rgba(255, 149, 0, 0.15);
+}
+
 #battery.critical,
 #battery.urgent {
-  color: #ff6b81;
+  color: #ff3b30;
+  background: rgba(255, 59, 48, 0.15);
 }
 
+/* Notification */
 #custom-notification {
   margin-right: 5px;
   padding: 0 20px 0 20px;
+  color: #ffffff;
+  transition: 1s ease;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 12px;
 }
 
+/* Tooltip */
 tooltip {
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 15px;
-  background-color: #131822;
+  background: rgba(40, 40, 40, 0.95);
+  color: #ffffff;
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 tooltip label {
   padding: 5px;
-  background-color: #131822;
+  background: transparent;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
