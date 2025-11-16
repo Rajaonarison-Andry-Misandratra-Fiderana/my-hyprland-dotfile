@@ -94,7 +94,7 @@ install_network_pack() {
 # --- Install AUR packages ---
 install_aur_packages() {
     echo "📦 Installing AUR packages..."
-    yay -S walker-bin elephant --noconfirm
+    yay -S walker-bin elephant-bin --noconfirm
 }
 
 # --- Common config (applied after installs) ---
