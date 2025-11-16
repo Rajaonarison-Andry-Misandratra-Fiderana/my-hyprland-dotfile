@@ -39,12 +39,27 @@ system_update() {
     sudo pacman -Syu --noconfirm
 }
 
+# --- Install yay if not present ---
+install_yay() {
+    if ! command -v yay &> /dev/null; then
+        echo "📦 Installing yay..."
+        sudo pacman -S --noconfirm --needed git base-devel
+        git clone https://aur.archlinux.org/yay.git /tmp/yay
+        cd /tmp/yay
+        makepkg -si --noconfirm
+        cd -
+        echo "✅ yay installed successfully"
+    else
+        echo "✅ yay already installed"
+    fi
+}
+
 # --- Packs installation ---
 install_hyprland_pack() {
     echo "🚀 Installing Hyprland Pack..."
     sudo pacman -S --noconfirm --needed \
-        hyprland rofi-wayland hyprpaper kitty jq fastfetch \
-        slurp powertop nwg-look hyprlock hypridle hyprpolkitagent wlogout waybar swaync \
+        hyprland hyprpaper kitty jq fastfetch \
+        slurp nwg-look hyprlock hypridle hyprpolkitagent wlogout waybar swaync swayosd \
         xdg-user-dirs xdg-utils xdg-desktop-portal-wlr xdg-desktop-portal-hyprland \
         xdg-desktop-portal-gtk xdg-desktop-portal nordic-darker-theme
 }
@@ -74,6 +89,12 @@ install_network_pack() {
         bluez bluez-utils rfkill networkmanager network-manager-applet
     sudo systemctl enable --now bluetooth.service
     sudo systemctl enable --now NetworkManager.service
+}
+
+# --- Install AUR packages ---
+install_aur_packages() {
+    echo "📦 Installing AUR packages..."
+    yay -S --noconfirm walker
 }
 
 # --- Common config (applied after installs) ---
@@ -143,42 +164,23 @@ apply_common_config() {
     echo "✅ Configuration applied!"
 }
 
-# --- Menu ---
-show_menu() {
-    echo -e "\n========= INSTALLER MENU ========="
-    echo "1) Full Install (All packs)"
-    echo "2) Hyprland Pack (WM + Utils)"
-    echo "3) System Tools Pack (Audio, Power, File Ops)"
-    echo "4) Thunar Pack (File Manager + Thumbnails)"
-    echo "5) Fonts & Icons Pack (JetBrains, FA, Bibata)"
-    echo "6) Networking Pack (WiFi, Bluetooth, NetworkManager)"
-    echo "0) Exit"
-    echo "=================================="
+# --- Main installation process ---
+main() {
+    echo "🚀 Starting complete Hyprland installation..."
+    
+    setup_chaotic_aur
+    system_update
+    install_yay
+    
+    echo "📦 Installing all packages..."
+    install_hyprland_pack
+    install_system_tools_pack
+    install_thunar_pack
+    install_fonts_icons_pack
+    install_network_pack
+    install_aur_packages
+    apply_common_config
 }
 
-# --- Logic ---
-setup_chaotic_aur
-system_update
-
-while true; do
-    show_menu
-    read -rp "👉 Select an option: " choice
-    case "$choice" in
-        1)
-            install_hyprland_pack
-            install_system_tools_pack
-            install_thunar_pack
-            install_fonts_icons_pack
-            install_network_pack
-            apply_common_config
-            echo "✅ Full installation completed!"
-            ;;
-        2) install_hyprland_pack; apply_common_config ;;
-        3) install_system_tools_pack; apply_common_config ;;
-        4) install_thunar_pack; apply_common_config ;;
-        5) install_fonts_icons_pack; apply_common_config ;;
-        6) install_network_pack; apply_common_config ;;
-        0) echo "👋 Exit"; exit 0 ;;
-        *) echo "⚠️ Invalid option" ;;
-    esac
-done
+# --- Start the installation ---
+main
