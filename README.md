@@ -97,13 +97,13 @@ To enable Gaming Mode:
 | File Manager (Thunar)        | mainMod + E             |
 | Web Browser                  | mainMod + B             |
 | Obsidian                     | mainMod + O             |
-| Code Editor                  | mainMod + W             |
+| Fullscreen                   | mainMod + W             |
 | Full Screenshot              | mainMod + S             |
 | Region Screenshot            | mainMod + Shift + S     |
 | Toggle Waybar                | mainMod + A             |
 | Next Window                  | mainMod + Tab           |
 | Previous Window              | mainMod + Shift + Tab   |
-| Fullscreen Toggle            | mainMod + F             |
+| Exclusive Fullscreen         | mainMod + F             |
 | Toggle Floating              | mainMod + T             |
 | Toggle Pseudotile            | mainMod + P             |
 | Toggle Split Orientation     | mainMod + J             |
@@ -117,7 +117,6 @@ To enable Gaming Mode:
 | Resize Window (Mouse)        | mainMod + Right Click   |
 | Close Window                 | mainMod + Q             |
 | Exit Session                 | mainMod + M             |
-| Toggle Gaming Mode           | mainMod + F1            |
 | Volume Up                    | mainMod + F7            |
 | Volume Down                  | mainMod + F6            |
 | Mute                         | mainMod + F5            |
