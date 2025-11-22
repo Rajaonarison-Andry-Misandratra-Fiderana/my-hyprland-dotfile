@@ -91,10 +91,42 @@ install_network_pack() {
     sudo systemctl enable --now NetworkManager.service
 }
 
+# --- Ask user about Chrome installation ---
+ask_chrome_installation() {
+    echo "🌐 Google Chrome Installation"
+    echo "=============================="
+    echo "Do you want to install Google Chrome? (y/N)"
+    read -r response
+    
+    case $response in
+        [yY]|[yY][eE][sS])
+            INSTALL_CHROME=true
+            echo "✅ Google Chrome will be installed."
+            ;;
+        *)
+            INSTALL_CHROME=false
+            echo "❌ Google Chrome will NOT be installed."
+            ;;
+    esac
+    echo ""
+}
+
 # --- Install AUR packages ---
 install_aur_packages() {
     echo "📦 Installing AUR packages..."
-    yay -S google-chrome walker-bin elephant-bin elephant-providerlist-bin elephant-desktopapplications-bin --noconfirm
+    
+    # Base AUR packages (always installed)
+    local aur_packages="walker-bin elephant-bin elephant-providerlist-bin elephant-desktopapplications-bin"
+    
+    # Add Chrome if user requested it
+    if [ "$INSTALL_CHROME" = true ]; then
+        aur_packages="$aur_packages google-chrome"
+        echo "🔵 Including Google Chrome in installation..."
+    else
+        echo "🔵 Skipping Google Chrome installation..."
+    fi
+    
+    yay -S $aur_packages --noconfirm
 }
 
 # --- Common config (applied after installs) ---
@@ -168,6 +200,9 @@ apply_common_config() {
 main() {
     echo "🚀 Starting complete Hyprland installation..."
     
+    # Ask user about Chrome installation first
+    ask_chrome_installation
+    
     setup_chaotic_aur
     system_update
     install_yay
@@ -180,6 +215,14 @@ main() {
     install_network_pack
     install_aur_packages
     apply_common_config
+    
+    # Final summary
+    echo ""
+    echo "🎉 Installation completed successfully!"
+    if [ "$INSTALL_CHROME" = false ]; then
+        echo "📝 Note: Google Chrome was not installed as per your choice."
+        echo "   You can install it later with: yay -S google-chrome"
+    fi
 }
 
 # --- Start the installation ---
