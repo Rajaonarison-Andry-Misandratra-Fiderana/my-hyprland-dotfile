@@ -59,7 +59,7 @@ install_hyprland_pack() {
     echo "🚀 Installing Hyprland Pack..."
     sudo pacman -S --noconfirm --needed \
         hyprland hyprpaper ghostty jq fastfetch \
-        slurp nwg-look hyprlock hypridle hyprpolkitagent wlogout waybar swaync swayosd \
+        slurp nwg-look hyprlock hypridle hyprpolkitagent wlogout waybar swaync swayosd waypaper \
         xdg-user-dirs xdg-utils xdg-desktop-portal-wlr xdg-desktop-portal-hyprland \
         xdg-desktop-portal-gtk xdg-desktop-portal nordic-darker-theme
 }
