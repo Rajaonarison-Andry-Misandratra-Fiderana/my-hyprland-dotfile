@@ -20,9 +20,9 @@
 
 ---
 
-## 📦 Requirements
+## 📦 Packages
 
-🖥️ **Kitty** – GPU-accelerated terminal  
+🖥️ **Ghostty** – GPU-accelerated terminal  
 💤 **Rofi** – App launcher  
 🌀 **Hyprland** – Next-gen Wayland compositor  
 🖼️ **Hyprpaper** – Wallpaper manager  
@@ -75,12 +75,12 @@ To enable Gaming Mode:
 
 ## 📚 Default Programs
 
-* Terminal: `kitty`
-* Launcher: `~/.config/rofi/launcher.sh`
+* Terminal: `ghostty`
+* Launcher: `walker`
 * File Manager: `thunar`
-* Browser: `zen-browser`
+* Browser: `chrome`
 * Power Menu: `wlogout`
-* Code Editor: `code`
+* Code Editor: `nvim`
 
 ---
 
@@ -89,11 +89,11 @@ To enable Gaming Mode:
 | Action                       | Shortcut                |
 | ---------------------------- | ----------------------- |
 | Open Terminal                | mainMod + Return        |
-| App Launcher (Rofi)          | mainMod + Space         |
+| App Launcher                 | mainMod + Space         |
 | File Manager (Thunar)        | mainMod + E             |
-| Web Browser (Zen)            | mainMod + B             |
+| Web Browser                  | mainMod + B             |
 | Obsidian                     | mainMod + O             |
-| Code Editor (VSCode)         | mainMod + W             |
+| Code Editor                  | mainMod + W             |
 | Full Screenshot              | mainMod + S             |
 | Region Screenshot            | mainMod + Shift + S     |
 | Toggle Waybar                | mainMod + A             |
