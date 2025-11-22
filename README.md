@@ -27,7 +27,7 @@
 ## 📦 Packages
 
 🖥️ **Ghostty** – GPU-accelerated terminal  
-💤 **Rofi** – App launcher  
+💤 **walker** – App launcher  
 🌀 **Hyprland** – Next-gen Wayland compositor  
 🖼️ **Hyprpaper** – Wallpaper manager  
 📏 **Slurp** – Region selector for screenshots  
