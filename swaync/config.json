@@ -64,14 +64,14 @@
           "tooltip": "Take Screenshot"
         },
         {
+          "label": "",
+          "command": "waypaper",
+          "tooltip": "Change Wallpaper"
+        },
+        {
           "label": "󰌾",
           "command": "hyprlock",
           "tooltip": "Lock the PC"
-        },
-        {
-          "label": "⏾",
-          "command": "hypridle -t 0",
-          "tooltip": "Idle"
         },
         {
           "label": "󰜉",

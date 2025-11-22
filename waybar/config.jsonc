@@ -26,7 +26,7 @@
 
   "custom/arch": {
     "format": "",
-    "on-click": "~/.config/rofi/launcher.sh",
+    "on-click": "walker",
     "tooltip": false,
   },
 

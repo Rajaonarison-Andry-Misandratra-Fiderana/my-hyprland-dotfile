@@ -1,86 +1,52 @@
-local fn = vim.fn
-local lazypath = fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-    fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable",
-        lazypath,
-    })
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Safe require helper
-local function safe_require(mod)
-    local ok, res = pcall(require, mod)
-    if not ok then
-        vim.notify(string.format("Error requiring module '%s': %s", mod, tostring(res)), vim.log.levels.ERROR)
-        return nil
-    end
-    return res
-end
-
--- Collect plugin specs from lua/plugins/*.lua
-local specs = {}
-local plugin_dir = fn.stdpath("config") .. "/lua/plugins"
-local files = fn.globpath(plugin_dir, "*.lua", false, true)
-
--- helper for list extend
-if not vim.list_extend then
-    vim.list_extend = function(a, b)
-        for _, v in ipairs(b) do
-            table.insert(a, v)
-        end
-        return a
-    end
-end
-
-for _, filepath in ipairs(files) do
-    local name = fn.fnamemodify(filepath, ":t:r")
-    local module = "plugins." .. name
-    local mod = safe_require(module)
-    if mod then
-        if type(mod) == "table" then
-            if mod[1] ~= nil then
-                vim.list_extend(specs, mod)
-            else
-                table.insert(specs, mod)
-            end
-        else
-            vim.notify(string.format("Plugin module '%s' did not return a table", module), vim.log.levels.WARN)
-        end
-    end
-end
-
--- Normalize: wrap string config fields into functions that require the module
-for _, spec in ipairs(specs) do
-    if type(spec) == "table" and type(spec.config) == "string" then
-        local cfg_mod = spec.config
-        spec.config = function()
-            local ok, m = pcall(require, cfg_mod)
-            if not ok then
-                vim.notify(string.format("Failed to load config module '%s' for plugin '%s'", cfg_mod, tostring(spec[1] or "?")), vim.log.levels.ERROR)
-                return
-            end
-            if type(m) == "function" then
-                pcall(m)
-            elseif type(m) == "table" and type(m.setup) == "function" then
-                pcall(m.setup, m.opts or {})
-            end
-        end
-    end
-end
-
--- Finally setup lazy with collected specs
 require("lazy").setup({
-    spec = {
-        { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-        { import = "plugins" },
+  spec = {
+    -- add LazyVim and import its plugins
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    -- import/override with your plugins
+    { import = "plugins" },
+  },
+  defaults = {
+    -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
+    -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
+    lazy = false,
+    -- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
+    -- have outdated releases, which may break your Neovim install.
+    version = false, -- always use the latest git commit
+    -- version = "*", -- try installing the latest stable version for plugins that support semver
+  },
+  checker = {
+    enabled = false, -- check for plugin updates periodically
+    notify = false, -- notify on update
+  }, -- automatically check for plugin updates
+  performance = {
+    rtp = {
+      -- disable some rtp plugins
+      disabled_plugins = {
+        "gzip",
+        -- "matchit",
+        -- "matchparen",
+        -- "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
     },
-    defaults = { lazy = true, version = false },
-    install = { colorscheme = { "habamax" } },
-    checker = { enabled = false, notify = false },
-    performance = { rtp = { disabled_plugins = { "gzip", "tarPlugin", "tohtml", "tutor", "zipPlugin" } } },
+  },
 })
