@@ -6,31 +6,9 @@ vim.opt.swapfile = false
 vim.opt.undofile = true
 vim.opt.backup = false
 vim.opt.writebackup = false
-vim.cmd([[colorscheme no-clown-fiesta]])
 require("luasnip.loaders.from_vscode").lazy_load()
 
--- =============================================
--- 🛜 LUALINE - THÈME NORDIC
--- =============================================
-local status, lualine = pcall(require, "lualine")
-if not status then
-    return
-end
-
--- Palette de couleurs nordic
-local colors = {
-    bg = "#2E3440",
-    fg = "#D8DEE9",
-    snow = "#ECEFF4",
-    frost = "#8FBCBB",
-    aurora = "#BF616A",
-    gold = "#EBCB8B",
-    pine = "#A3BE8C",
-    polar = "#81A1C1",
-    lavender = "#B48EAD",
-    storm = "#5E81AC",
-}
-
+vim.cmd.colorscheme("noirblaze")
 -- =========================================
 -- 🔍 TELESCOPE
 -- =========================================
