@@ -10,23 +10,21 @@
 
 ## 🖼️ Preview 
 
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/5ef882bf-2e34-4b27-8dd9-be0d57cbf803" />
+<img width="1920" height="1080" alt="20251204_11h45m13s_grim" src="https://github.com/user-attachments/assets/344e97bc-ca81-43a4-9a48-41263ff69dbe" />
 
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/04c9625c-b0e8-448c-882e-c4ad214240d6" />
+<img width="1920" height="1080" alt="20251204_11h16m12s_grim" src="https://github.com/user-attachments/assets/9f3cfe10-b928-4b63-9fa3-96cbf6c88fb0" />
 
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/704a6f9b-3cb0-4fab-9466-855c09b5cd78" />
+<img width="1920" height="1080" alt="20251204_11h16m48s_grim" src="https://github.com/user-attachments/assets/adcdaf40-291e-44cf-8464-c7c01a8dd727" />
 
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/e6e15140-6bd1-4ba1-a4b0-bb05a0738058" />
+<img width="1920" height="1080" alt="20251204_11h42m17s_grim" src="https://github.com/user-attachments/assets/bfe834bb-da2b-49d5-a0f1-f508c3588437" />
 
-<img width="1920" height="1080" alt="20251122_20h07m58s_grim" src="https://github.com/user-attachments/assets/97feee29-ba02-4a02-9e30-771c3a6a1d98" />
-
-<img width="1920" height="1080" alt="20251122_20h10m13s_grim" src="https://github.com/user-attachments/assets/139e8f7b-3773-4d87-9593-5f684d0e8740" />
+<img width="1920" height="1080" alt="20251204_11h49m24s_grim" src="https://github.com/user-attachments/assets/206cba3c-99c7-47d5-b1b8-f0077b4955b0" />
 
 ---
 
 ## 📦 Packages
 
-🖥️ **Ghostty** – GPU-accelerated terminal  
+🖥️ **Kitty** – terminal  
 💤 **walker** – App launcher  
 🌀 **Hyprland** – Next-gen Wayland compositor  
 🖼️ **Hyprpaper** – Wallpaper manager  
@@ -64,7 +62,16 @@ To enable Gaming Mode:
 3. **Set the launch script** to:
 
 ```bash
-~/.config/hypr/scripts/gameboost.sh
+~/.config/hypr/scri Drag additional files here to add them to your repository
+
+Or
+/nvim/lua/plugins/rustace.lua
+Uploading 12 of 22 files
+/Assets/snorlax2.png
+/Assets/pixel.png
+/Assets/aesthetic.jpg
+/Assets/404-error-purple-3840x2160-18308.jpg
+pts/gameboost.sh
 ```
 
 4. **Set the post-game script** to:
@@ -79,10 +86,10 @@ To enable Gaming Mode:
 
 ## 📚 Default Programs
 
-* Terminal: `ghostty`
+* Terminal: `kitty`
 * Launcher: `walker`
 * File Manager: `thunar`
-* Browser: `chrome`
+* Browser: `zen browser`
 * Power Menu: `wlogout`
 * Code Editor: `nvim`
 
