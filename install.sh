@@ -12,7 +12,6 @@ configure_tty_boot() {
     case "$answer" in
         [yY]|[yY][eE][sS])
             echo "📝 Adding block to ~/.bash_profile..."
-
             BLOCK='
 
 # --- Auto start Hyprland on TTY1 ---
@@ -23,7 +22,6 @@ fi
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 '
-
             if ! grep -q "Auto start Hyprland on TTY1" "$BASH_PROFILE" 2>/dev/null; then
                 echo "$BLOCK" >> "$BASH_PROFILE"
                 echo "✅ Added to ~/.bash_profile"
@@ -88,7 +86,7 @@ install_hyprland_pack() {
         hyprland hyprpaper ghostty jq fastfetch \
         slurp nwg-look hyprlock hypridle hyprpolkitagent wlogout waybar swaync swayosd waypaper \
         xdg-user-dirs xdg-utils xdg-desktop-portal-wlr xdg-desktop-portal-hyprland \
-        xdg-desktop-portal-gtk nordic-darker-theme nvim feh obsidian
+        xdg-desktop-portal-gtk nordic-darker-theme nvim feh obsidian bpftune-git
 }
 
 install_system_tools_pack() {
@@ -123,6 +121,15 @@ ask_browser_installation() {
     esac
 }
 
+# --- Gaming pack prompt ---
+ask_gaming_installation() {
+    read -rp "🎮 Install Gaming Pack (Heroic, Proton GE, Gamescope, Gamemode)? (y/N) " response
+    case $response in
+        [yY]|[yY][eE][sS]) INSTALL_GAMING=true ;;
+        *) INSTALL_GAMING=false ;;
+    esac
+}
+
 # --- AUR installation ---
 install_aur_packages() {
     echo "📦 Installing AUR packages..."
@@ -131,10 +138,20 @@ install_aur_packages() {
     yay -S --needed --noconfirm "${aur_packages[@]}"
 }
 
+# --- Gaming Pack ---
+install_gaming_pack() {
+    if [ "$INSTALL_GAMING" = true ]; then
+        echo "🎮 Installing Gaming Pack..."
+        local gaming_packages=("heroic-games-launcher-bin" "proton-ge-custom-bin" "gamescope" "gamemode")
+        yay -S --needed --noconfirm "${gaming_packages[@]}"
+    else
+        echo "⏭️ Skipping Gaming Pack installation."
+    fi
+}
+
 # --- Config ---
 apply_common_config() {
     echo "📁 Applying configuration..."
-
     mkdir -p "$HOME/.config"
     sudo mkdir -p /usr/share/fonts/TTF /usr/share/icons
 
@@ -187,6 +204,7 @@ main() {
 
     configure_tty_boot
     ask_browser_installation
+    ask_gaming_installation
     setup_chaotic_aur
     system_update
     install_yay
@@ -197,10 +215,12 @@ main() {
     install_fonts_icons_pack
     install_network_pack
     install_aur_packages
+    install_gaming_pack
     apply_common_config
 
     echo "🎉 Installation complete!"
     [[ "$INSTALL_BROWSER" = false ]] && echo "📝 Zen browser was not installed."
+    [[ "$INSTALL_GAMING" = false ]] && echo "📝 Gaming Pack was not installed."
 }
 
 main
