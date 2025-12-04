@@ -4,13 +4,24 @@
 	<icon>utilities-terminal</icon>
 	<name>Open Terminal Here</name>
 	<submenu></submenu>
-	<unique-id>1749410661254742-1</unique-id>
-	<command>kitty --directory %f
+	<unique-id>1764675055713074-1</unique-id>
+	<command>kitty --working-directory %f
 </command>
-	<description>Example for a custom action</description>
+	<description></description>
 	<range></range>
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>
+</action>
+<action>
+	<icon></icon>
+	<name>sushi</name>
+	<submenu></submenu>
+	<unique-id>1764837567771471-1</unique-id>
+	<command>sushi %f
+</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
 </action>
 </actions>

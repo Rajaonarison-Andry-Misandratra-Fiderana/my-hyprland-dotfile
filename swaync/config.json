@@ -70,7 +70,7 @@
         },
         {
           "label": "󰌾",
-          "command": "hyprlock",
+          "command": "sh ~/.config/hypr/scripts/update-hyprlock.sh",
           "tooltip": "Lock the PC"
         },
         {
