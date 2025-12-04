@@ -3,11 +3,11 @@
 # Restaure les paramètres Hyprland normaux selon ta config
 hyprctl --batch "\
     keyword animations:enabled 1;\
-    keyword decoration:shadow:enabled 1;\
+    keyword decoration:shadow:enabled 0;\
     keyword decoration:blur:enabled 1;\
     keyword general:gaps_in 2;\
     keyword general:gaps_out 4;\
-    keyword decoration:rounding 10;\
+    keyword decoration:rounding 0;\
     keyword misc:vfr false"
 
 # NVIDIA mode normal
