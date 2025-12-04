@@ -4,6 +4,39 @@ IFS=$'\n\t'
 
 trap 'echo "❌ Error at line $LINENO"' ERR
 
+BASH_PROFILE="$HOME/.bash_profile"
+
+# --- TTY1 Hyprland autostart ---
+configure_tty_boot() {
+    read -rp "⚡ Automatically start Hyprland from TTY1? (y/N) " answer
+    case "$answer" in
+        [yY]|[yY][eE][sS])
+            echo "📝 Adding block to ~/.bash_profile..."
+
+            BLOCK='
+
+# --- Auto start Hyprland on TTY1 ---
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+    rm -f /run/user/1000/wayland-1.lock
+    exec hyprland >/dev/null 2>&1
+fi
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+'
+
+            if ! grep -q "Auto start Hyprland on TTY1" "$BASH_PROFILE" 2>/dev/null; then
+                echo "$BLOCK" >> "$BASH_PROFILE"
+                echo "✅ Added to ~/.bash_profile"
+            else
+                echo "ℹ️ Entry already exists, skipping."
+            fi
+            ;;
+        *)
+            echo "⏭️ Skipped, ~/.bash_profile unchanged."
+            ;;
+    esac
+}
+
 # --- Chaotic-AUR setup ---
 setup_chaotic_aur() {
     echo "🌌 Setting up Chaotic-AUR repository..."
@@ -12,14 +45,16 @@ setup_chaotic_aur() {
     sudo pacman -U --noconfirm \
         'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' \
         'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+
     if ! grep -q "^\[chaotic-aur\]" /etc/pacman.conf; then
-        echo "📝 Adding [chaotic-aur] repository..."
+        echo "📝 Adding [chaotic-aur] to pacman.conf..."
         sudo tee -a /etc/pacman.conf >/dev/null <<'EOF'
 
 [chaotic-aur]
 Include = /etc/pacman.d/chaotic-mirrorlist
 EOF
     fi
+
     echo "🔄 Syncing databases..."
     sudo pacman -Sy --noconfirm
 }
@@ -37,9 +72,8 @@ install_yay() {
         sudo pacman -S --noconfirm --needed git base-devel
         tmpdir=$(mktemp -d)
         git clone https://aur.archlinux.org/yay.git "$tmpdir/yay"
-        cd "$tmpdir/yay" || exit
+        cd "$tmpdir/yay"
         makepkg -si --noconfirm
-        cd - || exit
         rm -rf "$tmpdir"
         echo "✅ yay installed"
     else
@@ -47,7 +81,7 @@ install_yay() {
     fi
 }
 
-# --- Packs installation ---
+# --- Package packs ---
 install_hyprland_pack() {
     echo "🚀 Installing Hyprland Pack..."
     sudo pacman -S --noconfirm --needed \
@@ -80,7 +114,7 @@ install_network_pack() {
     sudo systemctl enable --now NetworkManager.service
 }
 
-# --- Chrome installation prompt ---
+# --- Chrome install prompt ---
 ask_chrome_installation() {
     read -rp "🌐 Install Google Chrome? (y/N) " response
     case $response in
@@ -97,13 +131,13 @@ install_aur_packages() {
     yay -S --needed --noconfirm "${aur_packages[@]}"
 }
 
-# --- Common configuration ---
+# --- Config ---
 apply_common_config() {
     echo "📁 Applying configuration..."
+
     mkdir -p "$HOME/.config"
     sudo mkdir -p /usr/share/fonts/TTF /usr/share/icons
 
-    # Copy configs except install.sh, fonts, readme
     for item in ./*; do
         name="$(basename "$item")"
         if [[ "$name" != "fonts" && "$name" != "install.sh" && ! "$name" =~ ^[Rr][Ee][Aa][Dd][Mm][Ee] ]]; then
@@ -111,7 +145,6 @@ apply_common_config() {
         fi
     done
 
-    # Fonts/icons
     if [[ -d "./fonts" ]]; then
         for font in ./fonts/*; do
             fname="$(basename "$font")"
@@ -123,32 +156,27 @@ apply_common_config() {
         done
     fi
 
-    # Make scripts executable
-    chmod +x "$HOME/.config/rofi/launchers/type-6/launcher.sh" 2>/dev/null || true
-    chmod +x "$HOME/.config/rofi/powermenu/type-2/powermenu.sh" 2>/dev/null || true
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+
     chmod +x "$HOME/.config/waybar/powermenu.sh" 2>/dev/null || true
+
     if [[ -d "$HOME/.config/hypr/scripts" ]]; then
-        shopt -s nullglob
         for script in "$HOME/.config/hypr/scripts/"*.sh; do
             [[ -f "$script" && "$(basename "$script")" != "gamemode.sh" ]] && chmod +x "$script"
         done
-        shopt -u nullglob
     fi
 
     sudo fc-cache -fv
 
-    # Fastfetch
     mkdir -p "$HOME/.config/fastfetch"
-    [[ -f "$HOME/.config/fastfetch/fastfetch.jsonc" ]] && mv "$HOME/.config/fastfetch/fastfetch.jsonc" "$HOME/.config/fastfetch/config.jsonc"
+    [[ -f "$HOME/.config/fastfetch/fastfetch.jsonc" ]] &&
+        mv "$HOME/.config/fastfetch/fastfetch.jsonc" "$HOME/.config/fastfetch/config.jsonc"
 
-    # Bashrc
     BASHRC="$HOME/.bashrc"
     grep -qxF '[[ $- != *i* ]] && return' "$BASHRC" || echo '[[ $- != *i* ]] && return' >> "$BASHRC"
     grep -qxF 'fastfetch' "$BASHRC" || echo 'fastfetch' >> "$BASHRC"
     grep -qxF "alias ls='ls --color=auto'" "$BASHRC" || echo "alias ls='ls --color=auto'" >> "$BASHRC"
     grep -qxF "alias grep='grep --color=auto'" "$BASHRC" || echo "alias grep='grep --color=auto'" >> "$BASHRC"
-    grep -qxF "PS1='\\[\\e[1;32m\\]\\u\\[\\e[0m\\] \\[\\e[1;34m\\]\\w\\[\\e[0m\\] '" "$BASHRC" || \
-        echo "PS1='\\[\\e[1;32m\\]\\u\\[\\e[0m\\] \\[\\e[1;34m\\]\\w\\[\\e[0m\\] '" >> "$BASHRC"
 
     echo "✅ Configuration applied!"
 }
@@ -156,6 +184,8 @@ apply_common_config() {
 # --- Main ---
 main() {
     echo "🚀 Starting installation..."
+
+    configure_tty_boot
     ask_chrome_installation
     setup_chaotic_aur
     system_update
@@ -170,7 +200,7 @@ main() {
     apply_common_config
 
     echo "🎉 Installation complete!"
-    [[ "$INSTALL_CHROME" = false ]] && echo "📝 Google Chrome not installed; use: yay -S google-chrome"
+    [[ "$INSTALL_CHROME" = false ]] && echo "📝 Google Chrome was not installed."
 }
 
 main
