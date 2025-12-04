@@ -88,7 +88,7 @@ install_hyprland_pack() {
         hyprland hyprpaper ghostty jq fastfetch \
         slurp nwg-look hyprlock hypridle hyprpolkitagent wlogout waybar swaync swayosd waypaper \
         xdg-user-dirs xdg-utils xdg-desktop-portal-wlr xdg-desktop-portal-hyprland \
-        xdg-desktop-portal-gtk nordic-darker-theme nvim
+        xdg-desktop-portal-gtk nordic-darker-theme nvim feh
 }
 
 install_system_tools_pack() {
@@ -98,7 +98,7 @@ install_system_tools_pack() {
 
 install_thunar_pack() {
     echo "📂 Installing Thunar Pack..."
-    sudo pacman -S --noconfirm --needed thunar tumbler ffmpegthumbnailer
+    sudo pacman -S --noconfirm --needed thunar tumbler ffmpegthumbnailer gvfs gvfs-mtp
 }
 
 install_fonts_icons_pack() {
@@ -109,7 +109,7 @@ install_fonts_icons_pack() {
 
 install_network_pack() {
     echo "🌐 Installing Networking Pack..."
-    sudo pacman -S --noconfirm --needed bluez bluez-utils rfkill networkmanager network-manager-applet
+    sudo pacman -S --noconfirm --needed bluez bluez-utils rfkill networkmanager network-manager-applet blueman
     sudo systemctl enable --now bluetooth.service
     sudo systemctl enable --now NetworkManager.service
 }
