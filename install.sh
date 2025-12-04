@@ -114,12 +114,12 @@ install_network_pack() {
     sudo systemctl enable --now NetworkManager.service
 }
 
-# --- Chrome install prompt ---
-ask_chrome_installation() {
-    read -rp "🌐 Install Google Chrome? (y/N) " response
+# --- Browser install prompt ---
+ask_browser_installation() {
+    read -rp "🌐 Install zen browser? (y/N) " response
     case $response in
-        [yY]|[yY][eE][sS]) INSTALL_CHROME=true ;;
-        *) INSTALL_CHROME=false ;;
+        [yY]|[yY][eE][sS]) INSTALL_BROWSER=true ;;
+        *) INSTALL_BROWSER=false ;;
     esac
 }
 
@@ -127,7 +127,7 @@ ask_chrome_installation() {
 install_aur_packages() {
     echo "📦 Installing AUR packages..."
     local aur_packages=("walker-bin" "elephant-bin" "elephant-providerlist-bin" "elephant-desktopapplications-bin")
-    $INSTALL_CHROME && aur_packages+=("google-chrome")
+    $INSTALL_BROWSER && aur_packages+=("zen-browser-bin")
     yay -S --needed --noconfirm "${aur_packages[@]}"
 }
 
@@ -186,7 +186,7 @@ main() {
     echo "🚀 Starting installation..."
 
     configure_tty_boot
-    ask_chrome_installation
+    ask_browser_installation
     setup_chaotic_aur
     system_update
     install_yay
@@ -200,7 +200,7 @@ main() {
     apply_common_config
 
     echo "🎉 Installation complete!"
-    [[ "$INSTALL_CHROME" = false ]] && echo "📝 Google Chrome was not installed."
+    [[ "$INSTALL_BROWSER" = false ]] && echo "📝 Zen browser was not installed."
 }
 
 main
