@@ -86,17 +86,17 @@ install_hyprland_pack() {
         hyprland hyprpaper ghostty jq fastfetch \
         slurp nwg-look hyprlock hypridle hyprpolkitagent wlogout waybar swaync swayosd waypaper \
         xdg-user-dirs xdg-utils xdg-desktop-portal-wlr xdg-desktop-portal-hyprland \
-        xdg-desktop-portal-gtk nordic-darker-theme nvim feh obsidian bpftune-git
+        xdg-desktop-portal-gtk nordic-darker-theme nvim feh obsidian bpftune-git 
 }
 
 install_system_tools_pack() {
     echo "🛠️ Installing System Tools Pack..."
-    sudo pacman -S --noconfirm --needed udiskie pamixer
+    sudo pacman -S --noconfirm --needed udiskie pamixer pavucontrol gzip npm
 }
 
 install_thunar_pack() {
     echo "📂 Installing Thunar Pack..."
-    sudo pacman -S --noconfirm --needed thunar tumbler ffmpegthumbnailer gvfs gvfs-mtp
+    sudo pacman -S --noconfirm --needed thunar thunar-volman tumbler ffmpegthumbnailer gvfs gvfs-mtp
 }
 
 install_fonts_icons_pack() {
