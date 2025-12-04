@@ -62,16 +62,7 @@ To enable Gaming Mode:
 3. **Set the launch script** to:
 
 ```bash
-~/.config/hypr/scri Drag additional files here to add them to your repository
-
-Or
-/nvim/lua/plugins/rustace.lua
-Uploading 12 of 22 files
-/Assets/snorlax2.png
-/Assets/pixel.png
-/Assets/aesthetic.jpg
-/Assets/404-error-purple-3840x2160-18308.jpg
-pts/gameboost.sh
+~/.config/hypr/scripts/gameboost.sh
 ```
 
 4. **Set the post-game script** to:
