@@ -7,12 +7,10 @@ return {
         "nvim-tree/nvim-web-devicons",
     },
     lazy = false,
-
     opts = {
         sources = { "filesystem", "buffers", "git_status" },
         open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
 
-        -- Recherche en temps réel
         enable_search_in_input = true,
         search_in_input = {
             debounce = 100,
@@ -20,13 +18,15 @@ return {
         },
 
         filesystem = {
-            bind_to_cwd = false,
+            delete_to_trash = true,
+            bind_to_cwd = true, -- Neo-tree suit toujours le cwd actif
             follow_current_file = {
-                enabled = false,
+                enabled = true, -- suit le buffer actif
+                leave_dirs_open = true, -- laisse les dossiers ouverts
+                highlight = "NeoTreeFileNameCurrent",
             },
             use_libuv_file_watcher = true,
 
-            -- Filtres
             filtered_items = {
                 visible = true,
                 hide_dotfiles = false,

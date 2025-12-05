@@ -8,7 +8,7 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 require("luasnip.loaders.from_vscode").lazy_load()
 
-vim.cmd.colorscheme("noirblaze")
+vim.cmd.colorscheme("no-clown-fiesta")
 -- =========================================
 -- 🔍 TELESCOPE
 -- =========================================
@@ -57,3 +57,49 @@ require("bufferline").setup({
         background = { fg = "#a9b1d6", bg = "#1e1e2e" },
     },
 })
+
+require("oil").setup({
+    default_file_explorer = true,
+
+    columns = {
+        "icon",
+    },
+
+    keymaps = {
+        ["h"] = "actions.parent",
+        ["l"] = "actions.select",
+
+        -- tu gardes le reste si tu veux :
+        ["g?"] = "actions.show_help",
+        ["<CR>"] = "actions.select",
+        ["<C-s>"] = { "actions.select", opts = { vertical = true } },
+        ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
+        ["<C-t>"] = { "actions.select", opts = { tab = true } },
+        ["<C-p>"] = "actions.preview",
+        ["<C-c>"] = "actions.close",
+        ["<C-l>"] = "actions.refresh",
+        ["_"] = "actions.open_cwd",
+        ["`"] = "actions.cd",
+        ["~"] = { "actions.cd", opts = { scope = "tab" } },
+        ["gs"] = "actions.change_sort",
+        ["gx"] = "actions.open_external",
+        ["g."] = "actions.toggle_hidden",
+        ["g\\"] = "actions.toggle_trash",
+    },
+    view_options = {
+        show_hidden = false,
+        natural_order = "fast",
+        sort = {
+            { "type", "asc" },
+            { "name", "asc" },
+        },
+    },
+
+    preview_win = {
+        update_on_cursor_moved = true,
+        preview_method = "fast_scratch",
+    },
+})
+
+-- Après require("neo-tree").setup({...})
+vim.api.nvim_set_hl(0, "NeoTreeFileNameCurrent", { fg = "#ff9e64", bg = "#2a2a2a", bold = true })

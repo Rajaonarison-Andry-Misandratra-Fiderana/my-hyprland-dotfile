@@ -5,6 +5,10 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "🔍 Find text" }
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "🔍 Find in buffers" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "🔍 Help" })
 
+-- Oil
+vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>", { desc = "Open parent directory" })
+
+-- luasnip
 local ls = require("luasnip")
 
 vim.keymap.set({ "i" }, "<C-K>", function()
@@ -23,6 +27,7 @@ vim.keymap.set({ "i", "s" }, "<C-E>", function()
     end
 end)
 
+-- BufferNavigation
 vim.keymap.set("n", "<C-b>", "<cmd>BufferLinePick<cr>")
 vim.keymap.set("n", "<C-A-1>", "<cmd>BufferLineGoToBuffer 1<cr>")
 vim.keymap.set("n", "<C-A-2>", "<cmd>BufferLineGoToBuffer 2<cr>")
