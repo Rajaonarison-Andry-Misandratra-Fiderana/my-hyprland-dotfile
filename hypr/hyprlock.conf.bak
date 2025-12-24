@@ -7,7 +7,7 @@ general {
 # BACKGROUND
 background {
   monitor =
-    path = /home/fiderana/.config/Assets/kia-ev5-wkndr-3840x2160-24856.jpg
+    path = /home/fiderana/.config/Assets/os-x-mavericks-tide-5120x2880-24077.jpg
   blur_passes = 3
   color = rgba(30, 30, 46, 1.0)  # 1e1e2e
 }
