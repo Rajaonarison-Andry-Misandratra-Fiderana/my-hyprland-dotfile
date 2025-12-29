@@ -8,7 +8,7 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.smartindent = true
 vim.opt.wrap = true
-vim.cmd.colorscheme("hubbamax")
+vim.cmd.colorscheme("no-clown-fiesta")
 
 require("luasnip.loaders.from_vscode").lazy_load()
 -- =========================================
