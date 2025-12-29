@@ -10,27 +10,19 @@
 
 ## 🖼️ Preview 
 
-<img width="1920" height="1080" alt="20251204_11h45m13s_grim" src="https://github.com/user-attachments/assets/344e97bc-ca81-43a4-9a48-41263ff69dbe" />
+<img width="1920" height="1080" alt="20251229_10h38m22s_grim" src="https://github.com/user-attachments/assets/814f4fdd-fd0c-4247-b0af-da1d82f46807" />
+<img width="1920" height="1080" alt="20251229_10h33m06s_grim" src="https://github.com/user-attachments/assets/7fb6ec1a-06ba-4596-8c73-f8a8d09edd7e" />
+<img width="1920" height="1080" alt="20251229_10h33m42s_grim" src="https://github.com/user-attachments/assets/95ffd266-3e9e-4736-a825-09ce9e65dd0b" />
+<img width="1920" height="1080" alt="20251229_10h34m01s_grim" src="https://github.com/user-attachments/assets/b43beb00-c3f3-488b-a726-c103900e9c82" />
+<img width="1920" height="1080" alt="20251229_10h38m51s_grim" src="https://github.com/user-attachments/assets/3e36731d-9fb3-4d1c-ae21-c6a24140f639" />
 
-<img width="1920" height="1080" alt="20251204_11h16m12s_grim" src="https://github.com/user-attachments/assets/9f3cfe10-b928-4b63-9fa3-96cbf6c88fb0" />
-
-<img width="1920" height="1080" alt="20251204_11h16m48s_grim" src="https://github.com/user-attachments/assets/adcdaf40-291e-44cf-8464-c7c01a8dd727" />
-
-<img width="1920" height="1080" alt="20251204_11h42m17s_grim" src="https://github.com/user-attachments/assets/bfe834bb-da2b-49d5-a0f1-f508c3588437" />
-
-<img width="1920" height="1080" alt="20251224_19h15m58s_grim" src="https://github.com/user-attachments/assets/8355b20d-b6cc-42bd-9d06-7751c71c76c4" />
-
-
-<img width="1920" height="1080" alt="20251204_12h55m25s_grim" src="https://github.com/user-attachments/assets/bd5fede7-00ef-4be0-9ac8-b4a24df66a2b" />
-
-<img width="1920" height="1080" alt="20251204_11h49m24s_grim" src="https://github.com/user-attachments/assets/206cba3c-99c7-47d5-b1b8-f0077b4955b0" />
 
 ---
 
 ## 📦 Packages
 
 🖥️ **Kitty** – terminal  
-💤 **walker** – App launcher  
+💤 **Rofi** – App launcher  
 🌀 **Hyprland** – Next-gen Wayland compositor  
 🖼️ **Hyprpaper** – Wallpaper manager  
 📏 **Slurp** – Region selector for screenshots  
@@ -83,7 +75,7 @@ To enable Gaming Mode:
 ## 📚 Default Programs
 
 * Terminal: `kitty`
-* Launcher: `walker`
+* Launcher: `Rofi`
 * File Manager: `thunar`
 * Browser: `zen browser`
 * Power Menu: `wlogout`
