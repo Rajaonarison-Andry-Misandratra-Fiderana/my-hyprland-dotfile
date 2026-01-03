@@ -1,23 +1,30 @@
 {
-  "height": 55,
-  "spacing": 5,
+  "height": 60,
+  "spacing": 8,
+  "margin-top": 7,
+  "margin-bottom": -3,
+  "margin-left": 10,
+  "margin-right": 10,
 
   "modules-left": ["custom/arch", "hyprland/workspaces"],
   "modules-center": ["custom/cava"],
-  "modules-right": [
-    "tray",
-    "pulseaudio",
-    "backlight",
-    "network",
-    "battery",
-    "clock",
-    "custom/notification",
-  ],
+  "modules-right": ["tray", "battery", "clock", "custom/notification"],
 
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
-    "format-icons": {},
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十",
+    },
     "sort-by-number": true,
     "persistent-workspaces": {
       "*": 4,
@@ -25,8 +32,8 @@
   },
 
   "custom/arch": {
-    "format": "",
-    "on-click": "walker",
+    "format": "󰣇",
+    "on-click": "sh ~/.config/rofi/launchers/launcher.sh",
     "tooltip": false,
   },
 
@@ -34,68 +41,44 @@
     "format": "{}",
     "exec": "~/.config/waybar/cava.sh",
     "tooltip": false,
+    "max-length": 50,
   },
 
   "clock": {
     "format": "{:%I:%M %p}",
     "format-alt": "{:%Y-%m-%d}",
-    "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
   },
 
-  "network": {
-    "format-wifi": "  {signalStrength}%",
-    "format-ethernet": "{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
-  },
-
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{volume}% {icon}  {format_source}",
-    "format-bluetooth-muted": "  {format_source}",
-    "format-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""],
-    },
-    "on-click": "pamixer -t",
-    "on-click-right": "pavucontrol",
-    "tooltip": false,
-  },
-
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon}  {percent}%",
-    "format-icons": ["", "", ""],
-    "on-click": "pgrep -x hyprsunset && pkill hyprsunset || hyprsunset -t 5000",
-    "on-click-right": "hyprsunset -t 6500",
-    "tooltip": false,
+  "tray": {
+    "icon-size": 18,
+    "spacing": 8,
   },
 
   "battery": {
-    "format": "{capacity}% {icon}",
-    "format-icons": {
-      "charging": ["󰂄", "󰂅"],
-      "discharging": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-      "full": ["󰂅"],
-    },
-    "interval": 5,
+    "format": "{icon} {capacity}%",
     "tooltip": false,
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10,
+    },
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󱘖 {capacity}%",
+    "format-full": "󰂅 {capacity}%",
+    "format-icons": {
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "discharging": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    },
   },
+
   "custom/notification": {
     "tooltip": false,
-    "format": "<span size='16pt'>{icon}</span>",
+    "format": "{icon}",
     "format-icons": {
       "notification": "󱅫",
       "none": "󰂜",
-      "dnd-notification": "󰂠",
+      "dnd-notification": "󰂛",
       "dnd-none": "󰪓",
       "inhibited-notification": "󰂛",
       "inhibited-none": "󰪑",

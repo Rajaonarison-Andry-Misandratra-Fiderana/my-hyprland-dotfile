@@ -8,6 +8,7 @@ window#waybar {
   background: rgba(0, 0, 0, 1);
   transition: background-color 0.5s;
   color: #ffffff;
+  border-radius: 14px;
 }
 
 window#waybar.hidden {
@@ -22,7 +23,7 @@ window#waybar.hidden {
 #workspaces button {
   padding: 6px 18px;
   margin: 6px 3px;
-  border-radius: 12px;
+  border-radius: 16px;
   background: rgba(0, 0, 0, 0);
   color: #ffffff;
   min-width: 0;
@@ -48,8 +49,9 @@ window#waybar.hidden {
 
 /* Logo Arch */
 #custom-arch {
+  font-size: 25px;
   background: rgba(255, 255, 255, 0);
-  padding: 0 25px;
+  padding: 0 25px 0 35px;
   border-radius: 16px;
   color: #ffffff;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
@@ -70,6 +72,7 @@ window#waybar.hidden {
 #network,
 #clock,
 #tray {
+  font-size: 14px;
   border-radius: 12px;
   margin: 6px 3px;
   padding: 6px 12px;
@@ -93,26 +96,20 @@ window#waybar.hidden {
 }
 
 /* Batterie */
-#battery.charging {
-  color: #34c759;
-  background: rgba(52, 199, 89, 0.15);
+
+#battery {
+  color: #fff; /* blanc par défaut */
 }
 
-#battery.warning {
-  color: #ff9500;
-  background: rgba(255, 149, 0, 0.15);
+/* Rouge si batterie < 15% */
+#battery.discharging {
+  color: #ff0000;
 }
-
-#battery.critical,
-#battery.urgent {
-  color: #ff3b30;
-  background: rgba(255, 59, 48, 0.15);
-}
-
 /* Notification */
 #custom-notification {
+  font-size: 25px;
   margin-right: 5px;
-  padding: 0 20px 0 20px;
+  padding: 0 35px 0 20px;
   color: #ffffff;
   transition: 1s ease;
   background: rgba(255, 255, 255, 0);
