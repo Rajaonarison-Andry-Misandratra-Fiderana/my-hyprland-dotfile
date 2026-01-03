@@ -81,7 +81,7 @@ install_hyprland_pack() {
         xdg-user-dirs xdg-utils \
         xdg-desktop-portal-wlr xdg-desktop-portal-hyprland \
         xdg-desktop-portal-gtk nordic-darker-theme \
-        nvim feh obsidian bpftune-git rofi
+        nvim feh obsidian bpftune-git rofi imagemagick
 }
 
 install_system_tools_pack() {
