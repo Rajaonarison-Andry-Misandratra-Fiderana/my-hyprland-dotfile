@@ -6,6 +6,9 @@
   "margin-left": 10,
   "margin-right": 10,
 
+  "on-sigusr1": "hide",
+  "on-sigusr2": "show",
+
   "modules-left": ["custom/arch", "hyprland/workspaces"],
   "modules-center": ["custom/cava"],
   "modules-right": ["tray", "battery", "clock", "custom/notification"],
@@ -61,7 +64,7 @@
     "interval": 5,
     "states": {
       "warning": 20,
-      "critical": 10,
+      "critical": 15,
     },
     "format-charging": "󰂄 {capacity}%",
     "format-plugged": "󱘖 {capacity}%",

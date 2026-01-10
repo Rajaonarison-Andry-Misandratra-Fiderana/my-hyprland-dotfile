@@ -6,7 +6,7 @@
     },
     {
         "label": "lock",
-        "action": "hyprlock",
+        "action": "sh ~/.config/hypr/scripts/update-hyprlock.sh && hyprlock",
         "text": "Lock",
         "keybind": "l"
     },

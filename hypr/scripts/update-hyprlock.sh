@@ -40,6 +40,3 @@ else
   echo "Config hyprlock introuvable: $HYPRLOCK_CONF"
   exit 1
 fi
-
-# Lancer hyprlock
-hyprlock

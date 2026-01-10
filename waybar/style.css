@@ -98,12 +98,31 @@ window#waybar.hidden {
 /* Batterie */
 
 #battery {
-  color: #fff; /* blanc par défaut */
+  color: #fff;
 }
 
-/* Rouge si batterie < 15% */
-#battery.discharging {
+#battery.critical {
   color: #ff0000;
+}
+#battery.warning {
+  color: orange;
+}
+
+#battery.charging {
+  animation: blink 5s infinite;
+  color: rgb(49, 171, 65);
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /* Notification */
 #custom-notification {
