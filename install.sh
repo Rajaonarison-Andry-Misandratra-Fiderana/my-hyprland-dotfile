@@ -115,7 +115,7 @@ ask_gaming_installation() {
 # --- AUR ---
 install_aur_packages() {
     local pkgs=()
-    $INSTALL_BROWSER && pkgs+=(zen-browser-bin)
+    $INSTALL_BROWSER && pkgs+=(zen-browser-bin wl-gammarelay-rs)
     [[ ${#pkgs[@]} -gt 0 ]] && yay -S --needed --noconfirm "${pkgs[@]}"
 }
 
