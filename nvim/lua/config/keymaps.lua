@@ -7,7 +7,6 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "🔍 Help" })
 --
 -- -- Oil
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>", { desc = "Open parent directory" })
--- vim.keymap.set("n", "<leader>E", "<cmd>NvimTreeToggle<cr>", { desc = "Open parent directory" })
 --
 --- BufferNavigation
 vim.keymap.set("n", "<C-b>", "<cmd>BufferLinePick<cr>")

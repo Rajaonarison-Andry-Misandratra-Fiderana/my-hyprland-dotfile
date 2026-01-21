@@ -11,7 +11,13 @@
 
   "modules-left": ["custom/arch", "hyprland/workspaces"],
   "modules-center": ["custom/cava"],
-  "modules-right": ["tray", "battery", "clock", "custom/notification"],
+  "modules-right": [
+    "tray",
+    "battery",
+    "custom/wl-gammarelay-brightness",
+    "clock",
+    "custom/notification",
+  ],
 
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -33,7 +39,13 @@
       "*": 4,
     },
   },
-
+  "custom/wl-gammarelay-brightness": {
+    "format": "{}% ",
+    "exec": "wl-gammarelay-rs watch {bp}",
+    "on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.02",
+    "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02",
+    "tooltip": false,
+  },
   "custom/arch": {
     "format": "󰣇",
     "on-click": "sh ~/.config/rofi/launchers/launcher.sh",

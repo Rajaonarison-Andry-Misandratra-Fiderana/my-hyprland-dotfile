@@ -71,7 +71,8 @@ window#waybar.hidden {
 #pulseaudio,
 #network,
 #clock,
-#tray {
+#tray,
+#custom-wl-gammarelay-brightness {
   font-size: 14px;
   border-radius: 12px;
   margin: 6px 3px;

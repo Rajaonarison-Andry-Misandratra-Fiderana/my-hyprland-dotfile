@@ -1,6 +1,6 @@
           {
         "label": "update",
-        "action": "sudo pacman -Syu",
+        "action": "kitty sudo pacman -Syu",
         "text": "Update",
         "keybind": "u"
     },
@@ -27,8 +27,14 @@
     },
 
     {
-        "label": "shutdown",
+        "label": "poweroff",
         "action": "systemctl poweroff",
-        "text": "Shutdown",
+        "text": "Poweroff",
+        "keybind": "s"
+    },
+    {
+        "label": "hibernate",
+        "action": "systemctl hibernate",
+        "text": "Hibernate",
         "keybind": "h"
     }

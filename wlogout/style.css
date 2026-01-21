@@ -31,7 +31,8 @@ button:hover {
 #update,
 #logout,
 #suspend,
-#shutdown,
+#poweroff,
+#hibernate,
 #reboot {
   background-repeat: no-repeat;
 }
@@ -52,10 +53,13 @@ button:hover {
   background-image: url("icons/suspend.svg");
 }
 
-#shutdown {
+#poweroff {
   background-image: url("icons/shutdown.svg");
 }
 
 #reboot {
   background-image: url("icons/reboot.svg");
+}
+#hibernate {
+  background-image: url("icons/hibernation.svg");
 }
