@@ -1,0 +1,40 @@
+          {
+        "label": "update",
+        "action": "kitty sudo pacman -Syu",
+        "text": "Update",
+        "keybind": "u"
+    },
+    {
+        "label": "lock",
+        "action": "sh ~/.config/hypr/scripts/update-hyprlock.sh && hyprlock",
+        "text": "Lock",
+        "keybind": "l"
+    },
+
+
+    {
+        "label": "suspend",
+        "action": "systemctl suspend",
+        "text": "Suspend",
+        "keybind": "s"
+    },
+
+    {
+        "label": "reboot",
+        "action": "systemctl reboot",
+        "text": "Reboot",
+        "keybind": "r"
+    },
+
+    {
+        "label": "poweroff",
+        "action": "systemctl poweroff",
+        "text": "Poweroff",
+        "keybind": "s"
+    },
+    {
+        "label": "hibernate",
+        "action": "systemctl hibernate",
+        "text": "Hibernate",
+        "keybind": "h"
+    }

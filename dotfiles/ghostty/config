@@ -1,0 +1,52 @@
+# This is the configuration file for Ghostty.
+#
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   /home/fiderana/.config/ghostty/config
+#
+# The template does not set any default options, since Ghostty ships
+# with sensible defaults for all options. Users should only need to set
+# options that they want to change from the default.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+#
+# Ghostty can reload the configuration while running by using the menu
+# options or the bound key (default: Command + Shift + comma on macOS and
+# Control + Shift + comma on other platforms). Not all config options can be
+# reloaded while running; some only apply to new windows and others may require
+# a full restart to take effect.
+
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+font-family = JetBrain Mono
+font-size = 16
+window-padding-x = 0
+window-padding-y = 0
+resize-overlay-duration = 0s 00ms
+
+shell-integration=detect
+theme = Abernathy
+mouse-hide-while-typing = true
+background-opacity = 0.9
+background-blur = true
+working-directory = window-inherit-working-directory
+window-vsync = false
+window-decoration = none
+confirm-close-surface = false
+quit-after-last-window-closed = false
+
+
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+h=previous_tab
+keybind = ctrl+shift+l=next_tab
+keybind = ctrl+shift+w=close_tab
+keybind = ctrl+shift+alt+t=toggle_quick_terminal
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard

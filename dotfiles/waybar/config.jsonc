@@ -1,0 +1,116 @@
+{
+  "height": 60,
+  "spacing": 8,
+  "margin-top": 7,
+  "margin-bottom": -3,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "on-sigusr1": "hide",
+  "on-sigusr2": "show",
+  "start_hidden": false,
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "gtk-layer-shell": true,
+  "exclusive": true,
+  "modules-left": ["custom/arch", "hyprland/workspaces"],
+  "modules-center": ["custom/cava"],
+  "modules-right": [
+    "tray",
+    "battery",
+    "custom/wl-gammarelay-brightness",
+    "clock",
+    "custom/notification",
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十",
+    },
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "*": 4,
+    },
+  },
+  "custom/wl-gammarelay-brightness": {
+    "format": "{}% ",
+    "exec": "wl-gammarelay-rs watch {bp}",
+    "on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.02",
+    "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02",
+    "on-click": "pgrep -x hyprsunset >/dev/null && pkill hyprsunset || hyprsunset --temperature 5000 &",
+    "tooltip": false,
+  },
+  "custom/arch": {
+    "format": "󰣇",
+    "on-click": "sh ~/.config/rofi/launchers/launcher.sh",
+    "tooltip": false,
+  },
+
+  "custom/cava": {
+    "format": "{}",
+    "exec": "~/.config/waybar/cava.sh",
+    "tooltip": false,
+    "max-length": 50,
+  },
+
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%Y-%m-%d}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 8,
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "tooltip": false,
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 15,
+    },
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󱘖 {capacity}%",
+    "format-full": "󰂅 {capacity}%",
+    "format-icons": {
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "discharging": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    },
+  },
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂛",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
+  },
+}

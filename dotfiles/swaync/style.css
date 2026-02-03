@@ -1,0 +1,332 @@
+@define-color cc-bg rgba(10, 10, 10, 0.7);
+@define-color noti-border-color rgba(255, 255, 255, 0.1);
+@define-color noti-bg rgba(30, 30, 30, 0.6);
+@define-color noti-bg-darker rgba(40, 40, 40, 0.7);
+@define-color noti-bg-hover rgba(50, 50, 50, 0.8);
+@define-color text-color #e0e0e0;
+@define-color text-color-disabled #666666;
+@define-color bg-selected #4a90e2;
+@define-color border-green #4a90e2;
+@define-color border-inactive rgba(255, 255, 255, 0.15);
+@define-color red-base #e74c3c;
+@define-color red-hover #ff6b5b;
+@define-color green-base #2ecc71;
+@define-color blue-base #3498db;
+
+* {
+  font-family: "JetBrainsMono NFM", "Inter", sans-serif;
+}
+
+/* === CONTROL CENTER PRINCIPAL === */
+.control-center {
+  background: rgba(15, 15, 15, 0.95);
+  border: 1px solid @border-inactive;
+  border-radius: 16px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  margin: 4px;
+  padding: 2px;
+  backdrop-filter: blur(20px);
+}
+
+/* === NOTIFICATIONS === */
+.notification-row {
+  outline: none;
+  margin: 0;
+  padding: 4px 2px;
+  transition: all 0.2s ease;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+  opacity: 1;
+  background: rgba(74, 144, 226, 0.15);
+  border-radius: 12px;
+  padding-left: 6px;
+}
+
+.notification {
+  background: rgba(30, 30, 30, 0.6);
+  border: 1px solid @border-inactive;
+  border-radius: 12px;
+  margin: 2px 0;
+  padding: 10px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.notification:hover {
+  border-color: @bg-selected;
+  box-shadow: 0 4px 16px rgba(74, 144, 226, 0.3);
+  margin: 3px 1px;
+  background: rgba(40, 40, 40, 0.7);
+}
+
+/* Bouton fermer */
+.close-button {
+  background: linear-gradient(135deg, @red-base, @red-hover);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 3px 6px;
+  margin: 2px;
+  opacity: 0;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(231, 76, 60, 0.3);
+  font-size: 10px;
+  min-height: 20px;
+  min-width: 20px;
+}
+
+.notification:hover .close-button {
+  opacity: 1;
+}
+
+.close-button:hover {
+  background: linear-gradient(135deg, @red-hover, #ff8a7a);
+  box-shadow: 0 3px 8px rgba(255, 107, 91, 0.4);
+}
+
+/* Actions de notification */
+.notification-action {
+  background: rgba(40, 40, 40, 0.7);
+  border: 1px solid @border-inactive;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  padding: 6px 8px;
+  margin: 0;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(5px);
+}
+
+.notification-default-action,
+.notification-action {
+  transition: all 0.2s ease;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  background: @bg-selected;
+  color: white;
+  border-color: @border-green;
+}
+
+/* Réponse inline */
+.inline-reply-entry {
+  background: rgba(40, 40, 40, 0.7);
+  color: @text-color;
+  caret-color: @text-color;
+  border: 1px solid @noti-border-color;
+  border-radius: 6px;
+  padding: 6px;
+  margin: 3px 0;
+  backdrop-filter: blur(5px);
+}
+
+.inline-reply-button {
+  background: rgba(30, 30, 30, 0.6);
+  border: 1px solid @noti-border-color;
+  color: @text-color;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 3px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 11px;
+}
+
+.inline-reply-button:disabled {
+  background: transparent;
+  color: @text-color-disabled;
+  border: 1px solid transparent;
+}
+
+.inline-reply-button:hover {
+  background: @bg-selected;
+  color: white;
+  border-color: @border-green;
+}
+
+/* === TEXTE ET CONTENU === */
+.summary,
+.time,
+.body {
+  text-shadow: none;
+  margin: 1px 0;
+}
+
+.summary {
+  font-size: 12px;
+  font-weight: 700;
+  color: @green-base;
+  letter-spacing: -0.05px;
+}
+
+.time {
+  font-size: 10px;
+  font-weight: 600;
+  color: @text-color-disabled;
+  margin-right: 6px;
+  opacity: 0.8;
+}
+
+.body {
+  font-size: 11px;
+  font-weight: 400;
+  color: @text-color;
+  line-height: 1.3;
+  opacity: 0.9;
+}
+
+/* === WIDGETS === */
+.widget-title {
+  color: @text-color;
+  background: rgba(30, 30, 30, 0.6);
+  padding: 8px 12px;
+  margin: 6px 4px 4px 4px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  border: 1px solid @border-inactive;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.widget-title > button {
+  font-size: 0.7rem;
+  color: @text-color;
+  background: rgba(30, 30, 30, 0.6);
+  border: 1px solid @border-inactive;
+  border-radius: 6px;
+  padding: 4px 8px;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.widget-title > button:hover {
+  background: @red-base;
+  color: white;
+  box-shadow: 0 2px 6px rgba(231, 76, 60, 0.3);
+}
+
+/* Grille de boutons */
+.widget-buttons-grid {
+  background: rgba(30, 30, 30, 0.6);
+  padding: 8px;
+  margin: 4px;
+  border-radius: 12px;
+  border: 1px solid @border-inactive;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  background: rgba(30, 30, 30, 0.6);
+  color: @text-color;
+  border: 1px solid @border-inactive;
+  border-radius: 10px;
+  margin: 3px;
+  transition: all 0.25s ease;
+  font-size: 1.4rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
+  min-height: 45px;
+  min-width: 45px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: @bg-selected;
+  color: white;
+  border-color: @border-green;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:checked {
+  background: @bg-selected;
+  color: white;
+  border-color: @border-green;
+}
+
+/* Volume et rétroéclairage - ICÔNES EN BLANC */
+.widget-volume,
+.widget-backlight {
+  background: rgba(30, 30, 30, 0.6);
+  padding: 8px 12px;
+  margin: 4px;
+  border-radius: 12px;
+  border: 1px solid @border-inactive;
+  color: @text-color;
+  font-size: 1.4rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Barres de progression en bleu */
+.widget-backlight progressbar progress,
+.widget-volume progressbar progress {
+  background: linear-gradient(90deg, @bg-selected, #5ca2ff);
+}
+
+/* MPRIS */
+.widget-mpris {
+  color: @text-color;
+  background: rgba(30, 30, 30, 0.6);
+  padding: 10px;
+  margin: 4px;
+  border-radius: 12px;
+  border: 1px solid @border-inactive;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.widget-mpris > box > button,
+.widget-mpris-player,
+.widget-mpris-album-art {
+  border-radius: 6px;
+  padding: 6px 8px;
+  margin: 3px;
+  transition: all 0.2s ease;
+  font-size: 11px;
+  color: @text-color;
+}
+
+.widget-mpris > box > button:hover {
+  background: @bg-selected;
+  color: white;
+}
+
+/* Animation d'entrée */
+.notification-row {
+  animation: slideInFade 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes slideInFade {
+  from {
+    opacity: 0;
+    padding-left: 10px;
+  }
+  to {
+    opacity: 1;
+    padding-left: 2px;
+  }
+}
+
+/* Scrollbar */
+scrollbar {
+  background: rgba(40, 40, 40, 0.5);
+  border-radius: 2px;
+}
+
+scrollbar slider {
+  background: @border-inactive;
+  border-radius: 3px;
+  min-width: 4px;
+}
+
+scrollbar slider:hover {
+  background: @bg-selected;
+}

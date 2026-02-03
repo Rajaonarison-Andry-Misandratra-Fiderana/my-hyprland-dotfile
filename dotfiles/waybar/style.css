@@ -1,0 +1,155 @@
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 1);
+  transition: background-color 0.5s;
+  color: #ffffff;
+  border-radius: 14px;
+}
+
+window#waybar.hidden {
+  opacity: 0.5;
+}
+
+/* Workspaces */
+#workspaces {
+  background-color: transparent;
+}
+
+#workspaces button {
+  padding: 6px 18px;
+  margin: 6px 3px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  min-width: 0;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+#workspaces button.active,
+#workspaces button:hover {
+  color: #ffffff;
+  background: rgba(0, 122, 255, 0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 1px 2px rgba(0, 122, 255, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+#workspaces button.urgent {
+  background: rgba(255, 59, 48, 0.3);
+}
+
+/* Logo Arch */
+#custom-arch {
+  font-size: 25px;
+  background: rgba(255, 255, 255, 0);
+  padding: 0 25px 0 35px;
+  border-radius: 16px;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  transition: all 1s ease;
+}
+
+#custom-notification:hover,
+#custom-arch:hover {
+  color: #0096ff;
+  text-shadow: 0 0 12px rgba(0, 150, 255, 0.6);
+}
+
+/* Modules */
+#memory,
+#battery,
+#backlight,
+#pulseaudio,
+#network,
+#clock,
+#tray,
+#custom-wl-gammarelay-brightness {
+  font-size: 14px;
+  border-radius: 12px;
+  margin: 6px 3px;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+#memory:hover,
+#battery:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#network:hover,
+#clock:hover,
+#tray:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Batterie */
+
+#battery {
+  color: #fff;
+}
+
+#battery.critical {
+  color: #ff0000;
+}
+#battery.warning {
+  color: orange;
+}
+
+#battery.charging {
+  animation: blink 5s infinite;
+  color: rgb(49, 171, 65);
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Notification */
+#custom-notification {
+  font-size: 25px;
+  margin-right: 5px;
+  padding: 0 35px 0 20px;
+  color: #ffffff;
+  transition: 1s ease;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 12px;
+}
+
+/* Tooltip */
+tooltip {
+  border-radius: 16px;
+  padding: 15px;
+  background: rgba(40, 40, 40, 0.95);
+  color: #ffffff;
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+tooltip label {
+  padding: 5px;
+  background: transparent;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
