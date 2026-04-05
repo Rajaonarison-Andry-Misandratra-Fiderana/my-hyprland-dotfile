@@ -1,184 +1,226 @@
--- =========================================
--- CORE & OPTIONS
--- =========================================
+-- ==========================================================================
+-- BOOTSTRAP LAZY
+-- ==========================================================================
 require("config.lazy")
-local keymap = require("vim.keymap")
 
-vim.opt.termguicolors = true
-vim.opt.cursorline = true
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.swapfile = false
-vim.opt.undofile = true
-vim.opt.backup = false
-vim.opt.writebackup = false
-vim.opt.smartindent = true
-vim.opt.wrap = true
-vim.cmd.colorscheme("tokyonight-night")
-vim.api.nvim_set_hl(0, "LineNr", { fg = "#FFFFFF" })
--- =========================================
--- LUASNIP
--- =========================================
--- require("luasnip.loaders.from_vscode").lazy_load()
+-- ==========================================================================
+-- VIM OPTIONS
+-- ==========================================================================
+local opt = vim.opt
 
--- =========================================
--- TELESCOPE
--- =========================================
-require("telescope").setup({
-  defaults = {
-    prompt_prefix = " ",
-    selection_caret = " ",
-    sorting_strategy = "ascending",
-    layout_config = { prompt_position = "top" },
-    path_display = { "smart" },
-    file_ignore_patterns = { "node_modules", ".git", "target", "build", "dist", "__pycache__" },
+-- Apparence & Interface
+opt.termguicolors = true
+opt.cursorline = true
+opt.number = true
+opt.relativenumber = true
+opt.wrap = false -- pas de line wrap sur du code
+opt.linebreak = true -- wrap sur les mots si activé ponctuellement
+opt.signcolumn = "yes:4" -- 1 colonne suffit avec statuscol.nvim
+opt.scrolloff = 8 -- contexte vertical au scroll
+opt.sidescrolloff = 8 -- contexte horizontal
+opt.splitright = true -- vsplit à droite
+opt.splitbelow = true -- hsplit en bas
+opt.showmode = false -- inutile avec une statusline
+
+-- Fichiers & Historique
+opt.swapfile = false
+opt.backup = false
+opt.writebackup = false
+opt.undofile = true -- undo persistant entre sessions
+opt.clipboard = "unnamedplus" -- sync avec clipboard système
+
+-- Performance
+opt.updatetime = 200 -- réduit délai CursorHold (LSP, gitsigns)
+opt.timeoutlen = 300 -- délai keymaps (whichkey friendly)
+opt.lazyredraw = false -- laisser false avec Neovim moderne
+
+-- Indentation
+opt.smartindent = true
+opt.expandtab = true -- espaces au lieu de tabs
+opt.shiftwidth = 2 -- indentation 2 espaces (React/TS standard)
+opt.tabstop = 2
+opt.softtabstop = 2
+
+-- Recherche
+opt.ignorecase = true
+opt.smartcase = true -- sensible à la casse si majuscule présente
+opt.hlsearch = false -- pas de highlight persistant après recherche
+opt.incsearch = true
+
+-- ==========================================================================
+-- THÈME
+-- ==========================================================================
+vim.cmd.colorscheme("carbonfox")
+
+-- Numéros de ligne : couleur dim kanagawa (fujiGray) au lieu de blanc pur
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#54546D" })
+vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#54546D" })
+vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#54546D" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#DCA561", bold = true })
+
+-- ==========================================================================
+-- DIAGNOSTICS
+-- ==========================================================================
+vim.diagnostic.config({
+  virtual_text = false, -- désactivé : tiny-inline-diagnostic s'en charge
+  signs = true,
+  underline = true,
+  update_in_insert = false, -- pas de diagnostics pendant la frappe
+  severity_sort = true,
+  float = {
+    border = "rounded",
+    source = "always",
   },
 })
 
--- =========================================
--- OIL (FILE EXPLORER)
--- =========================================
+-- ==========================================================================
+-- PLUGINS
+-- ==========================================================================
+
+-- --------------------------------------------------------------------------
+-- OIL (File Explorer)
+-- --------------------------------------------------------------------------
 require("oil").setup({
   default_file_explorer = true,
   columns = { "icon" },
   keymaps = {
     ["h"] = "actions.parent",
+    ["<Left>"] = "actions.parent",
     ["l"] = "actions.select",
-    ["g?"] = "actions.show_help",
+    ["<Right>"] = "actions.select",
     ["<CR>"] = "actions.select",
     ["<C-s>"] = { "actions.select", opts = { vertical = true } },
     ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
-    ["<C-t>"] = { "actions.select", opts = { tab = true } },
-    ["<C-p>"] = "actions.preview",
-    ["<C-c>"] = "actions.close",
-    ["<C-l>"] = "actions.refresh",
-    ["_"] = "actions.open_cwd",
-    ["`"] = "actions.cd",
-    ["~"] = { "actions.cd", opts = { scope = "tab" } },
-    ["gs"] = "actions.change_sort",
-    ["gx"] = "actions.open_external",
     ["g."] = "actions.toggle_hidden",
-    ["g\\"] = "actions.toggle_trash",
   },
   view_options = {
     show_hidden = true,
-    natural_order = "fast",
-    sort = { { "type", "asc" }, { "name", "asc" } },
+    sort = {
+      { "type", "asc" },
+      { "name", "asc" },
+    },
   },
-  preview_win = { update_on_cursor_moved = true, preview_method = "fast_scratch" },
 })
 
--- =========================================
--- TINY INLINE DIAGNOSTIC
--- =========================================
-require("tiny-inline-diagnostic").setup({
-  preset = "ghost",
-  transparent_bg = true,
-  transparent_cursorline = true,
-  hi = {
-    error = "DiagnosticError",
-    warn = "DiagnosticWarn",
-    info = "DiagnosticInfo",
-    hint = "DiagnosticHint",
-    arrow = "NonText",
-    background = "CursorLine",
-    mixing_color = "Normal",
-  },
-  options = {
-    show_source = { enabled = false, if_many = false },
-    use_icons_from_diagnostic = false,
-    set_arrow_to_diag_color = true,
-    throttle = 50,
-    softwrap = 10,
-    add_messages = { messages = true, display_count = false, use_max_severity = false, show_multiple_glyphs = true },
-    multilines = { enabled = false, always_show = true, trim_whitespaces = true, tabstop = 4 },
-    show_all_diags_on_cursorline = true,
-    show_diags_only_under_cursor = false,
-    show_related = { enabled = true, max_count = 5 },
-    enable_on_insert = false,
-    enable_on_select = false,
-    overflow = { mode = "wrap", padding = 0 },
-    break_line = { enabled = true, after = 30 },
-    virt_texts = { priority = 2048 },
-    severity = {
-      vim.diagnostic.severity.ERROR,
-      vim.diagnostic.severity.WARN,
-      vim.diagnostic.severity.INFO,
-      vim.diagnostic.severity.HINT,
+-- --------------------------------------------------------------------------
+-- TELESCOPE (Fuzzy Finder)
+-- --------------------------------------------------------------------------
+require("telescope").setup({
+  defaults = {
+    sorting_strategy = "ascending",
+    layout_config = { prompt_position = "top" },
+    path_display = { "smart" },
+    file_ignore_patterns = {
+      "node_modules",
+      ".git/",
+      "target/",
+      "dist/",
+      "build/",
+      ".next/",
     },
-    override_open_float = true,
   },
 })
+
+-- --------------------------------------------------------------------------
+-- TINY INLINE DIAGNOSTIC (LSP UI)
+-- --------------------------------------------------------------------------
+require("tiny-inline-diagnostic").setup({
+  preset = "ghost",
+  options = {
+    throttle = 50,
+    show_all_diags_on_cursorline = true,
+    break_line = {
+      enabled = true,
+      after = 30,
+    },
+    -- severity non filtré : virtual_text=false gère déjà la déduplication
+  },
+})
+-- --------------------------------------------------------------------------
+-- HBAC (Heuristic Buffer Auto-Close)
+-- --------------------------------------------------------------------------
 require("hbac").setup({
-  autoclose = true, -- set autoclose to false if you want to close manually
-  threshold = 5, -- hbac will start closing unedited buffers once that number is reached
+  autoclose = true,
+  threshold = 5,
   close_command = function(bufnr)
     vim.api.nvim_buf_delete(bufnr, {})
   end,
-  close_buffers_with_windows = false, -- hbac will close buffers with associated windows if this option is `true`
-  telescope = {
-    -- See #telescope-configuration below
-  },
+  close_buffers_with_windows = false,
 })
--- =========================================
--- BUFFERLINE LIGHT DISPLAY
--- =========================================
+
+-- --------------------------------------------------------------------------
+-- BUFFERLINE
+-- --------------------------------------------------------------------------
 require("bufferline").setup({
   options = {
-    numbers = "none",
-    close_command = nil,
-    right_mouse_command = nil,
-    left_mouse_command = nil,
-    middle_mouse_command = nil,
-    indicator = {
-      style = "none",
-      icon = "▎",
-    },
-    buffer_close_icon = "",
-    modified_icon = "●",
-    show_buffer_icons = true,
-    show_buffer_close_icons = false,
-    show_close_icon = false,
-    show_tab_indicators = true,
-    persist_buffer_sort = true,
+    mode = "buffers",
+    numbers = "ordinal",
     separator_style = "thin",
-    enforce_regular_tabs = false,
     always_show_bufferline = true,
-    diagnostics = "nil",
+    show_buffer_close_icons = true,
+    show_close_icon = false,
+    diagnostics = "nvim_lsp",
     offsets = {
-      {
-        filetype = "oil",
-        text = "Explorer",
-        highlight = "Directory",
-        text_align = "center",
-      },
+      { filetype = "oil", text = "Explorer", text_align = "center" },
     },
   },
   highlights = {
-    fill = {
-      fg = "#ffffff",
-      bg = "#1a1b26",
-    },
-    background = {
-      fg = "#a9b1d6",
-      bg = "#1a1b26",
-    },
-    buffer_selected = {
-      fg = "#ffffff",
-      bold = true,
-      italic = false,
-      bg = "#2d2f4a",
-    },
-    indicator_selected = {
-      fg = "#ff9e64",
-    },
-    close_button = {
-      fg = "#ff0000",
-      bg = "#1a1b26",
-    },
-    modified = {
-      fg = "#ff9e64",
-      bg = "#1a1b26",
-    },
+    buffer_selected = { fg = "#ffffff", bg = "#2d2f4a", bold = true },
+    buffer_visible = { fg = "#a0a0a0", bg = "#1f1f2a" },
+    buffer = { fg = "#888888", bg = "#1f1f2a" },
+    separator = { fg = "#44475a", bg = "#1f1f2a" },
+    separator_selected = { fg = "#2d2f4a", bg = "#2d2f4a" },
+    close_button = { fg = "#888888", bg = "#1f1f2a" },
+    close_button_visible = { fg = "#a0a0a0", bg = "#1f1f2a" },
+    close_button_selected = { fg = "#ffffff", bg = "#2d2f4a" },
+  },
+})
+
+-- --------------------------------------------------------------------------
+-- COMPLETION (nvim-cmp + luasnip)
+-- --------------------------------------------------------------------------
+local cmp = require("cmp")
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<C-e>"] = cmp.mapping.abort(),
+    ["<C-d>"] = cmp.mapping.scroll_docs(4),
+    ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+  }),
+  sources = cmp.config.sources({
+    { name = "nvim_lsp", priority = 1000 },
+    { name = "luasnip", priority = 750 },
+    { name = "buffer", priority = 500 },
+    { name = "path", priority = 250 },
+  }),
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
 })
